@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Ship Design Calculator</title>
+
   <style>
     /* Reset default margins/paddings and box-sizing */
     * {
@@ -39,7 +40,6 @@
       margin-top: 20px;
     }
 
-    /* Section styling */
     .section {
       padding: 20px;
       border-radius: 15px;
@@ -47,25 +47,21 @@
       margin: 10px;
       transition: transform 0.3s ease-in-out;
       position: relative;
-      color: #fff;
+      color: #333;
+      background-color: #f4f4f4;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background-color: #4CAF50;
-      /* Updated section background color */
-      background-image: none;
-      /* Remove background gradient */
     }
 
-    /* Updated hover effect for sections combined with the animated effect */
     .section:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-      background-color: #48A869;
-      /* Hover color change */
+      background-color: #e0e0e0;
     }
+
 
     /* Input and label styles */
     label {
@@ -78,16 +74,88 @@
 
     input,
     select {
-      padding: 10px;
+      padding: 12px;
       border: 1px solid #ccc;
       border-radius: 6px;
       width: 100%;
       margin-bottom: 15px;
-      background-color: #f4f4f4;
+      background-color: #fff;
       color: #333;
       font-size: 1rem;
     }
+
+    /* Radio button style */
+    .radio-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .radio-container input[type="radio"] {
+      display: none;
+    }
+
+    .radio-container label:before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      position: relative;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      margin-right: 5px;
+      margin-bottom: -5px;
+    }
+
+    .radio-container label {
+      position: relative;
+      cursor: pointer;
+      margin-left: 30px;
+      display: inline-block;
+    }
+
+    .radio-container input[type="radio"]:checked+label:before {
+      background-color: #333;
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .radio-container input[type="radio"]:not(:checked)+label:before {
+      background-color: #fff;
+      border: 2px solid #ccc;
+    }
+
+    /* Range slider style */
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      transition: opacity .2s, background-color 0.3s, transform 0.2s;
+    }
+
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    input[type="range"]:hover::-webkit-slider-thumb {
+      background: #45a049;
+    }
   </style>
+
 </head>
 
 <body>
@@ -96,19 +164,19 @@
     <div class="section">
       <h2>Ship Information</h2>
       <form>
-        <label for="shipSizeX">Ship Size X (in meters, max 78):</label>
+        <label for="shipSizeX">Ship Size X (in ship blocks):</label>
         <br>
         <input type="number" id="shipSizeX" name="shipSizeX" max="78" min="0" placeholder="30" value="30">
         <br>
-        <label for="shipSizeY">Ship Size Y (in meters, max 78):</label>
+        <label for="shipSizeY">Ship Size Y (in ship blocks):</label>
         <br>
         <input type="number" id="shipSizeY" name="shipSizeY" max="78" min="0" placeholder="30" value="30">
         <br>
-        <label for="thrusterCount">Number of Thrusters (max 104):</label>
+        <label for="thrusterCount">Total Number of Thrusters:</label>
         <br>
         <input type="number" id="thrusterCount" name="thrusterCount" max="104" min="0" placeholder="16" value="16">
         <br>
-        <label for="shipSpeed">Speed (in m/s):</label>
+        <label for="shipSpeed">Maximum Speed:</label>
         <br>
         <input type="string" id="shipSpeed" name="shipSpeed" readonly>
       </form>
@@ -152,7 +220,7 @@
         <br>
         <label for="ammoType">Select Ammo Type:</label>
         <br>
-        <select id="ammoType" name="ammoType">
+        <select id="ammoType" name="ammoType" placeholder="Standard Ammo" value="standardAmmo">
           <option value="trashAmmo">Trash Ammo</option>
           <option value="standardAmmo" selected>Standard Ammo</option>
           <option value="flakAmmo">Flak Ammo</option>
@@ -165,43 +233,36 @@
         <label for="ammoConsumptionRate">Ammo Consumption Rate (per second per turret):</label><br>
         <input type="string" id="ammoConsumptionRate" name="ammoConsumptionRate" readonly placeholder="0">
         <br>
+        <label for="ammoSource">Select Ammo Source:</label>
+        <div class="radio-container">
+          <input type="radio" id="preloaded" name="ammoSource" value="preloaded" checked>
+          <label for="preloaded">Preloaded</label>
+          <input type="radio" id="fabricators" name="ammoSource" value="fabricators">
+          <label for="fabricators">Fabricators</label>
+        </div>
         <label for="firePercentage">Percent of Time Firing Turrets: <span
             id="firePercentageIndicator">50%</span></label><br>
         <input type="range" id="firePercentage" name="firePercentage" min="0" max="100" value="50"
           oninput="updateFirePercentageIndicator(this.value); calculateFabricatorsRequired()" style="padding: 0px;"><br>
-        <label for="fabricatorsRequired">Fabricators Required:</label><br>
+        <label for="fabricatorsRequired" id="label-for-fabricatorsRequired">Fabricators Required:</label>
         <input type="string" id="fabricatorsRequired" name="fabricatorsRequired" readonly placeholder="0">
       </form>
     </div>
     <script>
 
-      document.getElementById("shipSizeX").addEventListener("input", updateNumTurrets);
-      document.getElementById("shipSizeY").addEventListener("input", updateNumTurrets);
-      document.getElementById("thrusterCount").addEventListener("input", updateNumTurrets);
-      document.getElementById("ammoType").addEventListener("input", calculateAmmoConsumption);
-      document.getElementById("ammoConsumptionRate").addEventListener("input", calculateFabricatorsRequired);
-      document.getElementById("shipSizeX").addEventListener("input", calculateSpeed);
-      document.getElementById("shipSizeY").addEventListener("input", calculateSpeed);
-      document.getElementById("thrusterCount").addEventListener("input", calculateSpeed);
-      document.getElementById("shieldGenerators").addEventListener("input", calculateSpace);
-      document.getElementById("shieldTanks").addEventListener("input", calculateSpace);
-      document.getElementById("shieldGenerators").addEventListener("input", calculateShieldRegen);
-
       var productionRate = 0;
 
       function updateNumTurrets() {
-        var sizeX = document.getElementById("shipSizeX").value;
-        var sizeY = document.getElementById("shipSizeY").value;
-        var thrusterCount = document.getElementById("thrusterCount").value;
-        var numTurrets = Math.floor(sizeX / 3) * 2 + Math.floor(sizeY / 3) * 2 - thrusterCount;
-        if (numTurrets > 104) {numTurrets = 104;}
-        if (numTurrets < 0) {numTurrets = 0;}
+        const sizeX = parseInt(document.getElementById("shipSizeX").value);
+        const sizeY = parseInt(document.getElementById("shipSizeY").value);
+        const thrusterCount = parseInt(document.getElementById("thrusterCount").value);
+        let numTurrets = Math.floor(sizeX / 3) * 2 + Math.floor(sizeY / 3) * 2 - thrusterCount;
+        numTurrets = Math.max(0, Math.min(numTurrets, 104));
         document.getElementById("numTurrets").value = numTurrets;
       }
 
       function calculateAmmoConsumption() {
         var ammoType = document.getElementById("ammoType").value;
-
         if (ammoType === "standardAmmo") {
           var ammoConsumptionRate = 1;
           productionRate = 4 / 3;
@@ -228,11 +289,29 @@
           productionRate = 4 / 3;
         }
         document.getElementById("ammoConsumptionRate").value = ammoConsumptionRate;
-        calculateFabricatorsRequired();
       }
 
       function updateFirePercentageIndicator(value) {
         document.getElementById("firePercentageIndicator").innerText = value + '%';
+      }
+
+      function updateAmmoOutput() {
+        var ammoSource = document.querySelector('input[name="ammoSource"]:checked').value;
+        if (ammoSource === "preloaded") {
+          document.getElementById("label-for-fabricatorsRequired").innerText = "Ammo required (20 minutes of combat):";
+          calculateAmmoRequired();
+        } else if (ammoSource === "fabricators") {
+          document.getElementById("label-for-fabricatorsRequired").innerText = "Fabricators required:";
+          calculateFabricatorsRequired();
+        }
+      }
+
+      function calculateAmmoRequired() {
+        var firePercentage = document.getElementById("firePercentage").value / 100;
+        var ammoConsumptionRate = document.getElementById("ammoConsumptionRate").value;
+        var turretNumber = document.getElementById("numTurrets").value;
+        var ammoRequired = Math.ceil(ammoConsumptionRate * turretNumber * firePercentage * 0.5 * 60 * 20);
+        document.getElementById("fabricatorsRequired").value = ammoRequired;
       }
 
       function calculateFabricatorsRequired() {
@@ -247,105 +326,84 @@
         var sizeX = document.getElementById("shipSizeX").value;
         var sizeY = document.getElementById("shipSizeY").value;
         var thrusterCount = document.getElementById("thrusterCount").value;
-        document.getElementById("thrusterCount").max = Math.floor(sizeX / 3) * 2 + Math.floor(sizeY / 3) * 2;
-        if (sizeX > 78) {
-          document.getElementById("shipSizeX").value = 78;
-          sizeX = 78;
-        } else if (sizeX < 0) {
-          document.getElementById("shipSizeX").value = 0;
-          sizeX = 0;
-        }
-        if (sizeY > 78) {
-          document.getElementById("shipSizeY").value = 78;
-          sizeY = 78;
-        } else if (sizeY < 0) {
-          document.getElementById("shipSizeY").value = 0;
-          sizeY = 0;
-        }
-        if (thrusterCount > 104) {
-          document.getElementById("thrusterCount").value = 104;
-          thrusterCount = 104;
-        } else if (thrusterCount < 0) {
-          document.getElementById("thrusterCount").value = 0;
-          thrusterCount = 0;
-        }
-        var sizeFactor = 0.365; // Adjust this value as needed
-        var thrusterFactor = 5; // Adjust this value as needed for diminishing returns
-        var speed = 60 - (Math.sqrt(sizeX * sizeY) * sizeFactor) + (Math.sqrt(thrusterCount / 2) * thrusterFactor);
-
-
         var mass = (sizeX * sizeY) ** .5 * 2;
 
-        // total_thrust maxes out at this value. The max-out is computed using a sigmoid function but the details of this are probably not too important.
-        var total_thrust = thrusterCount * 1000
-        //1 / (1 + Math.exp(x/2))
+        var total_thrust = (thrusterCount / 4 * 2000) + 2000;
         var max_thrust = mass * 100;
-
-        // thrusters provide 2000 thrust in the direction they face
-        // thrusters provide 500 thrust in directions to their side
-        // starter thrusters provide 50% the thrust of normal thrusters (1000 and 250)
-        // starter thrusters on corners provide full thrust (1000) in the directions adjacent to their facing and less thrust (250) in other directions
-
-        var max_speed = 20 + 0.4 * total_thrust / mass;
-
-        // Solving these equations to get the absolute max speed:
-
-        //max_speed = 20 + 0.4 * (mass * 100) / mass;
-        //max_speed = 20 + 0.4 * 100;
-        if (speed > 60) {speed = 60;}
+        if (max_thrust > total_thrust) {total_thrust = max_thrust};
+        var max_speed = Math.round(20 + 0.4 * total_thrust / mass);
 
         document.getElementById("shipSpeed").value = Math.max(0, max_speed);
       }
 
       function calculateSpace() {
         var totalShipSize = document.getElementById("shipSizeY").value * document.getElementById("shipSizeX").value;
-        var generators = document.getElementById("shieldGenerators").value;
-        var tanks = document.getElementById("shieldTanks").value;
+        var generators = parseInt(document.getElementById("shieldGenerators").value);
+        var tanks = parseInt(document.getElementById("shieldTanks").value);
         var space = generators * 8 + tanks * 4;
         var spacePercent = Math.round((space / totalShipSize) * 100)
-        if (spacePercent > 100) {spacePercent = 100;}
         document.getElementById("shieldSpace").value = spacePercent + "%";
-        document.getElementById("shieldGenerators").max = Math.floor((totalShipSize - (tanks * 4)) / 8);
-        document.getElementById("shieldTanks").max = Math.floor((totalShipSize - (generators * 8)) / 4);
       }
 
-      function updateHealthBar() {
-        var totalHealth = 2000 + document.getElementById("shieldTanks").value * 500;
-        // Update the health bar display here
-        // ...
-      }
-      function calculateTanksForTotalShieldCapacity() {
-        var generators = document.getElementById("shieldGenerators").value;
+      function calculateTotalShieldCapacity() {
         var tanks = document.getElementById("shieldTanks").value;
-        var activeTanks = tanks * 0.5; // Assuming 50% of tanks are active when the projector is enabled
-        var totalShieldCapacity = generators * (10 + (activeTanks * 50)); // Calculate total shield capacity
+        var totalShieldCapacity = 2000 + tanks * 500;
         document.getElementById("totalHealth").value = totalShieldCapacity;
       }
+
       function calculateShieldRegen() {
-        var generators = parseInt(document.getElementById("shieldGenerators").value)
-        console.log(generators)
-        // Diminishing returns factor
-        //var regenRate = (1 / (-p * numOfGenerators + p + numOfGenerators)) * numOfGenerators * 100;
-        var regenRate = Math.round((1 / ((-0.95 * generators) + 0.95 + generators)) * generators * 100)
+        var generators = parseInt(document.getElementById("shieldGenerators").value);
+        var regenRate = Math.round((1 / ((-0.95 * generators) + 0.95 + generators)) * generators * 100);
         document.getElementById("shieldRegen").value = regenRate;
-        calculateTimeToFullHealth();
-        // Add any other logic for shield regen calculation here
       }
+
       function calculateTimeToFullHealth() {
         var totalHealth = document.getElementById("totalHealth").value;
-        var regenRateTime = document.getElementById("shieldRegen").value;
-        var timeToFullHealth = Math.round((totalHealth) / regenRateTime);
+        var shieldRegen = document.getElementById("shieldRegen").value;
+        var timeToFullHealth = Math.round(totalHealth / shieldRegen);
         document.getElementById("timeToFullHealth").value = timeToFullHealth;
       }
-      document.getElementById("shieldGenerators").addEventListener("input", calculateTanksForTotalShieldCapacity);
-      document.getElementById("shieldTanks").addEventListener("input", calculateTanksForTotalShieldCapacity);
-      updateHealthBar();
-      calculateShieldRegen();
-      calculateTimeToFullHealth();
-      calculateSpace();
-      calculateTanksForTotalShieldCapacity();
-      calculateSpeed();
-      calculateFabricatorsRequired();
+
+      function limitValues() {
+        var shipSizeX = document.getElementById("shipSizeX").value;
+        var shipSizeY = document.getElementById("shipSizeY").value;
+        var thrusterCount = document.getElementById("thrusterCount").value;
+        var generators = document.getElementById("shieldGenerators").value;
+        var tanks = document.getElementById("shieldTanks").value;
+        var shieldSpace = document.getElementById("shieldSpace").value;
+        var totalShipSize = document.getElementById("shipSizeY").value * document.getElementById("shipSizeX").value;
+
+        document.getElementById("thrusterCount").value = Math.max(0, Math.min(thrusterCount, (Math.floor(shipSizeX / 3) * 2 + Math.floor(shipSizeY / 3) * 2)));
+
+        document.getElementById("shipSizeX").value = Math.max(1, Math.min(shipSizeX, 78));
+        document.getElementById("shipSizeY").value = Math.max(1, Math.min(shipSizeY, 78));
+
+        document.getElementById("shieldGenerators").max = Math.floor((totalShipSize - (tanks * 4)) / 8);
+        document.getElementById("shieldTanks").max = Math.floor((totalShipSize - (generators * 8)) / 4);
+        document.getElementById("shieldGenerators").value = Math.max(0, Math.min(generators, document.getElementById("shieldGenerators").max));
+        document.getElementById("shieldTanks").value = Math.max(0, Math.min(tanks, document.getElementById("shieldTanks").max));
+
+        document.getElementById("shieldSpace").value = Math.max(0, Math.min(100, shieldSpace));
+
+      }
+
+      document.addEventListener("input", updateAllCalculations);
+      document.addEventListener("change", updateAllCalculations);
+
+      function updateAllCalculations() {
+        limitValues();
+        calculateTotalShieldCapacity();
+        calculateShieldRegen();
+        calculateTimeToFullHealth();
+        calculateSpace();
+        calculateSpeed();
+        calculateFabricatorsRequired();
+        calculateAmmoConsumption();
+        updateNumTurrets();
+        updateAmmoOutput();
+      }
+
+      updateAllCalculations();
     </script>
   </div>
 </body>
