@@ -1,0 +1,28 @@
+This is a (hopefully) comprehensive guide to the new shield system. If you don't want to read walls of text, the pictures should give you a good enough idea to get started.
+
+Base Health+Passive Regen All ships have 2000 base HP,
+visible as 2 green segments on their health bar. All ships passively regen 100 HP/second. Once the base HP is filled,
+this passive regen will fill other pools of health. Minimal Setup The starter ship contains two tanks for shield fluid next to a Navigation Unit,
+which functions as a primitive shield projector. Crafting more tanks will increase the health pool,
+but passive regen will slow with more health due to leakage. Component Overview A basic shield setup looks like this: The shield cores are consumed by the generator. The generator creates shield fluid,
+which is usable shield HP. The tank stores shield fluid (HP). Each tank holds 500 fluid and will link with neighboring tanks. The shield projector activates a bank of neighboring tanks,
+making the shield fluid usable at the cost of some efficiency. A minimal setup only requires tanks and projectors,
+but would have to rely on passive regen. Obtaining Components Shield Cores,
+Generators,
+and Projectors are dropped by blue bots in Finch and Sparrow. Fluid Tanks can be crafted in machine fabricators. Tanks,
+Projectors,
+and Leakage All tanks of shield fluid leak over time. Larger systems leak more,
+making them more wasteful. Passive tanks leak at 1%/second,
+while active tanks leak at 2%/second. Tanks of shield fluid can be either active or passive. A bank of tanks is active when an adjacent projector is enabled. Projectors can be toggled by clicking on them. Navigation Units function as shield projectors which are always enabled. Only active tanks count as usable shield HP,
+but they will leak twice as rapidly. Passive tanks also receive boosted generation efficiency. HP from shield fluid is visible in a ship's health bar:
+
+
+Shield Generators and Efficiency There are some rules when placing generators. In order to function,
+a generator's face must be touching a tank or another valid generator. It may touch two tanks and/or generators, but it will only select one to power. There cannot be cycles or generators facing each-other.
+
+
+Shield generators must be loaded with either Shield Cores or the older Shield Boosters. Shield Boosters provide 1/10 the energy and are not recommended as they may be totally deprecated. Shield generators have an efficiency stat which is influenced by several factors. It is determined as follows. Start with a base efficiency of 100%. A shield generator connected to a passive tank will receive a 100% efficiency bonus. A shield generator with an optimized matrix (see next section) will receive a 100% efficiency bonus. A shield generator with a broken matrix will receive a 50% efficiency penalty. Next,
+the efficiency is adjusted based on the number of total generators. Adding more generators to a ship provides diminishing returns. To get the final efficiency value,
+multiply by 1/(-px + p + x),
+where p=0.95 and x is the total number of shield generators. Assuming no other bonuses or debuffs,
+this should provide around: 100 HP/s at 1 generator 417 HP/s at 5 generators 690 HP/s at 10 generators 882 HP/s at 15 generators 1026 HP/s at 20 generators
