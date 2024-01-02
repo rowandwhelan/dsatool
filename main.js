@@ -75,11 +75,11 @@ function calculateSpeed() {
   var sizeX = document.getElementById("shipSizeX").value;
   var sizeY = document.getElementById("shipSizeY").value;
   var thrusterCount = document.getElementById("thrusterCount").value;
-  var mass = (sizeX * sizeY) ** .5 * 2;
+  var mass = (sizeX * sizeY) ** 0.5 * 2;
 
   var total_thrust = (thrusterCount / 4 * 2000) + 2000;
   var max_thrust = mass * 100;
-  if (max_thrust > total_thrust) { total_thrust = max_thrust };
+  if (max_thrust > total_thrust) { total_thrust = max_thrust }
   var max_speed = Math.round(20 + 0.4 * total_thrust / mass);
 
   document.getElementById("shipSpeed").value = Math.max(0, max_speed);
@@ -90,7 +90,7 @@ function calculateSpace() {
   var generators = parseInt(document.getElementById("shieldGenerators").value);
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var space = generators * 8 + tanks * 4;
-  var spacePercent = Math.round((space / totalShipSize) * 100)
+  var spacePercent = Math.round((space / totalShipSize) * 100);
   document.getElementById("shieldSpace").value = spacePercent + "%";
 }
 
