@@ -1,3 +1,17 @@
+TODO:
+
+make it easier to see what is and isn't an input field
+add option for mutiple sheild systems (possibly of different sizes)
+add a thing to tell you how many cores per min will be used at maximum load on the sheild system
+
+
+
+
+
+
+
+
+
 This is a (hopefully) comprehensive guide to the new shield system. If you don't want to read walls of text, the pictures should give you a good enough idea to get started.
 
 Base Health+Passive Regen All ships have 2000 base HP,
