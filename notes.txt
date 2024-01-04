@@ -2,7 +2,7 @@ TODO:
 
 make it easier to see what is and isn't an input field
 add option for mutiple sheild systems (possibly of different sizes)
-add a thing to tell you how many cores per min will be used at maximum load on the sheild system
+add a thing to tell you how many cores per min will be used at maximum load on the sheild system 5000 hp per core
 
 
 
