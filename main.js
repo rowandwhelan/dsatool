@@ -124,8 +124,8 @@ function limitValues() {
 
   document.getElementById("thrusterCount").value = Math.max(0, Math.min(thrusterCount, (Math.floor(shipSizeX / 3) * 2 + Math.floor(shipSizeY / 3) * 2)));
 
-  document.getElementById("shipSizeX").value = Math.max(1, Math.min(shipSizeX, 78));
-  document.getElementById("shipSizeY").value = Math.max(1, Math.min(shipSizeY, 78));
+  document.getElementById("shipSizeX").value = Math.max(0, Math.min(shipSizeX, 78));
+  document.getElementById("shipSizeY").value = Math.max(0, Math.min(shipSizeY, 78));
 
   document.getElementById("shieldGenerators").max = Math.floor((totalShipSize - (tanks * 4)) / 8);
   document.getElementById("shieldTanks").max = Math.floor((totalShipSize - (generators * 8)) / 4);
