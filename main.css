@@ -11,11 +11,11 @@ body {
   background-color: #f8f8f8;
   padding: 20px;
   margin: 0;
-    -webkit-user-select: none; 
-    -moz-user-select: none;    
-    -ms-user-select: none;   
-    -o-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 /* Main heading style */
@@ -145,11 +145,15 @@ input[type="range"]::-webkit-slider-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: #333;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
-  background: #45a049;
+  background: #000000;
+}
+
+.noInput {
+  background: #d3d3d3;
 }
