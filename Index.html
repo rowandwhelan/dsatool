@@ -22,7 +22,7 @@
         <label for="thrusterCount">Total Number of Thrusters:</label>
         <input type="number" id="thrusterCount" name="thrusterCount" max="104" min="0" placeholder="16" value="16">
         <label for="shipSpeed">Maximum Speed:</label>
-        <input type="string" id="shipSpeed" name="shipSpeed" disabled>
+        <input class="noInput" type="string" id="shipSpeed" name="shipSpeed" disabled>
       </form>
     </div>
     <div class="section">
@@ -33,20 +33,20 @@
         <label for="shieldTanks">Number of Shield Tanks:</label>
         <input type="number" id="shieldTanks" name="shieldTanks" placeholder="20" value="20">
         <label for="totalHealth">Total Health:</label>
-        <input type="string" id="totalHealth" name="totalHealth" disabled>
+        <input class="noInput" type="string" id="totalHealth" name="totalHealth" disabled>
         <label for="shieldSpace">Space needed:</label>
-        <input type="string" id="shieldSpace" name="shieldSpace" disabled>
+        <input class="noInput" type="string" id="shieldSpace" name="shieldSpace" disabled>
         <label for="shieldRegen">Shield Regen (HP/second):</label>
-        <input type="string" id="shieldRegen" name="shieldRegen" disabled>
+        <input class="noInput" type="string" id="shieldRegen" name="shieldRegen" disabled>
         <label for="timeToFullHealth">Time to Full Health (s):</label>
-        <input type="string" id="timeToFullHealth" name="timeToFullHealth" disabled>
+        <input class="noInput" type="string" id="timeToFullHealth" name="timeToFullHealth" disabled>
       </form>
     </div>
     <div class="section">
       <h2>Weapons Information</h2>
       <form>
         <label for="numTurrets">Maximum Number of Turrets:</label>
-        <input type="string" id="numTurrets" name="numTurrets" placeholder="80" value="80" disabled>
+        <input class="noInput" type="string" id="numTurrets" name="numTurrets" placeholder="80" value="80" disabled>
         <label for="ammoType">Select Ammo Type:</label>
         <select id="ammoType" name="ammoType" placeholder="Standard Ammo" value="standardAmmo">
           <option value="trashAmmo">Trash Ammo</option>
@@ -59,7 +59,7 @@
           <option value="sniperAmmo">Sniper Ammo</option>
         </select>
         <label for="ammoConsumptionRate">Rate of Fire (per second per turret):</label>
-        <input type="string" id="ammoConsumptionRate" name="ammoConsumptionRate" disabled>
+        <input class="noInput" type="string" id="ammoConsumptionRate" name="ammoConsumptionRate" disabled>
         <label for="ammoSource">Select Ammo Source:</label>
         <div class="radio-container">
           <input type="radio" id="preloaded" name="ammoSource" value="preloaded" checked>
@@ -70,10 +70,13 @@
         <label for="firePercentage">Percent of Time Firing Turrets: <span id="firePercentageIndicator"></span></label>
         <input type="range" id="firePercentage" name="firePercentage" value="50" style="padding: 0px;">
         <label for="fabricatorsRequired" id="label-for-fabricatorsRequired">Fabricators Required:</label>
-        <input type="string" id="fabricatorsRequired" name="fabricatorsRequired" disabled>
+        <input class="noInput" type="string" id="fabricatorsRequired" name="fabricatorsRequired" disabled>
       </form>
     </div>
     <script src='./main.js'></script>
+    <script src='./econ.js' type='module'></script>
+    <script src=" https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/plugin/customParseFormat.js"></script>
   </div>
 </body>
 
