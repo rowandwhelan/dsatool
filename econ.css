@@ -16,7 +16,7 @@ body {
 /* Main heading style */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
   color: #333;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -151,4 +151,12 @@ input[type="range"]:hover::-webkit-slider-thumb {
 
 .noInput {
   background: #d3d3d3;
+}
+
+#output {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
