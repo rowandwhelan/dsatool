@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "dayjs": "^1.11.10",
+    "esbuild": "^0.19.11",
+    "rollup": "^4.9.4",
     "vite": "^4.5.1"
   }
 }
