@@ -5,12 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-js": "browserify ./src/econ.js -o ./public/bundle.js"
   },
   "dependencies": {
     "dayjs": "^1.11.10",
-    "esbuild": "^0.19.11",
-    "rollup": "^4.9.4",
     "vite": "^4.5.1"
   }
 }

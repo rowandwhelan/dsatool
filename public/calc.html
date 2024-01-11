@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ship Design Calculator</title>
+  <link rel="stylesheet" href="/calc.css" />
+  <style></style>
+</head>
+
+<body>
+  <iframe src="/header.html" frameborder="0" width="100%" height="50px"></iframe>
+  <h1>Ship Design Calculator</h1>
+  <div class="grid-container">
+    <div class="section">
+      <h2>Ship Information</h2>
+      <form>
+        <label for="shipSizeX">Ship Size X (in ship blocks):</label>
+        <input type="number" id="shipSizeX" name="shipSizeX" placeholder="30" value="30" />
+        <label for="shipSizeY">Ship Size Y (in ship blocks):</label>
+        <input type="number" id="shipSizeY" name="shipSizeY" placeholder="30" value="30" />
+        <label for="thrusterCount">Total Number of Thrusters:</label>
+        <input type="number" id="thrusterCount" name="thrusterCount" max="104" min="0" placeholder="16" value="16" />
+        <label for="shipSpeed">Maximum Speed:</label>
+        <input class="noInput" type="string" id="shipSpeed" name="shipSpeed" disabled />
+      </form>
+    </div>
+    <div class="section">
+      <h2>Shield Information</h2>
+      <form>
+        <label for="shieldGenerators">Number of Shield Generators:</label>
+        <input type="number" id="shieldGenerators" name="shieldGenerators" placeholder="20" value="20" />
+        <label for="shieldTanks">Number of Shield Tanks:</label>
+        <input type="number" id="shieldTanks" name="shieldTanks" placeholder="20" value="20" />
+        <label for="totalHealth">Total Health:</label>
+        <input class="noInput" type="string" id="totalHealth" name="totalHealth" disabled />
+        <label for="shieldSpace">Space needed:</label>
+        <input class="noInput" type="string" id="shieldSpace" name="shieldSpace" disabled />
+        <label for="shieldRegen">Shield Regen (HP/second):</label>
+        <input class="noInput" type="string" id="shieldRegen" name="shieldRegen" disabled />
+        <label for="timeToFullHealth">Time to Full Health (s):</label>
+        <input class="noInput" type="string" id="timeToFullHealth" name="timeToFullHealth" disabled />
+      </form>
+    </div>
+    <div class="section">
+      <h2>Weapons Information</h2>
+      <form>
+        <label for="numTurrets">Maximum Number of Turrets:</label>
+        <input class="noInput" type="string" id="numTurrets" name="numTurrets" placeholder="80" value="80" disabled />
+        <label for="ammoType">Select Ammo Type:</label>
+        <select id="ammoType" name="ammoType" placeholder="Standard Ammo" value="standardAmmo">
+          <option value="trashAmmo">Trash Ammo</option>
+          <option value="standardAmmo" selected>Standard Ammo</option>
+          <option value="flakAmmo">Flak Ammo</option>
+          <option value="slugAmmo">Slug Ammo</option>
+          <option value="punchAmmo">Punch Ammo</option>
+          <option value="yankAmmo">Yank Ammo</option>
+          <option value="scattershotAmmo">Scattershot Ammo</option>
+          <option value="sniperAmmo">Sniper Ammo</option>
+        </select>
+        <label for="ammoConsumptionRate">Rate of Fire (per second per turret):</label>
+        <input class="noInput" type="string" id="ammoConsumptionRate" name="ammoConsumptionRate" disabled />
+        <label for="ammoSource">Select Ammo Source:</label>
+        <div class="radio-container">
+          <input type="radio" id="preloaded" name="ammoSource" value="preloaded" checked />
+          <label for="preloaded">Preloaded</label>
+          <input type="radio" id="fabricators" name="ammoSource" value="fabricators" />
+          <label for="fabricators">Fabricators</label>
+        </div>
+        <label for="firePercentage">Percent of Time Firing Turrets:
+          <span id="firePercentageIndicator"></span></label>
+        <input type="range" id="firePercentage" name="firePercentage" value="50" style="padding: 0px" />
+        <label for="fabricatorsRequired" id="label-for-fabricatorsRequired">Fabricators Required:</label>
+        <input class="noInput" type="string" id="fabricatorsRequired" name="fabricatorsRequired" disabled />
+      </form>
+    </div>
+    <script src="../src/calc.js"></script>
+  </div>
+</body>
+
+</html>
