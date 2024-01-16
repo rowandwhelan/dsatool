@@ -203,32 +203,37 @@ body.dark-mode #output {
   color: #fff;
 }
 
-/* Dark Mode Button */
+/* Dark Mode Button Animation */
 button {
   background-color: #000;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 10px;
   cursor: pointer;
   border-radius: 5px;
   outline: none;
+  position: relative;
 }
 
 button:hover {
   background-color: #333;
 }
-/* Dark Mode Button Animation */
+/* Dark Mode Button Animation: Image Icon */
 button::before {
-  content: url('./moon.png');
+  content: url('./sun.png'); 
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Add opacity transition */
-  opacity: 1; /* Initial opacity */
+  width: 20px; /* Adjust width */
+  height: 20px; /* Adjust height */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  position: absolute;
+  left: 5px; /* Adjust position */
+  top: 50%; /* Adjust position */
+  transform: translateY(-50%); /* Adjust position */
 }
+
 body.dark-mode button::before {
-  content: url('./sun.png'); /* Change the content to the moon SVG */
+  content: url('./moon.png'); 
   transform: rotate(180deg);
-  opacity: 1; /* Ensure the moon is fully visible */
+  opacity: 1;
 }
