@@ -226,22 +226,3 @@ button {
 button:hover {
   background-color: #333;
 }
-/* Dark Mode Button Animation: Image Icon */
-button::before {
-  content: url('./sun.png'); 
-  display: inline-block;
-  width: 20px; /* Adjust width */
-  height: 20px; /* Adjust height */
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 1;
-  position: absolute;
-  left: 5px; /* Adjust position */
-  top: 50%; /* Adjust position */
-  transform: translateY(-50%); /* Adjust position */
-}
-
-body.dark-mode button::before {
-  content: url('./moon.png'); 
-  transform: rotate(180deg);
-  opacity: 1;
-}
