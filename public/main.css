@@ -172,6 +172,14 @@ body.dark-mode .section {
   color: #fff;
 }
 
+body.dark-mode label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  display: block;
+  color: #fff;
+}
+
 body.dark-mode input,
 body.dark-mode select {
   background-color: #444;
