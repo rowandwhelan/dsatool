@@ -211,8 +211,13 @@ body.dark-mode #output {
   color: #fff;
 }
 
-body.dark-mode h1 {
+h1 {
+  text-align: center;
+  margin-top: 20px;
   color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
 }
 
 /* Dark Mode Button Animation */
