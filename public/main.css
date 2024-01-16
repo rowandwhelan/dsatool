@@ -229,7 +229,7 @@ button {
   cursor: pointer;
   border-radius: 5px;
   outline: none;
-  position: relative;
+  position: absolute;
 }
 
 button:hover {
