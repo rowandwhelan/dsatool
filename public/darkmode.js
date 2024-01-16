@@ -1,6 +1,6 @@
 // Dark Mode Toggle
 const darkModeToggle = document.createElement('button');
-darkModeToggle.textContent = 'Toggle Dark Mode';
+darkModeToggle.textContent = 'Dark Mode';
 darkModeToggle.style.position = 'fixed';
 darkModeToggle.style.top = '20px';
 darkModeToggle.style.right = '20px';
