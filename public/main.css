@@ -211,7 +211,7 @@ body.dark-mode #output {
   color: #fff;
 }
 
-h1 {
+body.dark-mode h1 {
   text-align: center;
   margin-top: 20px;
   color: #fff;
