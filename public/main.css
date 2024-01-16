@@ -8,7 +8,7 @@
 /* Set a background color and add some spacing */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f8f8f8;
   padding: 20px;
   margin: 0;
 }
@@ -20,7 +20,7 @@ h1 {
   color: #333;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 /* Updated Grid container style */
@@ -39,7 +39,7 @@ h1 {
   transition: transform 0.3s ease-in-out;
   position: relative;
   color: #333;
-  background-color: #fff;
+  background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,9 +48,9 @@ h1 {
 }
 
 .section:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  background-color: #f4f4f4;
+  background-color: #e0e0e0;
 }
 
 /* Input and label styles */
@@ -60,17 +60,17 @@ label {
   margin-top: 10px;
   display: block;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 input,
 select {
-  padding: 14px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 100%;
   margin-bottom: 15px;
-  background-color: #f8f8f8;
+  background-color: #fff;
   color: #333;
   font-size: 1rem;
 }
@@ -90,8 +90,8 @@ select {
 .radio-container label:before {
   content: '';
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border: 2px solid #ccc;
   border-radius: 50%;
   position: relative;
@@ -109,7 +109,7 @@ select {
 
 .radio-container input[type="radio"]:checked+label:before {
   background-color: #333;
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -126,7 +126,7 @@ input[type="range"] {
   width: 100%;
   height: 10px;
   border-radius: 5px;
-  background: #e0e0e0;
+  background: #d3d3d3;
   outline: none;
   opacity: 0.7;
   transition: opacity .2s, background-color 0.3s, transform 0.2s;
@@ -150,13 +150,85 @@ input[type="range"]:hover::-webkit-slider-thumb {
 }
 
 .noInput {
-  background: #e0e0e0;
+  background: #d3d3d3;
 }
 
 #output {
-  background-color: #f8f8f8;
-  border: 2px solid #ccc;
+  background-color: #fff;
+  border: 1px solid #ccc;
   padding: 20px;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .section {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .radio-container label:before {
+  border: 2px solid #fff;
+}
+
+body.dark-mode .radio-container input[type="radio"]:checked+label:before {
+  background-color: #fff;
+}
+
+body.dark-mode input[type="range"] {
+  background: #555;
+}
+
+body.dark-mode input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+}
+
+body.dark-mode .noInput {
+  background: #555;
+}
+
+body.dark-mode #output {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Dark Mode Button */
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #333;
+}
+/* Dark Mode Button Animation */
+button::before {
+  content: url('./moon.png');
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add opacity transition */
+  opacity: 1; /* Initial opacity */
+}
+body.dark-mode button::before {
+  content: url('./sun.png'); /* Change the content to the moon SVG */
+  transform: rotate(180deg);
+  opacity: 1; /* Ensure the moon is fully visible */
 }
