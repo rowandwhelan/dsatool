@@ -211,6 +211,10 @@ body.dark-mode #output {
   color: #fff;
 }
 
+body.dark-mode h1 {
+  color: #fff;
+}
+
 /* Dark Mode Button Animation */
 button {
   background-color: #000;
