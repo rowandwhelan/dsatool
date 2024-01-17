@@ -203,7 +203,7 @@ body.dark-mode input[type="range"]::-webkit-slider-thumb {
 }
 
 body.dark-mode .noInput {
-  background: #444;
+  background: #333;
 }
 
 body.dark-mode #output {
