@@ -182,12 +182,12 @@ body.dark-mode label {
 
 body.dark-mode input,
 body.dark-mode select {
-  background-color: #555;
+  background-color: #666;
   color: #fff;
 }
 
 body.dark-mode .radio-container label:before {
-  border: 2px solid #fff;
+  border: 2px solid #555;
 }
 
 body.dark-mode .radio-container input[type="radio"]:checked+label:before {
