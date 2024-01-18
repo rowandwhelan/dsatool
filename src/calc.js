@@ -4,7 +4,7 @@ var trueShipY = 30;
 
 function updateUnitType(){
   var unitType = document.querySelector('input[name="unitType"]:checked').value;
-  if (unitType == "shipBlocks") {
+  if (unitType === "shipBlocks") {
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in ship blocks):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in ship blocks):";
     document.getElementById("shipSizeX").value = Math.max(0, Math.min(trueShipX, 78));
