@@ -1,5 +1,7 @@
 var productionRate = 0;
 var pastUnitType = "shipBlocks";
+var trueShipX = 30;
+var trueShipY = 30;
 
 function updateUnitType(){
   var unitType = document.querySelector('input[name="unitType"]:checked').value;
@@ -18,6 +20,8 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = sizeX
       document.getElementById("shipSizeY").value = sizeY
     }
+    trueShipX = document.getElementById("shipSizeX").value;
+    trueShipY = document.getElementById("shipSizeY").value;
   }  if (unitType === "RCs") {
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in RCs):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in RCs):";
@@ -31,6 +35,8 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = sizeX
       document.getElementById("shipSizeY").value = sizeY
     }
+    trueShipX = Math.round(document.getElementById("shipSizeX").value*3);
+    trueShipY = Math.round(document.getElementById("shipSizeY").value*3);
   } else if (unitType === "worldBlocks") {
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in world blocks):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in world blocks):";
@@ -44,6 +50,8 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = sizeX
       document.getElementById("shipSizeY").value = sizeY
     }
+    trueShipX = Math.round(document.getElementById("shipSizeX").value*8);
+    trueShipY = Math.round(document.getElementById("shipSizeY").value*8);
   }
 }
 
