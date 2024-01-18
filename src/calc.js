@@ -105,8 +105,8 @@ function calculateShieldRegen() {
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var regenRate = Math.round(((1 / ((-0.95 * generators) + 0.95 + generators)) * generators * 100) - (tanks*500*0.02)) + 100;
   if (regenRate < 0) {
-    alert("Shield regen cannot support the shield system, add more generators");
     regenRate = 0
+    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second): [Warning: Shield regen cannot support the shield system and calculations will be inaccurate. Add more generators]"
   }
   document.getElementById("shieldRegen").value = regenRate;
 }
@@ -120,9 +120,7 @@ function calculateTimeToFullHealth() {
 
 function calculateCoresConsumed() {
   var shieldRegen = parseInt(document.getElementById("shieldRegen").value);
-  console.log(shieldRegen)
   var coresConsumed = Math.round((shieldRegen*60) / 5000);
-  console.log(coresConsumed)
   document.getElementById("coresConsumed").value = coresConsumed;
 }
 
