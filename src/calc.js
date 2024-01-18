@@ -20,6 +20,8 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = sizeX
       document.getElementById("shipSizeY").value = sizeY
     }
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, 78));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, 78));
     trueShipX = document.getElementById("shipSizeX").value;
     trueShipY = document.getElementById("shipSizeY").value;
   }  if (unitType === "RCs") {
@@ -35,6 +37,8 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = sizeX
       document.getElementById("shipSizeY").value = sizeY
     }
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, (Math.round((80/3) *10)/10)));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, (Math.round((80/3) *10)/10)));
     trueShipX = Math.round(document.getElementById("shipSizeX").value*3);
     trueShipY = Math.round(document.getElementById("shipSizeY").value*3);
   } else if (unitType === "worldBlocks") {
@@ -50,16 +54,16 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = sizeX
       document.getElementById("shipSizeY").value = sizeY
     }
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, 10));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, 10));
     trueShipX = Math.round(document.getElementById("shipSizeX").value*8);
     trueShipY = Math.round(document.getElementById("shipSizeY").value*8);
   }
 }
 
 function updateNumTurrets() {
-  var sizeX = parseInt(document.getElementById("shipSizeX").value);
-  var sizeY = parseInt(document.getElementById("shipSizeY").value);
   var thrusterCount = parseInt(document.getElementById("thrusterCount").value);
-  var numTurrets = Math.floor(sizeX / 3) * 2 + Math.floor(sizeY / 3) * 2 - thrusterCount;
+  var numTurrets = Math.floor(trueShipX / 3) * 2 + Math.floor(trueShipY / 3) * 2 - thrusterCount;
   numTurrets = Math.max(0, Math.min(numTurrets, 104));
   document.getElementById("numTurrets").value = numTurrets;
 }
@@ -138,10 +142,8 @@ function calculateFabricatorsRequired() {
 }
 
 function calculateSpeed() {
-  var sizeX = document.getElementById("shipSizeX").value;
-  var sizeY = document.getElementById("shipSizeY").value;
   var thrusterCount = document.getElementById("thrusterCount").value;
-  var mass = (sizeX * sizeY) ** 0.5 * 2;
+  var mass = (trueShipX * trueShipY) ** 0.5 * 2;
 
   var total_thrust = (thrusterCount / 4 * 2000) + 2000;
   var max_thrust = mass * 100;
@@ -152,7 +154,7 @@ function calculateSpeed() {
 }
 
 function calculateSpace() {
-  var totalShipSize = document.getElementById("shipSizeY").value * document.getElementById("shipSizeX").value;
+  var totalShipSize = trueShipY * trueShipX;
   var generators = parseInt(document.getElementById("shieldGenerators").value);
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var space = generators * 8 + tanks * 4;
@@ -193,8 +195,6 @@ function calculateCoresConsumed() {
 }
 
 function limitValues() {
-  var shipSizeX = document.getElementById("shipSizeX").value;
-  var shipSizeY = document.getElementById("shipSizeY").value;
   var thrusterCount = document.getElementById("thrusterCount").value;
   var generators = document.getElementById("shieldGenerators").value;
   var tanks = document.getElementById("shieldTanks").value;
@@ -202,9 +202,6 @@ function limitValues() {
   var totalShipSize = document.getElementById("shipSizeY").value * document.getElementById("shipSizeX").value;
 
   document.getElementById("thrusterCount").value = Math.max(0, Math.min(thrusterCount, (Math.floor(shipSizeX / 3) * 2 + Math.floor(shipSizeY / 3) * 2)));
-
-  document.getElementById("shipSizeX").value = Math.max(0, Math.min(shipSizeX, 78));
-  document.getElementById("shipSizeY").value = Math.max(0, Math.min(shipSizeY, 78));
 
   document.getElementById("shieldGenerators").max = Math.floor((totalShipSize - (tanks * 4)) / 8);
   document.getElementById("shieldTanks").max = Math.floor((totalShipSize - (generators * 8)) / 4);
