@@ -104,7 +104,10 @@ function calculateShieldRegen() {
   var generators = parseInt(document.getElementById("shieldGenerators").value);
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var regenRate = Math.round(((1 / ((-0.95 * generators) + 0.95 + generators)) * generators * 100) - (tanks*500*0.02)) + 100;
-  if (regenRate >= 0) {alert("Shield regen cannot fully support the shield system, add more generators")}
+  if (regenRate >= 0) {
+    alert("Shield regen cannot support the shield system, add more generators");
+    regenRate = 0
+  }
   document.getElementById("shieldRegen").value = regenRate;
 }
 
