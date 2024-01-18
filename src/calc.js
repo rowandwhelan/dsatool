@@ -13,30 +13,40 @@ function calculateAmmoConsumption() {
   var ammoType = document.getElementById("ammoType").value;
   if (ammoType === "standardAmmo") {
     var ammoConsumptionRate = 1;
+    var damage = 100;
     productionRate = 4 / 3;
   } else if (ammoType === "trashAmmo") {
     var ammoConsumptionRate = 0.5;
+    var damage = 100;
     productionRate = 1 / 3;
   } else if (ammoType === "flakAmmo") {
     var ammoConsumptionRate = 0.5;
+    //TODO: add a note that says that this assumes that you hit it at far range
+    var damage = 350;
     productionRate = 4 / 3;
   } else if (ammoType === "punchAmmo") {
     var ammoConsumptionRate = 0.5;
+    var damage = 50;
     productionRate = 4 / 3;
   } else if (ammoType === "yankAmmo") {
     var ammoConsumptionRate = 0.5;
+    var damage = 50;
     productionRate = 4 / 3;
   } else if (ammoType === "scattershotAmmo") {
     var ammoConsumptionRate = 0.5;
+    var damage = 150;
     productionRate = 4 / 3;
   } else if (ammoType === "sniperAmmo") {
     var ammoConsumptionRate = 0.5;
+    var damage = 150;
     productionRate = 4 / 3;
   } else if (ammoType === "slugAmmo") {
     var ammoConsumptionRate = 0.25;
+    var damage = 250;
     productionRate = 4 / 3;
   }
   document.getElementById("ammoConsumptionRate").value = ammoConsumptionRate;
+  document.getElementById("damagePerSecond").value = ammoConsumptionRate*damage;
 }
 
 function updateFirePercentageIndicator() {
