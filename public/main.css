@@ -190,7 +190,7 @@ body.dark-mode .radio-container label:before {
 }
 
 body.dark-mode .radio-container input[type="radio"]:checked+label:before {
-  background-color: #fff;
+  background-color: #333;
 }
 
 body.dark-mode input[type="range"] {
