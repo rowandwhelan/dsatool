@@ -113,6 +113,12 @@ function calculateTimeToFullHealth() {
   document.getElementById("timeToFullHealth").value = timeToFullHealth;
 }
 
+function calculateCoresConsumed() {
+  var shieldRegen = document.getElementById("shieldRegen").value;
+  var coresConsumed = Math.round(shieldRegen / 5000);
+  document.getElementById("coresConsumed").value = coresConsumed;
+}
+
 function limitValues() {
   var shipSizeX = document.getElementById("shipSizeX").value;
   var shipSizeY = document.getElementById("shipSizeY").value;
@@ -144,6 +150,7 @@ function updateAllCalculations() {
   calculateTotalShieldCapacity();
   calculateShieldRegen();
   calculateTimeToFullHealth();
+  calculateCoresConsumed();
   calculateSpace();
   calculateSpeed();
   calculateFabricatorsRequired();
