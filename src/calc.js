@@ -107,6 +107,8 @@ function calculateShieldRegen() {
   if (regenRate < 0) {
     regenRate = 0
     document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second): [Warning: Shield regen cannot support the shield system and calculations will be inaccurate. Add more generators]"
+  } else {
+    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second):"
   }
   document.getElementById("shieldRegen").value = regenRate;
 }
