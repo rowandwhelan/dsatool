@@ -46,7 +46,8 @@ function calculateAmmoConsumption() {
     productionRate = 4 / 3;
   }
   document.getElementById("ammoConsumptionRate").value = ammoConsumptionRate;
-  document.getElementById("damagePerSecond").value = ammoConsumptionRate*damage;
+  var numTurrets = document.getElementById("numTurrets").value;
+  document.getElementById("damagePerSecond").value = ammoConsumptionRate*damage*numTurrets/2;
 }
 
 function updateFirePercentageIndicator() {
