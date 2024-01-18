@@ -25,8 +25,8 @@ function updateUnitType(){
   }  else if (unitType === "RCs") {
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in RCs):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in RCs):";
-    document.getElementById("shipSizeX").step = 1/3;
-    document.getElementById("shipSizeY").step = 1/3;
+    document.getElementById("shipSizeX").step = Math.round((1/3)*10)/10;
+    document.getElementById("shipSizeY").step = Math.round((1/3) * 10) /10;
       if (pastUnitType === "shipBlocks") {
       document.getElementById("shipSizeX").value = Math.round((document.getElementById("shipSizeX").value/3) * 10) / 10;
       document.getElementById("shipSizeY").value = Math.round((document.getElementById("shipSizeY").value/3) * 10) / 10; 
@@ -42,8 +42,8 @@ function updateUnitType(){
   } else if (unitType === "worldBlocks") {
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in world blocks):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in world blocks):";
-    document.getElementById("shipSizeX").step = 1/8;
-    document.getElementById("shipSizeY").step = 1/8;
+    document.getElementById("shipSizeX").step = Math.round((1/8)*100)/100;
+    document.getElementById("shipSizeY").step = Math.round((1/8)*100)/100;
     if (pastUnitType === "shipBlocks") {
       document.getElementById("shipSizeX").value = Math.round((document.getElementById("shipSizeX").value/8) * 100) / 100;
       document.getElementById("shipSizeY").value = Math.round((document.getElementById("shipSizeY").value/8) * 100) / 100;
