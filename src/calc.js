@@ -1,10 +1,57 @@
 var productionRate = 0;
+var pastUnitType = "shipBlocks";
+
+function updateUnitType(){
+  var unitType = document.querySelector('input[name="unitType"]:checked').value;
+  var sizeX = document.getElementById("shipSizeX").value;
+  var sizeY = document.getElementById("shipSizeY").value;
+  if (unitType === "shipBlocks") {
+    document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in ship blocks):";
+    document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in ship blocks):";
+    if (pastUnitType === "RCs") {
+      document.getElementById("shipSizeX").value = Math.round(sizeX*3)
+      document.getElementById("shipSizeY").value = Math.round(sizeY*3)
+    } else if (pastUnitType === "worldBlocks") {
+      document.getElementById("shipSizeX").value = Math.round(sizeX*8)
+      document.getElementById("shipSizeY").value = Math.round(sizeY*8)
+    } else {
+      document.getElementById("shipSizeX").value = sizeX
+      document.getElementById("shipSizeY").value = sizeY
+    }
+  }  if (unitType === "RCs") {
+    document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in RCs):";
+    document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in RCs):";
+      if (pastUnitType === "shipBlocks") {
+      document.getElementById("shipSizeX").value = Math.round((sizeX/3) * 10) / 10
+      document.getElementById("shipSizeY").value = Math.round((sizeY/3) * 10) / 10 
+    } else if (pastUnitType === "worldBlocks") {
+      document.getElementById("shipSizeX").value = Math.round((sizeX*(8/3)) * 10) / 10
+      document.getElementById("shipSizeY").value = Math.round((sizeY*(8/3)) * 10) / 10
+    } else {
+      document.getElementById("shipSizeX").value = sizeX
+      document.getElementById("shipSizeY").value = sizeY
+    }
+  } else if (unitType === "worldBlocks") {
+    document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in world blocks):";
+    document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in world blocks):";
+      if (pastUnitType === "shipBlocks") {
+      document.getElementById("shipSizeX").value = Math.round((sizeX/8) * 100) / 100 
+      document.getElementById("shipSizeY").value = Math.round((sizeY/8) * 100) / 100
+    } else if (pastUnitType === "RCs") {
+      document.getElementById("shipSizeX").value = Math.round((sizeX/(8/3)) * 100) / 100
+      document.getElementById("shipSizeY").value = Math.round((sizeY/(8/3)) * 100) / 100
+    } else {
+      document.getElementById("shipSizeX").value = sizeX
+      document.getElementById("shipSizeY").value = sizeY
+    }
+  }
+}
 
 function updateNumTurrets() {
-  const sizeX = parseInt(document.getElementById("shipSizeX").value);
-  const sizeY = parseInt(document.getElementById("shipSizeY").value);
-  const thrusterCount = parseInt(document.getElementById("thrusterCount").value);
-  let numTurrets = Math.floor(sizeX / 3) * 2 + Math.floor(sizeY / 3) * 2 - thrusterCount;
+  var sizeX = parseInt(document.getElementById("shipSizeX").value);
+  var sizeY = parseInt(document.getElementById("shipSizeY").value);
+  var thrusterCount = parseInt(document.getElementById("thrusterCount").value);
+  var numTurrets = Math.floor(sizeX / 3) * 2 + Math.floor(sizeY / 3) * 2 - thrusterCount;
   numTurrets = Math.max(0, Math.min(numTurrets, 104));
   document.getElementById("numTurrets").value = numTurrets;
 }
