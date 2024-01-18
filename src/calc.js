@@ -220,6 +220,7 @@ document.addEventListener("change", updateAllCalculations);
 
 function updateAllCalculations() {
   limitValues();
+  updateUnitType();
   calculateTotalShieldCapacity();
   calculateShieldRegen();
   calculateTimeToFullHealth();
