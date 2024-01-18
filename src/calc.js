@@ -116,7 +116,9 @@ function calculateTimeToFullHealth() {
 
 function calculateCoresConsumed() {
   var shieldRegen = parseInt(document.getElementById("shieldRegen").value);
+  console.log(shieldRegen)
   var coresConsumed = Math.round((shieldRegen*60) / 5000);
+  console.log(coresConsumed)
   document.getElementById("coresConsumed").value = coresConsumed;
 }
 
