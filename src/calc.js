@@ -13,26 +13,26 @@ function updateUnitType(){
     console.log("gg1")
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in ship blocks):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in ship blocks):";
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min(trueShipX, 78));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min(trueShipY, 78));
     trueShipX = document.getElementById("shipSizeX").value;
     trueShipY = document.getElementById("shipSizeY").value;
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min(trueShipX, 78));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min(trueShipY, 78));
   }  else if (unitType === "RCs") {
     console.log("gg2")
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in RCs):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in RCs):";
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/3) * 10) / 10), (Math.round((80/3) * 10)/10)));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/3) * 10) / 10), (Math.round((80/3) * 10)/10)));
     trueShipX = Math.round(document.getElementById("shipSizeX").value*3);
     trueShipY = Math.round(document.getElementById("shipSizeY").value*3);
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/3) * 10) / 10), (Math.round((80/3) * 10)/10)));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/3) * 10) / 10), (Math.round((80/3) * 10)/10)));
   } else if (unitType === "worldBlocks") {
     console.log("gg3")
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in world blocks):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in world blocks):";
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/8) * 100) / 100), 10));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/8) * 100) / 100), 10));
     trueShipX = Math.round(document.getElementById("shipSizeX").value*8);
     trueShipY = Math.round(document.getElementById("shipSizeY").value*8);
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/8) * 100) / 100), 10));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/8) * 100) / 100), 10));
   }
 }
 
