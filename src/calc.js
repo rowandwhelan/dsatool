@@ -12,8 +12,8 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = Math.round(document.getElementById("shipSizeX").value*3)
       document.getElementById("shipSizeY").value = Math.round(document.getElementById("shipSizeY").value*3)
     } else if (pastUnitType == "worldBlocks") {
-      document.getElementById("shipSizeX").value = Math.round(document.getElementById("shipSizeX").value*8)
-      document.getElementById("shipSizeY").value = Math.round(document.getElementById("shipSizeY").value*8)
+      document.getElementById("shipSizeX").value = Math.round(document.getElementById("shipSizeX").value*8-2)
+      document.getElementById("shipSizeY").value = Math.round(document.getElementById("shipSizeY").value*8-2)
     } 
     trueShipX = document.getElementById("shipSizeX").value;
     trueShipY = document.getElementById("shipSizeY").value;
@@ -27,8 +27,8 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = Math.round((document.getElementById("shipSizeX").value/3) * 10) / 10;
       document.getElementById("shipSizeY").value = Math.round((document.getElementById("shipSizeY").value/3) * 10) / 10; 
     } else if (pastUnitType === "worldBlocks") {
-      document.getElementById("shipSizeX").value = Math.round((document.getElementById("shipSizeX").value*(8/3)) * 10) / 10;
-      document.getElementById("shipSizeY").value = Math.round((document.getElementById("shipSizeY").value*(8/3)) * 10) / 10;
+      document.getElementById("shipSizeX").value = Math.round((document.getElementById("shipSizeX").value*(8/3)-2) * 10) / 10;
+      document.getElementById("shipSizeY").value = Math.round((document.getElementById("shipSizeY").value*(8/3)-2) * 10) / 10;
     } 
     trueShipX = Math.round(document.getElementById("shipSizeX").value*3);
     trueShipY = Math.round(document.getElementById("shipSizeY").value*3);
@@ -45,10 +45,10 @@ function updateUnitType(){
       document.getElementById("shipSizeX").value = Math.round((document.getElementById("shipSizeX").value/(8/3)) * 100) / 100;
       document.getElementById("shipSizeY").value = Math.round((document.getElementById("shipSizeY").value/(8/3)) * 100) / 100;
     } 
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/8) * 100) / 100), 10));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/8) * 100) / 100), 10));
-    trueShipX = Math.round(document.getElementById("shipSizeX").value*8);
-    trueShipY = Math.round(document.getElementById("shipSizeY").value*8);
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/8+2) * 100) / 100), 10));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/8+2) * 100) / 100), 10));
+    trueShipX = Math.round(document.getElementById("shipSizeX").value*8+2);
+    trueShipY = Math.round(document.getElementById("shipSizeY").value*8+2);
     pastUnitType = "worldBlocks";
   }
 }
