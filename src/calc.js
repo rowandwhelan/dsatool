@@ -32,8 +32,8 @@ function updateUnitType(){
     } 
     trueShipX = Math.round(document.getElementById("shipSizeX").value*3);
     trueShipY = Math.round(document.getElementById("shipSizeY").value*3);
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/3) * 10) / 10), (Math.round((80/3) * 10)/10)));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/3) * 10) / 10), (Math.round((80/3) * 10)/10)));
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min((Math.round((trueShipX/3) * 10) / 10), (Math.round(26 * 10)/10)));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min((Math.round((trueShipY/3) * 10) / 10), (Math.round(26 * 10)/10)));
     pastUnitType = "RCs";
   } else if (unitType === "worldBlocks") {
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in world blocks):";
