@@ -5,13 +5,9 @@ var trueShipY = 30;
 
 function updateUnitType(){
   var unitType = document.querySelector('input[name="unitType"]:checked').value;
-  console.log(unitType)
-  var sizeX = document.getElementById("shipSizeX").value;
-  var sizeY = document.getElementById("shipSizeY").value;
-  console.log(sizeX)
-  console.log(sizeY)
+  var sizeX = parseInt(document.getElementById("shipSizeX").value);
+  var sizeY = parseInt(documnt.getElementById("shipSizeY").value);
   if (unitType == "shipBlocks") {
-    console.log("gg1")
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in ship blocks):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in ship blocks):";
     if (pastUnitType == "RCs") {
@@ -19,8 +15,8 @@ function updateUnitType(){
       document.getElementById("shipSizeY").value = Math.round(sizeY*3)
     }
     if (pastUnitType == "worldBlocks") {
-      document.getElementById("shipSizeX").value = Math.round(sizeX*8)
-      document.getElementById("shipSizeY").value = Math.round(sizeY*8)
+      document.getElementById("shipSizeX").value = Math.round(sizeX*8-2)
+      document.getElementById("shipSizeY").value = Math.round(sizeY*8-2)
     } 
     document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, 78));
     document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, 78));
@@ -28,7 +24,6 @@ function updateUnitType(){
     trueShipY = document.getElementById("shipSizeY").value;
     pastUnitType = "shipBlocks";
   }  else if (unitType === "RCs") {
-       console.log("gg2")
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in RCs):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in RCs):";
       if (pastUnitType === "shipBlocks") {
@@ -36,30 +31,29 @@ function updateUnitType(){
       document.getElementById("shipSizeY").value = Math.round((sizeY/3) * 10) / 10; 
     } 
       if (pastUnitType === "worldBlocks") {
-      document.getElementById("shipSizeX").value = Math.round((sizeX*(8/3)) * 10) / 10;
-      document.getElementById("shipSizeY").value = Math.round((sizeY*(8/3)) * 10) / 10;
+      document.getElementById("shipSizeX").value = Math.round((sizeX*(8/3)-2/3) * 10) / 10;
+      document.getElementById("shipSizeY").value = Math.round((sizeY*(8/3)- 2/3) * 10) / 10;
     } 
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, (Math.round((80/3) *10)/10)));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, (Math.round((80/3) *10)/10)));
+    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, (Math.round(26*10)/10)));
+    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, (Math.round(26*10)/10)));
     trueShipX = Math.round(document.getElementById("shipSizeX").value*3);
     trueShipY = Math.round(document.getElementById("shipSizeY").value*3);
     pastUnitType = "RCs";
   } else if (unitType === "worldBlocks") {
-       console.log("gg3")
     document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in world blocks):";
     document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in world blocks):";
       if (pastUnitType === "shipBlocks") {
-      document.getElementById("shipSizeX").value = Math.round((sizeX/8) * 100) / 100;
-      document.getElementById("shipSizeY").value = Math.round((sizeY/8) * 100) / 100;
+      document.getElementById("shipSizeX").value = Math.round((sizeX/8+2) * 100) / 100;
+      document.getElementById("shipSizeY").value = Math.round((sizeY/8+2) * 100) / 100;
     } 
     if (pastUnitType === "RCs") {
-      document.getElementById("shipSizeX").value = Math.round((sizeX/(8/3)) * 100) / 100;
-      document.getElementById("shipSizeY").value = Math.round((sizeY/(8/3)) * 100) / 100;
+      document.getElementById("shipSizeX").value = Math.round((sizeX/(8/3)+2/3) * 100) / 100;
+      document.getElementById("shipSizeY").value = Math.round((sizeY/(8/3)+2/3) * 100) / 100;
     } 
     document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, 10));
     document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, 10));
-    trueShipX = Math.round(document.getElementById("shipSizeX").value*8);
-    trueShipY = Math.round(document.getElementById("shipSizeY").value*8);
+    trueShipX = Math.round(document.getElementById("shipSizeX").value*8-2);
+    trueShipY = Math.round(document.getElementById("shipSizeY").value*8-2);
     pastUnitType = "worldBlocks";
   }
 }
