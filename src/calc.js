@@ -108,7 +108,7 @@ function calculateAmmoConsumption() {
 
 function updateShieldLoadIndicator() {
   var shieldLoad = parseInt(document.getElementById("shieldLoad").value);
-  document.getElementById("shieldLoad").innerText = shieldLoad + '%';
+  document.getElementById("shieldLoadIndicator").innerText = shieldLoad + '%';
 }
 
 function updateFirePercentageIndicator() {
