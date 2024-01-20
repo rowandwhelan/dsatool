@@ -75,10 +75,13 @@ function calculateAmmoConsumption() {
     var ammoConsumptionRate = 0.5;
     var damage = 100;
     productionRate = 1 / 3;
-  } else if (ammoType === "flakAmmo") {
+  } else if (ammoType === "flakAmmoFar") {
     var ammoConsumptionRate = 0.5;
-    //TODO: add a note that says that this assumes that you hit it at far range
     var damage = 350;
+    productionRate = 4 / 3;
+  } else if (ammoType === "flakAmmoNear") {
+    var ammoConsumptionRate = 0.5;
+    var damage = 100;
     productionRate = 4 / 3;
   } else if (ammoType === "punchAmmo") {
     var ammoConsumptionRate = 0.5;
