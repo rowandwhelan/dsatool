@@ -178,7 +178,7 @@ function calculateShieldRegen() {
   } else {
   var regenRate = Math.round((1 / ((-0.95 * generators) + 0.95 + generators)) * generators * 100) + 100;
   }
-  if (regenRate < 0) {
+  if (regenRate <= 0) {
     regenRate = 0
     document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second): [Warning: Shield regen cannot support the shield system and calculations will be inaccurate. Add more generators]"
   } if (regenRate > 0) {
@@ -196,11 +196,17 @@ function calculateTimeToFullHealth() {
 
 function calculateCoresConsumed() {
   var shieldRegen = parseInt(document.getElementById("shieldRegen").value);
+  var tanks = parseInt(document.getElementById("shieldTanks").value);
   var shieldLoad = document.getElementById("shieldLoad").value / 100;
+  if (shieldLoad != 0) {
   if (Math.round(((shieldRegen*shieldLoad-100)*60) / 5000) > 0) {
   var coresConsumed = Math.round(((shieldRegen*shieldLoad-100)*60) / 5000);
   } else {
+    var coresConsumed = Math.round((tanks*500*0.02) / 5000);
+  }
+  } else {
     var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
+    
   }
   document.getElementById("coresConsumed").value = coresConsumed;
 }
