@@ -205,11 +205,10 @@ function calculateCoresConsumed() {
   if (Math.round(((shieldRegen*shieldLoad-100)*60) / 5000) > 0) {
   var coresConsumed = Math.round(((shieldRegen*shieldLoad-100)*60) / 5000);
   } else {
-    var coresConsumed = Math.round((tanks*500*0.02) / 5000);
-  }
-  } else {
     var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
-    
+  }
+  } else if (shieldLoad = 0){
+    var coresConsumed = Math.round((tanks*500*0.02) / 5000);
   }
   document.getElementById("coresConsumed").value = coresConsumed;
 }
