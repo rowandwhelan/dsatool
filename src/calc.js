@@ -106,6 +106,11 @@ function calculateAmmoConsumption() {
   document.getElementById("damagePerSecond").value = (ammoConsumptionRate*damage*numTurrets/2);
 }
 
+function updateShieldLoadIndicator() {
+  var shieldLoad = parseInt(document.getElementById("shieldLoad").value);
+  document.getElementById("shieldLoad").innerText = shieldLoad + '%';
+}
+
 function updateFirePercentageIndicator() {
   var firePercent = parseInt(document.getElementById("firePercentage").value);
   document.getElementById("firePercentageIndicator").innerText = firePercent + '%';
@@ -191,7 +196,12 @@ function calculateTimeToFullHealth() {
 
 function calculateCoresConsumed() {
   var shieldRegen = parseInt(document.getElementById("shieldRegen").value);
-  var coresConsumed = Math.round(((shieldRegen-100)*60) / 5000);
+  var shieldLoad = document.getElementById("shieldLoad").value / 100;
+  if (shieldRegen > 100) {
+  var coresConsumed = Math.round(((shieldRegen*shieldLoad-100)*60) / 5000);
+  } else {
+    var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
+  }
   document.getElementById("coresConsumed").value = coresConsumed;
 }
 
@@ -230,6 +240,7 @@ function updateAllCalculations() {
   updateFirePercentageIndicator();
   updateNumTurrets();
   updateAmmoOutput();
+  updateShieldLoadIndicator()
 }
 
 updateAllCalculations();
