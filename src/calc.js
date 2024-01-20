@@ -202,15 +202,18 @@ function calculateCoresConsumed() {
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var shieldLoad = document.getElementById("shieldLoad").value / 100;
   if (shieldLoad != 0) {
+  document.getElementById("labelForPercentLoad").innerText = "Percent of Maximum Shield Load:"
   if (Math.round(((shieldRegen*shieldLoad-100)*60) / 5000) > 0) {
   var coresConsumed = Math.round(((shieldRegen*shieldLoad-100)*60) / 5000);
   } else {
     var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
   }
   } else if (shieldLoad == 0){
+    document.getElementById("labelForPercentLoad").innerText = "Shield Load When Idle:"
     var coresConsumed = Math.round((tanks*500*0.02*60) / 5000);
   }
   document.getElementById("coresConsumed").value = coresConsumed;
+  
 }
 
 function limitValues() {
