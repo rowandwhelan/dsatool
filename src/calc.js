@@ -146,6 +146,25 @@ function calculateFabricatorsRequired() {
   document.getElementById("fabricatorsRequired").value = fabricatorsRequired;
 }
 
+function calculateLoadingType() {
+  //3.5 seconds per loader
+  // (1/ (0.5 x fire%)) / 3.5  if it is < 1 then needs more loaders
+  var firePercentage = document.getElementById("firePercentage").value / 100;
+  var ammoConsumptionRate = document.getElementById("ammoConsumptionRate").value;
+  var loadingType = Math.ceil(( 1 / ( ammoConsumptionRate * firePercentage )) / 3.5 );
+  if (loadingType = 1) {
+      document.getElementById("loadingType").value = "Single Loaded";
+  }   if (loadingType = 2) {
+      document.getElementById("loadingType").value = "Double Loaded";
+  } if (loadingType = 3) {
+      document.getElementById("loadingType").value = "Triple Loaded";
+  } if (loadingType = 4) {
+      document.getElementById("loadingType").value = "Quadruple Loaded";
+  } if (loadingType = 5) {
+      document.getElementById("loadingType").value = "Quintuple Loaded";
+  }
+}
+
 function calculateSpeed() {
   var thrusterCount = document.getElementById("thrusterCount").value;
   var mass = (trueShipX * trueShipY) ** 0.5 * 2;
@@ -251,7 +270,8 @@ function updateAllCalculations() {
   updateFirePercentageIndicator();
   updateNumTurrets();
   updateAmmoOutput();
-  updateShieldLoadIndicator()
+  updateShieldLoadIndicator();
+  calculateLoadingType();
 }
 
 updateAllCalculations();
