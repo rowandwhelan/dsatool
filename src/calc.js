@@ -162,6 +162,8 @@ function calculateLoadingType() {
       document.getElementById("loadingType").value = "Quadruple Loaded";
   } if (loadingType = 5) {
       document.getElementById("loadingType").value = "Quintuple Loaded";
+  } else {
+    document.getElementById("loadingType").value = loadingType;
   }
 }
 
