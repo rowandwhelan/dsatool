@@ -110,7 +110,11 @@ function calculateAmmoConsumption() {
 }
 
 function updateShieldLoadIndicator() {
-  document.getElementById("shieldLoadIndicator").innerText = parseInt(document.getElementById("shieldLoad").value) + '%';
+  if (parseInt(document.getElementById("shieldLoad").value) == 0) {
+    document.getElementById("labelForShieldLoadIndicator").innerText = "Core Leak when Idle:";
+  } else {
+  document.getElementById("labelForShieldLoadIndicator").innerText = "Shield Load: " + parseInt(document.getElementById("shieldLoad").value) + '%';
+  }
 }
 
 function updateFirePercentageIndicator() {
@@ -213,14 +217,12 @@ function calculateCoresConsumed() {
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var shieldLoad = document.getElementById("shieldLoad").value / 100;
   if (shieldLoad != 0) {
-  document.getElementById("labelForShieldLoadIndicator").innerText = "Percent of Maximum Shield Load:";
   if (Math.round(((shieldRegen*shieldLoad-100)*60) / 5000) > 0) {
   var coresConsumed = Math.round(((shieldRegen*shieldLoad-100)*60) / 5000);
   } else {
     var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
   }
   } else if (shieldLoad == 0){
-    document.getElementById("labelForShieldLoadIndicator").innerText = "Shield Load When Idle:";
     var coresConsumed = Math.round((tanks*500*0.02*60) / 5000);
   }
   document.getElementById("coresConsumed").value = coresConsumed;
@@ -245,7 +247,6 @@ function limitValues() {
 }
 
 document.addEventListener("input", updateAllCalculations);
-document.addEventListener("change", updateAllCalculations);
 
 function updateAllCalculations() {
   limitValues();
