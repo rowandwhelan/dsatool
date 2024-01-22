@@ -107,5 +107,163 @@ function output(econ, items, date) {
     }
   }
 }
+  
+    var days = [];
+    var iron = [];
+    var exp = [];
+    var flux = [];
+    var rubber = [];
+    var cores = [];
+    var gens = [];
+    var projs = [];
+    var rcs = [];
+    var auto = [];
+    var burst = [];
+    var goldNull = [];
+    var silverNull = [];
+    var bug = [];
+    var shredder = [];
+    var legacy = [];
+    var glass = [];
+    var rcd = [];
+    var backpack = [];
+    var bp = [];
+    var manifest = [];
+    var bom = [];
+    var backpack = [];
+    var volleyball = [];
+    var basketball = [];
+    var beachball = [];
+    var football = [];
+    var rapid = [];
+    var pres = [];
+    var controller = [];
+    function output(econ, items, date) {
+      let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY")
+      document.getElementById("output").innerHTML += `<br><h2>${outputDate}<h2><br>`;
+      days.push(outputDate)
+      for (const [key, value] of Object.entries(econ.items_held)) {
+        let itemNum = value;
+        let i = 0;
+        while (i < items.length) {
+          if (items[i].id == key) {
+            document.getElementById("output").innerHTML +=
+              `${itemNum} ${items[i].name} ${key}<br>`;
+            if (items[i].name == 'Iron') {
+              iron.push(itemNum)
+            } else if (items[i].name == 'Explosives') {
+              exp.push(itemNum)
+            } else if (items[i].name == 'Hyper Rubber') {
+              rubber.push(itemNum)
+            } else if (items[i].name == 'Flux Crystals') {
+              flux.push(itemNum)
+            } else if (items[i].name == 'Shield Core') {
+              cores.push(itemNum)
+            } else if (items[i].name == 'Shield Generator') {
+              gens.push(itemNum)
+            } else if (items[i].name == 'Shield Projector') {
+              projs.push(itemNum)
+            } else if (items[i].name == 'RC Turret (Packaged)') {
+              rcs.push(itemNum)
+            } else if (items[i].name == 'Auto Turret (Packaged)') {
+              auto.push(itemNum)
+            } else if (items[i].name == 'Burst Turret (Packaged)') {
+              burst.push(itemNum)
+            } else if (items[i].name == 'Gold Null Trophy') {
+              goldNull.push(itemNum)
+            } else if (items[i].name == 'Silver Null Trophy') {
+              silverNull.push(itemNum)
+            } else if (items[i].name == 'Bug Hunter Trophy') {
+              bug.push(itemNum)
+            } else if (items[i].name == 'Golden Item Shredder') {
+              shredder.push(itemNum)
+            } else if (items[i].name == 'Fabricator (Legacy, Packaged)') {
+              legacy.push(itemNum)
+            } else if (items[i].name == 'Hyper Ice Block') {
+              glass.push(itemNum)
+            } else if (items[i].name == 'Flux RCD') {
+              rcd.push(itemNum)
+            } else if (items[i].name == 'Backpack') {
+              backpack.push(itemNum)
+            } else if (items[i].name == 'Blueprint Scanner') {
+              bp.push(itemNum)
+            } else if (items[i].name == 'Manifest Scanner') {
+              manifest.push(itemNum)
+            } else if (items[i].name == 'BoM Scanner') {
+              bom.push(itemNum)
+            } else if (items[i].name == 'Volleyball') {
+              volleyball.push(itemNum)
+            } else if (items[i].name == 'Basketball') {
+              basketball.push(itemNum)
+            } else if (items[i].name == 'Beach Ball') {
+              beachball.push(itemNum)
+            } else if (items[i].name == 'Football') {
+              football.push(itemNum)
+            } else if (items[i].name == 'Turret Booster - Rapid Fire') {
+              rapid.push(itemNum)
+            } else if (items[i].name == 'Turret Booster - Preservation') {
+              pres.push(itemNum)
+            } else if (items[i].name == 'Enhanced Turret Controller') {
+              controller.push(itemNum)
+            }
+            break;
+          }
+          i++;
+        }
+      }
+    }
+
+    document.addEventListener("change", graphChart);
+    function graphChart() {
+      var graphDataSet = [];
+      if (document.getElementById("mats").value == true) {
+        graphDataSet.push({ label: 'Iron', data: iron.reverse(), borderWidth: 4 }, { label: 'Explosives', data: exp.reverse(), borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber.reverse(), borderWidth: 4 }, { label: 'Flux Crystals', data: flux.reverse(), borderWidth: 4 })
+      }
+      if (document.getElementById("shields").value == true) {
+        graphDataSet.push({ label: 'Shield Cores', data: cores.reverse(), borderWidth: 4 }, { label: 'Shield Generators', data: gens.reverse(), borderWidth: 4 }, { label: 'Shield Projectors', data: projs.reverse(), borderWidth: 4 })
+      }
+      if (document.getElementById("turrets").value == true) {
+        graphDataSet.push({ label: 'RC Turret', data: rcs.reverse(), borderWidth: 4 }, { label: 'Auto Turret', auto: auto.reverse(), borderWidth: 4 }, { label: 'Burst Turret', burst: burst.reverse(), borderWidth: 4 })
+      }
+      if (document.getElementById("rares").value == true) {
+        graphDataSet.push({ label: 'Gold Null Trophy', data: goldNull.reverse(), borderWidth: 4 }, { label: 'Silver Null Trophy', data: silverNull.reverse(), borderWidth: 4 }, { label: 'Bug Hunter Trophy', data: bug.reverse(), borderWidth: 4 }, { label: 'Golden Shredder', data: gs.reverse(), borderWidth: 4 }, { label: 'Legacy Fabricator', data: legacy.reverse(), borderWidth: 4 })
+      }
+      if (document.getElementById("misc").value == true) {
+        graphDataSet.push({ label: 'Ice Glass', data: glass.reverse(), borderWidth: 4 }, { label: 'Flux RCD', data: rcd.reverse(), borderWidth: 4 }, { label: 'Backpack', data: backpack.reverse(), borderWidth: 4 })
+      }
+      if (document.getElementById("scanners").value == true) {
+        graphDataSet.push({ label: 'Blueprint Scanner', data: bp.reverse(), borderWidth: 4 }, { label: 'Manifest Scanner', data: manifest.reverse(), borderWidth: 4 }, { label: 'BoM Scanner', data: bom.reverse(), borderWidth: 4 })
+      }
+      if (document.getElementById("balls").value == true) {
+        graphDataSet.push({ label: 'Volleyball', data: volleyball.reverse(), borderWidth: 4 }, { label: 'Basketball', data: basketball.reverse(), borderWidth: 4 }, { label: 'Beach Ball', data: beachball.reverse(), borderWidth: 4 }, { label: 'Football', data: football.reverse(), borderWidth: 4 })
+      }
+      if (document.getElementById("vulture").value == true) {
+        graphDataSet.push({ label: 'Turret Booster - Rapid Fire', data: rapid.reverse(), borderWidth: 4 }, { label: 'Turret Booster - Preservation', data: pres.reverse(), borderWidth: 4 }, { label: 'Enhanced Turret Controller', data: controller.reverse(), borderWidth: 4 })
+      }
+
+      const graphDays = days.reverse();
+      document.getElementById("out").innerHTML +=
+        `${graphDataSet}<br>`;
+      new Chart(document.getElementById('chart'), {
+        type: 'line',
+        data: {
+          labels: graphDays,
+          datasets: graphDataSet,
+          options: {
+            responsive: true,
+            interaction: {
+              intersect: true,
+              mode: "index"
+            },
+            scales: {
+              y: {
+                beginAtZero: false,
+                type: "logarithmic"
+              }
+            }
+          }
+        }
+      })
+    }
 
 },{"dayjs":1,"dayjs/plugin/customParseFormat":2}]},{},[3]);
