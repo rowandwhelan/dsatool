@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Economics Page</title>
   <link rel="stylesheet" href="./main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4972043844070417" crossorigin="anonymous"></script>
 </head>
 
@@ -14,11 +15,22 @@
   <h1>Economics</h1>
   <br>
   <h3> This shows the total number of each type of item in all of drednot for each day in the past week</h3>
-  <div>
-    <canvas id="mainChart"></canvas>
-  </div>
-  <div id="output"></div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+   <div style="width: 90%;height: 65%;margin: auto;"><canvas id="chart"></canvas></div><br/>
+  <form>
+    <label> <input type="checkbox" id="mats"></input> Mats (iron, explosives, rubber, and flux)</label><br>
+    <label> <input type="checkbox" id="shields"></input> Shield Items (cores, generators, and projectors)</label><br>
+    <label> <input type="checkbox" id="turrets"></input> Turrets (rc, auto, and burst)</label><br>
+    <label> <input type="checkbox" id="rares"></input> Ultra-Rares (null trophies, bug trophy, golden shredder, and
+      legacy fabricators)</label><br>
+    <label> <input type="checkbox" id="misc"></input> Miscellaneous (ice glass, RCD, and backpacks)</label><br>
+    <label> <input type="checkbox" id="scanners"></input> Scanners (blueprint, manifest, and BoM)</label><br>
+    <label> <input type="checkbox" id="balls"></input> Balls (volleyball, basketball, beach ball, and football)</label><br>
+    <label> <input type="checkbox" id="vulture"></input> Vulure items (rapid fire, preservation, and enhanced controller)</label><br>
+  </form>
+  
+  <div id="out">
+  <div id="output">
   <script src="./econBundle.js"></script>
 <script src="./darkmode.js"></script>
 </body>
