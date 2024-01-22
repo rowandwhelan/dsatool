@@ -256,10 +256,10 @@ function updateAllCalculations() {
   calculateCoresConsumed();
   calculateSpace();
   calculateSpeed();
-  calculateFabricatorsRequired();
   calculateAmmoConsumption();
   updateFirePercentageIndicator();
   updateShieldLoadIndicator();
+  calculateFabricatorsRequired();
   updateNumTurrets();
   updateAmmoOutput();
   updateShieldLoadIndicator();
