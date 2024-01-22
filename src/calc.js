@@ -268,6 +268,7 @@ function updateAllCalculations() {
   calculateFabricatorsRequired();
   calculateAmmoConsumption();
   updateFirePercentageIndicator();
+  updateShieldLoadIndicator();
   updateNumTurrets();
   updateAmmoOutput();
   updateShieldLoadIndicator();
