@@ -214,36 +214,37 @@ function output(econ, items, date) {
     }
 
     document.addEventListener("change", graphChart);
+  
     function graphChart() {
       var graphDataSet = [];
-      if (document.getElementById("mats").value == true) {
+      console.log(document.getElementById("mats").value)
+      if (document.getElementById("mats").value) {
         graphDataSet.push({ label: 'Iron', data: iron.reverse(), borderWidth: 4 }, { label: 'Explosives', data: exp.reverse(), borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber.reverse(), borderWidth: 4 }, { label: 'Flux Crystals', data: flux.reverse(), borderWidth: 4 })
       }
-      if (document.getElementById("shields").value == true) {
+      if (document.getElementById("shields").value) {
         graphDataSet.push({ label: 'Shield Cores', data: cores.reverse(), borderWidth: 4 }, { label: 'Shield Generators', data: gens.reverse(), borderWidth: 4 }, { label: 'Shield Projectors', data: projs.reverse(), borderWidth: 4 })
       }
-      if (document.getElementById("turrets").value == true) {
+      if (document.getElementById("turrets").value) {
         graphDataSet.push({ label: 'RC Turret', data: rcs.reverse(), borderWidth: 4 }, { label: 'Auto Turret', auto: auto.reverse(), borderWidth: 4 }, { label: 'Burst Turret', burst: burst.reverse(), borderWidth: 4 })
       }
-      if (document.getElementById("rares").value == true) {
-        graphDataSet.push({ label: 'Gold Null Trophy', data: goldNull.reverse(), borderWidth: 4 }, { label: 'Silver Null Trophy', data: silverNull.reverse(), borderWidth: 4 }, { label: 'Bug Hunter Trophy', data: bug.reverse(), borderWidth: 4 }, { label: 'Golden Shredder', data: gs.reverse(), borderWidth: 4 }, { label: 'Legacy Fabricator', data: legacy.reverse(), borderWidth: 4 })
+      if (document.getElementById("rares").value) {
+        graphDataSet.push({ label: 'Gold Null Trophy', data: goldNull.reverse(), borderWidth: 4 }, { label: 'Silver Null Trophy', data: silverNull.reverse(), borderWidth: 4 }, { label: 'Bug Hunter Trophy', data: bug.reverse(), borderWidth: 4 }, { label: 'Golden Shredder', data: shredder.reverse(), borderWidth: 4 }, { label: 'Legacy Fabricator', data: legacy.reverse(), borderWidth: 4 })
       }
-      if (document.getElementById("misc").value == true) {
+      if (document.getElementById("misc").value) {
         graphDataSet.push({ label: 'Ice Glass', data: glass.reverse(), borderWidth: 4 }, { label: 'Flux RCD', data: rcd.reverse(), borderWidth: 4 }, { label: 'Backpack', data: backpack.reverse(), borderWidth: 4 })
       }
-      if (document.getElementById("scanners").value == true) {
+      if (document.getElementById("scanners").value) {
         graphDataSet.push({ label: 'Blueprint Scanner', data: bp.reverse(), borderWidth: 4 }, { label: 'Manifest Scanner', data: manifest.reverse(), borderWidth: 4 }, { label: 'BoM Scanner', data: bom.reverse(), borderWidth: 4 })
       }
-      if (document.getElementById("balls").value == true) {
+      if (document.getElementById("balls").value) {
         graphDataSet.push({ label: 'Volleyball', data: volleyball.reverse(), borderWidth: 4 }, { label: 'Basketball', data: basketball.reverse(), borderWidth: 4 }, { label: 'Beach Ball', data: beachball.reverse(), borderWidth: 4 }, { label: 'Football', data: football.reverse(), borderWidth: 4 })
       }
-      if (document.getElementById("vulture").value == true) {
+      if (document.getElementById("vulture").value) {
         graphDataSet.push({ label: 'Turret Booster - Rapid Fire', data: rapid.reverse(), borderWidth: 4 }, { label: 'Turret Booster - Preservation', data: pres.reverse(), borderWidth: 4 }, { label: 'Enhanced Turret Controller', data: controller.reverse(), borderWidth: 4 })
       }
 
       const graphDays = days.reverse();
-      document.getElementById("out").innerHTML +=
-        `${graphDataSet}<br>`;
+      console.log(graphDataSet)
       new Chart(document.getElementById('chart'), {
         type: 'line',
         data: {
@@ -253,7 +254,7 @@ function output(econ, items, date) {
             responsive: true,
             interaction: {
               intersect: true,
-              mode: "index"
+              mode: "x"
             },
             scales: {
               y: {
