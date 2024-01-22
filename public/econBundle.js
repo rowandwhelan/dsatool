@@ -7,6 +7,7 @@ const dayjs = require('dayjs');
 const customParseFormat = require("dayjs/plugin/customParseFormat");
 dayjs.extend(customParseFormat);
 
+let timeSlot;
 econInit();
 
 async function econInit(
@@ -18,7 +19,7 @@ async function econInit(
   endYear,
 ) {
   let buffer = 1;
-  let timeSlot = 7;
+  timeSlot = 30;
   if (timeSlot <= 1) {
     timeSlot = 1;
   }
@@ -52,7 +53,8 @@ async function econGetDate(
 ) {
   let endDate = dayjs(`${endYear}-${endMonth}-${endDay}`);
   let currentDate = dayjs(`${startYear}-${startMonth}-${startDay}`);
-
+  let countdown = 0;
+  let miniCounter = 0;
   let datesToFetch = [];
   while (currentDate.isAfter(endDate) || currentDate.isSame(endDate)) {
     let formattedDate = currentDate.format("YYYY_M_D");
@@ -61,8 +63,21 @@ async function econGetDate(
   }
 
   for (const date of datesToFetch) {
+    if (miniCounter == 0) {
+    document.getElementById("out").innerHTML = `Loading. ${Math.round((countdown/timeSlot) * 100)}%`;
+    } else if (miniCounter == 1) {
+    document.getElementById("out").innerHTML = `Loading.. ${Math.round((countdown/timeSlot) * 100)}%`;
+    } else if (miniCounter == 2) {
+    document.getElementById("out").innerHTML = `Loading... ${Math.round((countdown/timeSlot) * 100)}%`;
+    }
+    miniCounter++;
+    if (miniCounter > 2) {miniCounter = 0};
+    countdown++;
     await econGet(date);
   }
+  econDataFetched = true;
+  graphChart();
+  document.getElementById("out").innerHTML = '';
 }
 
 async function econGet(date) {
@@ -107,7 +122,7 @@ function output(econ, items, date) {
     }
   }
 }
-  
+    var econDataFetched = false;
     var days = [];
     var iron = [];
     var exp = [];
@@ -216,36 +231,38 @@ function output(econ, items, date) {
     document.addEventListener("change", graphChart);
   
     function graphChart() {
+      if (econDataFetched) {
       var graphDataSet = [];
-      console.log(document.getElementById("mats").value)
-      if (document.getElementById("mats").value) {
-        graphDataSet.push({ label: 'Iron', data: iron.reverse(), borderWidth: 4 }, { label: 'Explosives', data: exp.reverse(), borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber.reverse(), borderWidth: 4 }, { label: 'Flux Crystals', data: flux.reverse(), borderWidth: 4 })
+      if (document.getElementById("mats").checked) {
+        graphDataSet.push({ label: 'Iron', data: iron.toReversed(), borderWidth: 4 }, { label: 'Explosives', data: exp.toReversed(), borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber.toReversed(), borderWidth: 4 }, { label: 'Flux Crystals', data: flux.toReversed(), borderWidth: 4 })
       }
-      if (document.getElementById("shields").value) {
-        graphDataSet.push({ label: 'Shield Cores', data: cores.reverse(), borderWidth: 4 }, { label: 'Shield Generators', data: gens.reverse(), borderWidth: 4 }, { label: 'Shield Projectors', data: projs.reverse(), borderWidth: 4 })
+      if (document.getElementById("shields").checked) {
+        graphDataSet.push({ label: 'Shield Cores', data: cores.toReversed(), borderWidth: 4 }, { label: 'Shield Generators', data: gens.toReversed(), borderWidth: 4 }, { label: 'Shield Projectors', data: projs.toReversed(), borderWidth: 4 })
       }
-      if (document.getElementById("turrets").value) {
-        graphDataSet.push({ label: 'RC Turret', data: rcs.reverse(), borderWidth: 4 }, { label: 'Auto Turret', auto: auto.reverse(), borderWidth: 4 }, { label: 'Burst Turret', burst: burst.reverse(), borderWidth: 4 })
+      if (document.getElementById("turrets").checked) {
+        graphDataSet.push({ label: 'RC Turret', data: rcs.toReversed(), borderWidth: 4 }, { label: 'Auto Turret', auto: auto.toReversed(), borderWidth: 4 }, { label: 'Burst Turret', burst: burst.toReversed(), borderWidth: 4 })
       }
-      if (document.getElementById("rares").value) {
-        graphDataSet.push({ label: 'Gold Null Trophy', data: goldNull.reverse(), borderWidth: 4 }, { label: 'Silver Null Trophy', data: silverNull.reverse(), borderWidth: 4 }, { label: 'Bug Hunter Trophy', data: bug.reverse(), borderWidth: 4 }, { label: 'Golden Shredder', data: shredder.reverse(), borderWidth: 4 }, { label: 'Legacy Fabricator', data: legacy.reverse(), borderWidth: 4 })
+      if (document.getElementById("rares").checked) {
+        graphDataSet.push({ label: 'Gold Null Trophy', data: goldNull.toReversed(), borderWidth: 4 }, { label: 'Silver Null Trophy', data: silverNull.toReversed(), borderWidth: 4 }, { label: 'Bug Hunter Trophy', data: bug.toReversed(), borderWidth: 4 }, { label: 'Golden Shredder', data: shredder.toReversed(), borderWidth: 4 }, { label: 'Legacy Fabricator', data: legacy.toReversed(), borderWidth: 4 })
       }
-      if (document.getElementById("misc").value) {
-        graphDataSet.push({ label: 'Ice Glass', data: glass.reverse(), borderWidth: 4 }, { label: 'Flux RCD', data: rcd.reverse(), borderWidth: 4 }, { label: 'Backpack', data: backpack.reverse(), borderWidth: 4 })
+      if (document.getElementById("misc").checked) {
+        graphDataSet.push({ label: 'Ice Glass', data: glass.toReversed(), borderWidth: 4 }, { label: 'Flux RCD', data: rcd.toReversed(), borderWidth: 4 }, { label: 'Backpack', data: backpack.toReversed(), borderWidth: 4 })
       }
-      if (document.getElementById("scanners").value) {
-        graphDataSet.push({ label: 'Blueprint Scanner', data: bp.reverse(), borderWidth: 4 }, { label: 'Manifest Scanner', data: manifest.reverse(), borderWidth: 4 }, { label: 'BoM Scanner', data: bom.reverse(), borderWidth: 4 })
+      if (document.getElementById("scanners").checked) {
+        graphDataSet.push({ label: 'Blueprint Scanner', data: bp.toReversed(), borderWidth: 4 }, { label: 'Manifest Scanner', data: manifest.toReversed(), borderWidth: 4 }, { label: 'BoM Scanner', data: bom.toReversed(), borderWidth: 4 })
       }
-      if (document.getElementById("balls").value) {
-        graphDataSet.push({ label: 'Volleyball', data: volleyball.reverse(), borderWidth: 4 }, { label: 'Basketball', data: basketball.reverse(), borderWidth: 4 }, { label: 'Beach Ball', data: beachball.reverse(), borderWidth: 4 }, { label: 'Football', data: football.reverse(), borderWidth: 4 })
+      if (document.getElementById("balls").checked) {
+        graphDataSet.push({ label: 'Volleyball', data: volleyball.toReversed(), borderWidth: 4 }, { label: 'Basketball', data: basketball.toReversed(), borderWidth: 4 }, { label: 'Beach Ball', data: beachball.toReversed(), borderWidth: 4 }, { label: 'Football', data: football.toReversed(), borderWidth: 4 })
       }
-      if (document.getElementById("vulture").value) {
-        graphDataSet.push({ label: 'Turret Booster - Rapid Fire', data: rapid.reverse(), borderWidth: 4 }, { label: 'Turret Booster - Preservation', data: pres.reverse(), borderWidth: 4 }, { label: 'Enhanced Turret Controller', data: controller.reverse(), borderWidth: 4 })
+      if (document.getElementById("vulture").checked) {
+        graphDataSet.push({ label: 'Turret Booster - Rapid Fire', data: rapid.toReversed(), borderWidth: 4 }, { label: 'Turret Booster - Preservation', data: pres.toReversed(), borderWidth: 4 }, { label: 'Enhanced Turret Controller', data: controller.toReversed(), borderWidth: 4 })
       }
 
-      const graphDays = days.reverse();
-      console.log(graphDataSet)
-      new Chart(document.getElementById('chart'), {
+      const graphDays = days.toReversed();
+      if (Chart.getChart("chart") !=  undefined){
+      Chart.getChart("chart").destroy();
+      }
+     new Chart(document.getElementById('chart'), {
         type: 'line',
         data: {
           labels: graphDays,
@@ -253,18 +270,22 @@ function output(econ, items, date) {
           options: {
             responsive: true,
             interaction: {
-              intersect: true,
-              mode: "x"
+              mode: 'index'
             },
             scales: {
               y: {
-                beginAtZero: false,
+                display: true,
+                //beginAtZero: false,
                 type: "logarithmic"
+              },
+              x: {
+                display: true
               }
             }
           }
         }
       })
+    }
     }
 
 },{"dayjs":1,"dayjs/plugin/customParseFormat":2}]},{},[3]);
