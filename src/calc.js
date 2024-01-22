@@ -194,9 +194,9 @@ function calculateShieldRegen() {
   }
   if (regenRate <= 0) {
     regenRate = 0
-    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second): [Warning: Shield regen cannot support the shield system and calculations will be inaccurate. Add more generators]"
+    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second): [Warning: Shield regen cannot support the shield system and calculations will be inaccurate. Add more generators]";
   } if (regenRate > 0) {
-    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second):"
+    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second):";
   }
   document.getElementById("shieldRegen").value = regenRate;
 }
@@ -213,14 +213,14 @@ function calculateCoresConsumed() {
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var shieldLoad = document.getElementById("shieldLoad").value / 100;
   if (shieldLoad != 0) {
-  document.getElementById("labelForShieldLoadIndicator").innerText = "Percent of Maximum Shield Load:"
+  document.getElementById("labelForShieldLoadIndicator").innerText = "Percent of Maximum Shield Load:";
   if (Math.round(((shieldRegen*shieldLoad-100)*60) / 5000) > 0) {
   var coresConsumed = Math.round(((shieldRegen*shieldLoad-100)*60) / 5000);
   } else {
     var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
   }
   } else if (shieldLoad == 0){
-    document.getElementById("labelForShieldLoadIndicator").innerText = "Shield Load When Idle:"
+    document.getElementById("labelForShieldLoadIndicator").innerText = "Shield Load When Idle:";
     var coresConsumed = Math.round((tanks*500*0.02*60) / 5000);
   }
   document.getElementById("coresConsumed").value = coresConsumed;
