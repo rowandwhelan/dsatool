@@ -110,13 +110,11 @@ function calculateAmmoConsumption() {
 }
 
 function updateShieldLoadIndicator() {
-  var shieldLoad = parseInt(document.getElementById("shieldLoad").value);
-  document.getElementById("shieldLoadIndicator").innerText = shieldLoad + '%';
+  document.getElementById("shieldLoadIndicator").innerText = parseInt(document.getElementById("shieldLoad").value) + '%';
 }
 
 function updateFirePercentageIndicator() {
-  var firePercent = parseInt(document.getElementById("firePercentage").value);
-  document.getElementById("firePercentageIndicator").innerText = firePercent + '%';
+  document.getElementById("firePercentageIndicator").innerText = parseInt(document.getElementById("firePercentage").value) + '%';
 }
 
 function updateAmmoOutput() {
@@ -151,17 +149,13 @@ function calculateLoadingType() {
   // (1/ (0.5 x fire%)) / 3.5  if it is < 1 then needs more loaders
   var firePercentage = document.getElementById("firePercentage").value / 100;
   var ammoConsumptionRate = document.getElementById("ammoConsumptionRate").value;
-  var loadingType = Math.ceil(( 1 / ( ammoConsumptionRate * firePercentage )) / 3.5 );
+  var loadingType = Math.ceil( 3.5 * ammoConsumptionRate * firePercentage );
   if (loadingType == 1) {
       document.getElementById("loadingType").value = "Single Loaded";
   }   if (loadingType == 2) {
       document.getElementById("loadingType").value = "Double Loaded";
-  } if (loadingType == 3) {
+  } if (loadingType > 2) {
       document.getElementById("loadingType").value = "Triple Loaded";
-  } if (loadingType == 4) {
-      document.getElementById("loadingType").value = "Quadruple Loaded";
-  } if (loadingType == 5) {
-      document.getElementById("loadingType").value = "Quintuple Loaded";
   }
 }
 
