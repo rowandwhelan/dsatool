@@ -12,11 +12,10 @@
 
 <body>
   <iframe src="./header.html" frameborder="0" width="100%" height="50px"></iframe>
-    <h1>Economics</h1>
-  <br>
-  <h3> Select a start and end date, along with the types of items you want to view. Please be patient, the data may take several minutes to fetch</h3>
+  <h1>Economics</h1><br><br>
+  <h3>Select a start and end date, along with the types of items you want to view. Please be patient, the data may take several minutes to fetch</h3>
   
-   <div style="width: 90%;height: 65%;margin: auto;"><canvas id="chart"></canvas></div><br/>
+  <div style="width: 90%;height: 65%;margin: auto;"><canvas id="chart"></canvas></div><br/>
   <span id="out" style="font-family:'Arial', sans-serif;"></span>
   <form>
     <label for="start">Start date:
@@ -26,14 +25,12 @@
     <label> <input checked type="checkbox" id="mats"></input> Mats (iron, explosives, rubber, and flux)</label><br>
     <label> <input type="checkbox" id="shields"></input> Shield Items (cores, generators, and projectors)</label><br>
     <label> <input type="checkbox" id="turrets"></input> Turrets (rc, auto, and burst)</label><br>
-    <label> <input type="checkbox" id="rares"></input> Ultra-Rares (null trophies, bug trophy, golden shredder, and
-      legacy fabricators)</label><br>
+    <label> <input type="checkbox" id="rares"></input> Ultra-Rares (null trophies, bug trophy, golden shredder, and legacy fabricators)</label><br>
     <label> <input type="checkbox" id="misc"></input> Miscellaneous (ice glass, RCD, and backpacks)</label><br>
     <label> <input type="checkbox" id="scanners"></input> Scanners (blueprint, manifest, and BoM)</label><br>
     <label> <input type="checkbox" id="balls"></input> Balls (volleyball, basketball, beach ball, and football)</label><br>
     <label> <input type="checkbox" id="vulture"></input> Vulure items (rapid fire, preservation, and enhanced controller)</label><br>
   </form>
-  
   <script src="./econBundle.js"></script>
   <script src="./darkmode.js"></script>
 </body>
