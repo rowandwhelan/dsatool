@@ -8,7 +8,7 @@ const customParseFormat = require("dayjs/plugin/customParseFormat");
 dayjs.extend(customParseFormat);
 
 let timeSlot;
-econInit(document.querySelector("#end").valueAsDate = yesterday;);
+econInit();
 
 async function econInit(
   startDay,
