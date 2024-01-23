@@ -8,7 +8,7 @@ const customParseFormat = require("dayjs/plugin/customParseFormat");
 dayjs.extend(customParseFormat);
 
 let timeSlot;
-econInit();
+econInit(document.querySelector("#end").valueAsDate = yesterday;);
 
 async function econInit(
   startDay,
@@ -32,6 +32,7 @@ async function econInit(
     startDay = yesterday.format("D");
     startMonth = yesterday.format("M");
     startYear = yesterday.format("YYYY");
+    document.querySelector("#start").valueAsDate = yesterday.format("YYYY-MM-DD"); 
   }
 
   if (endDay === undefined || endMonth === undefined || endYear === undefined) {
@@ -39,6 +40,7 @@ async function econInit(
     endDay = endSlot.format("D");
     endMonth = endSlot.format("M");
     endYear = endSlot.format("YYYY");
+    document.querySelector("#end").valueAsDate = endSlot.format("YYYY-MM-DD");
   }
   await econGetDate(startDay, startMonth, startYear, endDay, endMonth, endYear);
 }
