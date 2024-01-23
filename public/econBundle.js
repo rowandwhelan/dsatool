@@ -19,7 +19,7 @@ async function econInit(
   endYear,
 ) {
   let buffer = 1;
-  timeSlot = 30;
+  timeSlot = 14;
   if (timeSlot <= 1) {
     timeSlot = 1;
   }
