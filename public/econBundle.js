@@ -155,15 +155,14 @@ function output(econ, items, date) {
     var controller = [];
     function output(econ, items, date) {
       let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY")
-      document.getElementById("output").innerHTML += `<br><h2>${outputDate}<h2><br>`;
+      //document.getElementById("output").innerHTML += `<br><h2>${outputDate}<h2><br>`;
       days.push(outputDate)
       for (const [key, value] of Object.entries(econ.items_held)) {
         let itemNum = value;
         let i = 0;
         while (i < items.length) {
           if (items[i].id == key) {
-            document.getElementById("output").innerHTML +=
-              `${itemNum} ${items[i].name} ${key}<br>`;
+            //document.getElementById("output").innerHTML += `${itemNum} ${items[i].name} ${key}<br>`;
             if (items[i].name == 'Iron') {
               iron.push(itemNum)
             } else if (items[i].name == 'Explosives') {
