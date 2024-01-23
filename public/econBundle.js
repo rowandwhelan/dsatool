@@ -216,7 +216,7 @@ document.addEventListener("change", graphChart);
       if (econDataFetched) {
       var graphDataSet = [];
       if (document.getElementById("mats").checked) {
-        graphDataSet.push({ label: 'Iron', data: iron.toReversed(), borderWidth: 4 }, { label: 'Explosives', data: exp.toReversed(), borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber.toReversed(), borderWidth: 4 }, { label: 'Flux Crystals', data: flux.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Iron', data: iron.reverse(), borderWidth: 4 }, { label: 'Explosives', data: exp.toReversed(), borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber.toReversed(), borderWidth: 4 }, { label: 'Flux Crystals', data: flux.toReversed(), borderWidth: 4 })
       }
       if (document.getElementById("shields").checked) {
         graphDataSet.push({ label: 'Shield Cores', data: cores.toReversed(), borderWidth: 4 }, { label: 'Shield Generators', data: gens.toReversed(), borderWidth: 4 }, { label: 'Shield Projectors', data: projs.toReversed(), borderWidth: 4 })
