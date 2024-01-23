@@ -31,8 +31,7 @@ async function econInit(
     const yesterday = dayjs().subtract(buffer, "days");
     startDay = yesterday.format("D");
     startMonth = yesterday.format("M");
-    startYear = yesterday.format("YYYY");
-    document.querySelector("#start").valueAsDate = yesterday.format("YYYY-MM-DD"); 
+    startYear = yesterday.format("YYYY")
   }
 
   if (endDay === undefined || endMonth === undefined || endYear === undefined) {
@@ -40,7 +39,6 @@ async function econInit(
     endDay = endSlot.format("D");
     endMonth = endSlot.format("M");
     endYear = endSlot.format("YYYY");
-    document.querySelector("#end").valueAsDate = endSlot.format("YYYY-MM-DD");
   }
   await econGetDate(startDay, startMonth, startYear, endDay, endMonth, endYear);
 }
