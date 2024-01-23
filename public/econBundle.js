@@ -76,6 +76,7 @@ async function econGetDate(
     await econGet(date);
   }
   econDataFetched = true;
+  econInit = true;
   graphChart();
   document.getElementById("out").innerHTML = '';
 }
@@ -106,6 +107,7 @@ async function econGet(date) {
 }
   
 var econDataFetched = false;
+var econInit = false;
 var days = [];
 var iron = [];
 var exp = [];
@@ -214,32 +216,65 @@ document.addEventListener("change", graphChart);
   
     function graphChart() {
       if (econDataFetched) {
+        if (econInit) {
+          days.reverse();
+          iron.reverse();
+          exp.reverse();
+          flux.reverse();
+          rubber.reverse();
+          cores.reverse();
+          gens.reverse();
+          projs.reverse();
+          rcs.reverse();
+          auto.reverse();
+          burst.reverse();
+          goldNull.reverse();
+          silverNull.reverse();
+          bug.reverse();
+          shredder.reverse();
+          legacy.reverse();
+          glass.reverse();
+          rcd.reverse();
+          backpack.reverse();
+          bp.reverse();
+          manifest.reverse();
+          bom.reverse();
+          backpack.reverse();
+          volleyball.reverse();
+          basketball.reverse();
+          beachball.reverse();
+          football.reverse();
+          rapid.reverse();
+          pres.reverse();
+          controller.reverse();
+          econInit = false;
+        }
       var graphDataSet = [];
       if (document.getElementById("mats").checked) {
-        graphDataSet.push({ label: 'Iron', data: iron.reverse(), borderWidth: 4 }, { label: 'Explosives', data: exp.toReversed(), borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber.toReversed(), borderWidth: 4 }, { label: 'Flux Crystals', data: flux.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Iron', data: iron, borderWidth: 4 }, { label: 'Explosives', data: exp, borderWidth: 4 }, { label: 'Hyper Rubber', data: rubber , borderWidth: 4 }, { label: 'Flux Crystals', data: flux , borderWidth: 4 })
       }
       if (document.getElementById("shields").checked) {
-        graphDataSet.push({ label: 'Shield Cores', data: cores.toReversed(), borderWidth: 4 }, { label: 'Shield Generators', data: gens.toReversed(), borderWidth: 4 }, { label: 'Shield Projectors', data: projs.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Shield Cores', data: cores , borderWidth: 4 }, { label: 'Shield Generators', data: gens , borderWidth: 4 }, { label: 'Shield Projectors', data: projs , borderWidth: 4 })
       }
       if (document.getElementById("turrets").checked) {
-        graphDataSet.push({ label: 'RC Turret', data: rcs.toReversed(), borderWidth: 4 }, { label: 'Auto Turret', auto: auto.toReversed(), borderWidth: 4 }, { label: 'Burst Turret', burst: burst.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'RC Turret', data: rcs , borderWidth: 4 }, { label: 'Auto Turret', auto: auto , borderWidth: 4 }, { label: 'Burst Turret', burst: burst , borderWidth: 4 })
       }
       if (document.getElementById("rares").checked) {
-        graphDataSet.push({ label: 'Gold Null Trophy', data: goldNull.toReversed(), borderWidth: 4 }, { label: 'Silver Null Trophy', data: silverNull.toReversed(), borderWidth: 4 }, { label: 'Bug Hunter Trophy', data: bug.toReversed(), borderWidth: 4 }, { label: 'Golden Shredder', data: shredder.toReversed(), borderWidth: 4 }, { label: 'Legacy Fabricator', data: legacy.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Gold Null Trophy', data: goldNull , borderWidth: 4 }, { label: 'Silver Null Trophy', data: silverNull , borderWidth: 4 }, { label: 'Bug Hunter Trophy', data: bug , borderWidth: 4 }, { label: 'Golden Shredder', data: shredder , borderWidth: 4 }, { label: 'Legacy Fabricator', data: legacy , borderWidth: 4 })
       }
       if (document.getElementById("misc").checked) {
-        graphDataSet.push({ label: 'Ice Glass', data: glass.toReversed(), borderWidth: 4 }, { label: 'Flux RCD', data: rcd.toReversed(), borderWidth: 4 }, { label: 'Backpack', data: backpack.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Ice Glass', data: glass , borderWidth: 4 }, { label: 'Flux RCD', data: rcd , borderWidth: 4 }, { label: 'Backpack', data: backpack , borderWidth: 4 })
       }
       if (document.getElementById("scanners").checked) {
-        graphDataSet.push({ label: 'Blueprint Scanner', data: bp.toReversed(), borderWidth: 4 }, { label: 'Manifest Scanner', data: manifest.toReversed(), borderWidth: 4 }, { label: 'BoM Scanner', data: bom.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Blueprint Scanner', data: bp , borderWidth: 4 }, { label: 'Manifest Scanner', data: manifest , borderWidth: 4 }, { label: 'BoM Scanner', data: bom , borderWidth: 4 })
       }
       if (document.getElementById("balls").checked) {
-        graphDataSet.push({ label: 'Volleyball', data: volleyball.toReversed(), borderWidth: 4 }, { label: 'Basketball', data: basketball.toReversed(), borderWidth: 4 }, { label: 'Beach Ball', data: beachball.toReversed(), borderWidth: 4 }, { label: 'Football', data: football.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Volleyball', data: volleyball , borderWidth: 4 }, { label: 'Basketball', data: basketball , borderWidth: 4 }, { label: 'Beach Ball', data: beachball , borderWidth: 4 }, { label: 'Football', data: football , borderWidth: 4 })
       }
       if (document.getElementById("vulture").checked) {
-        graphDataSet.push({ label: 'Turret Booster - Rapid Fire', data: rapid.toReversed(), borderWidth: 4 }, { label: 'Turret Booster - Preservation', data: pres.toReversed(), borderWidth: 4 }, { label: 'Enhanced Turret Controller', data: controller.toReversed(), borderWidth: 4 })
+        graphDataSet.push({ label: 'Turret Booster - Rapid Fire', data: rapid , borderWidth: 4 }, { label: 'Turret Booster - Preservation', data: pres , borderWidth: 4 }, { label: 'Enhanced Turret Controller', data: controller , borderWidth: 4 })
       }
-      const graphDays = days.toReversed();
+      const graphDays = days ;
       if (Chart.getChart("chart") !=  undefined){
       Chart.getChart("chart").destroy();
       }
