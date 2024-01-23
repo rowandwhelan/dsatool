@@ -12,13 +12,18 @@
 
 <body>
   <iframe src="./header.html" frameborder="0" width="100%" height="50px"></iframe>
-  <h1>Economics</h1>
+    <h1>Economics</h1>
   <br>
-  <h3> This shows the total number of each type of item in all of drednot for each day in the past week</h3>
+  <h3> Select a start and end date, along with the types of items you want to view. Please be patient, the data may take around a minute to load</h3>
   
    <div style="width: 90%;height: 65%;margin: auto;"><canvas id="chart"></canvas></div><br/>
+  <span id="out"></span>
   <form>
-    <label> <input type="checkbox" id="mats"></input> Mats (iron, explosives, rubber, and flux)</label><br>
+    <label for="start">Start date:
+    <input type="date" id="start" name="start" min="2022-11-23" /></label>
+    <label for="start">End date:
+    <input type="date" id="end" name="end"/></label>
+    <label> <input checked type="checkbox" id="mats"></input> Mats (iron, explosives, rubber, and flux)</label><br>
     <label> <input type="checkbox" id="shields"></input> Shield Items (cores, generators, and projectors)</label><br>
     <label> <input type="checkbox" id="turrets"></input> Turrets (rc, auto, and burst)</label><br>
     <label> <input type="checkbox" id="rares"></input> Ultra-Rares (null trophies, bug trophy, golden shredder, and
@@ -29,7 +34,6 @@
     <label> <input type="checkbox" id="vulture"></input> Vulure items (rapid fire, preservation, and enhanced controller)</label><br>
   </form>
   
-  <div id="out">
   <div id="output">
   <script src="./econBundle.js"></script>
 <script src="./darkmode.js"></script>
