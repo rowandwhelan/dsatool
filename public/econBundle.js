@@ -16,7 +16,7 @@ async function econInit(
   startYear,
   endDay,
   endMonth,
-  endYear,
+  endYear
 ) {
   let buffer = 1;
   timeSlot = 14;
@@ -31,7 +31,7 @@ async function econInit(
     const yesterday = dayjs().subtract(buffer, "days");
     startDay = yesterday.format("D");
     startMonth = yesterday.format("M");
-    startYear = yesterday.format("YYYY")
+    startYear = yesterday.format("YYYY");
   }
 
   if (endDay === undefined || endMonth === undefined || endYear === undefined) {
@@ -49,7 +49,7 @@ async function econGetDate(
   startYear,
   endDay,
   endMonth,
-  endYear,
+  endYear
 ) {
   let endDate = dayjs(`${endYear}-${endMonth}-${endDay}`);
   let currentDate = dayjs(`${startYear}-${startMonth}-${startDay}`);
@@ -64,11 +64,11 @@ async function econGetDate(
 
   for (const date of datesToFetch) {
     if (miniCounter == 0) {
-    document.getElementById("out").innerHTML = `Loading. ${Math.round((countdown/timeSlot) * 100)}%`;
+      document.getElementById("out").innerHTML = `Loading. ${Math.round((countdown/timeSlot) * 100)}%`;
     } else if (miniCounter == 1) {
-    document.getElementById("out").innerHTML = `Loading.. ${Math.round((countdown/timeSlot) * 100)}%`;
+      document.getElementById("out").innerHTML = `Loading.. ${Math.round((countdown/timeSlot) * 100)}%`;
     } else if (miniCounter == 2) {
-    document.getElementById("out").innerHTML = `Loading... ${Math.round((countdown/timeSlot) * 100)}%`;
+      document.getElementById("out").innerHTML = `Loading... ${Math.round((countdown/timeSlot) * 100)}%`;
     }
     miniCounter++;
     if (miniCounter > 2) {miniCounter = 0};
@@ -104,130 +104,113 @@ async function econGet(date) {
     console.error("Error fetching data:", error);
   }
 }
-
+  
+var econDataFetched = false;
+var days = [];
+var iron = [];
+var exp = [];
+var flux = [];
+var rubber = [];
+var cores = [];
+var gens = [];
+var projs = [];
+var rcs = [];
+var auto = [];
+var burst = [];
+var goldNull = [];
+var silverNull = [];
+var bug = [];
+var shredder = [];
+var legacy = [];
+var glass = [];
+var rcd = [];
+var backpack = [];
+var bp = [];
+var manifest = [];
+var bom = [];
+var backpack = [];
+var volleyball = [];
+var basketball = [];
+var beachball = [];
+var football = [];
+var rapid = [];
+var pres = [];
+var controller = [];
 function output(econ, items, date) {
   let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY")
-  document.getElementById("output").innerHTML += `<br><h2>${outputDate}<h2><br>`;
-  for (const [key, value] of Object.entries(econ.items_held)) {
-    let itemNum = value;
-    let i = 0;
-    while (i < items.length) {
-      if (items[i].id == key) {
-        document.getElementById("output").innerHTML +=
-          `${itemNum} ${items[i].name}<br>`;
-        console.log(`${itemNum} ${items[i].name}`);
-        break;
-      }
+    //document.getElementById("output").innerHTML += `<br><h2>${outputDate}<h2><br>`;
+    days.push(outputDate)
+    for (const [key, value] of Object.entries(econ.items_held)) {
+      let itemNum = value;
+      let i = 0;
+      while (i < items.length) {
+        if (items[i].id == key) {
+          //document.getElementById("output").innerHTML += `${itemNum} ${items[i].name} ${key}<br>`;
+          if (items[i].name == 'Iron') {
+            iron.push(itemNum)
+          } else if (items[i].name == 'Explosives') {
+            exp.push(itemNum)
+          } else if (items[i].name == 'Hyper Rubber') {
+            rubber.push(itemNum)
+          } else if (items[i].name == 'Flux Crystals') {
+            flux.push(itemNum)
+          } else if (items[i].name == 'Shield Core') {
+            cores.push(itemNum)
+          } else if (items[i].name == 'Shield Generator') {
+            gens.push(itemNum)
+          } else if (items[i].name == 'Shield Projector') {
+            projs.push(itemNum)
+          } else if (items[i].name == 'RC Turret (Packaged)') {
+            rcs.push(itemNum)
+          } else if (items[i].name == 'Auto Turret (Packaged)') {
+            auto.push(itemNum)
+          } else if (items[i].name == 'Burst Turret (Packaged)') {
+            burst.push(itemNum)
+          } else if (items[i].name == 'Gold Null Trophy') {
+            goldNull.push(itemNum)
+          } else if (items[i].name == 'Silver Null Trophy') {
+            silverNull.push(itemNum)
+          } else if (items[i].name == 'Bug Hunter Trophy') {
+            bug.push(itemNum)
+          } else if (items[i].name == 'Golden Item Shredder') {
+            shredder.push(itemNum)
+          } else if (items[i].name == 'Fabricator (Legacy, Packaged)') {
+            legacy.push(itemNum)
+          } else if (items[i].name == 'Hyper Ice Block') {
+            glass.push(itemNum)
+          } else if (items[i].name == 'Flux RCD') {
+            rcd.push(itemNum)
+          } else if (items[i].name == 'Backpack') {
+            backpack.push(itemNum)
+          } else if (items[i].name == 'Blueprint Scanner') {
+            bp.push(itemNum)
+          } else if (items[i].name == 'Manifest Scanner') {
+            manifest.push(itemNum)
+          } else if (items[i].name == 'BoM Scanner') {
+            bom.push(itemNum)
+          } else if (items[i].name == 'Volleyball') {
+            volleyball.push(itemNum)
+          } else if (items[i].name == 'Basketball') {
+            basketball.push(itemNum)
+          } else if (items[i].name == 'Beach Ball') {
+            beachball.push(itemNum)
+          } else if (items[i].name == 'Football') {
+            football.push(itemNum)
+          } else if (items[i].name == 'Turret Booster - Rapid Fire') {
+            rapid.push(itemNum)
+          } else if (items[i].name == 'Turret Booster - Preservation') {
+            pres.push(itemNum)
+          } else if (items[i].name == 'Enhanced Turret Controller') {
+            controller.push(itemNum)
+          }
+          break;
+        }
       i++;
     }
   }
 }
-    var econDataFetched = false;
-    var days = [];
-    var iron = [];
-    var exp = [];
-    var flux = [];
-    var rubber = [];
-    var cores = [];
-    var gens = [];
-    var projs = [];
-    var rcs = [];
-    var auto = [];
-    var burst = [];
-    var goldNull = [];
-    var silverNull = [];
-    var bug = [];
-    var shredder = [];
-    var legacy = [];
-    var glass = [];
-    var rcd = [];
-    var backpack = [];
-    var bp = [];
-    var manifest = [];
-    var bom = [];
-    var backpack = [];
-    var volleyball = [];
-    var basketball = [];
-    var beachball = [];
-    var football = [];
-    var rapid = [];
-    var pres = [];
-    var controller = [];
-    function output(econ, items, date) {
-      let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY")
-      //document.getElementById("output").innerHTML += `<br><h2>${outputDate}<h2><br>`;
-      days.push(outputDate)
-      for (const [key, value] of Object.entries(econ.items_held)) {
-        let itemNum = value;
-        let i = 0;
-        while (i < items.length) {
-          if (items[i].id == key) {
-            //document.getElementById("output").innerHTML += `${itemNum} ${items[i].name} ${key}<br>`;
-            if (items[i].name == 'Iron') {
-              iron.push(itemNum)
-            } else if (items[i].name == 'Explosives') {
-              exp.push(itemNum)
-            } else if (items[i].name == 'Hyper Rubber') {
-              rubber.push(itemNum)
-            } else if (items[i].name == 'Flux Crystals') {
-              flux.push(itemNum)
-            } else if (items[i].name == 'Shield Core') {
-              cores.push(itemNum)
-            } else if (items[i].name == 'Shield Generator') {
-              gens.push(itemNum)
-            } else if (items[i].name == 'Shield Projector') {
-              projs.push(itemNum)
-            } else if (items[i].name == 'RC Turret (Packaged)') {
-              rcs.push(itemNum)
-            } else if (items[i].name == 'Auto Turret (Packaged)') {
-              auto.push(itemNum)
-            } else if (items[i].name == 'Burst Turret (Packaged)') {
-              burst.push(itemNum)
-            } else if (items[i].name == 'Gold Null Trophy') {
-              goldNull.push(itemNum)
-            } else if (items[i].name == 'Silver Null Trophy') {
-              silverNull.push(itemNum)
-            } else if (items[i].name == 'Bug Hunter Trophy') {
-              bug.push(itemNum)
-            } else if (items[i].name == 'Golden Item Shredder') {
-              shredder.push(itemNum)
-            } else if (items[i].name == 'Fabricator (Legacy, Packaged)') {
-              legacy.push(itemNum)
-            } else if (items[i].name == 'Hyper Ice Block') {
-              glass.push(itemNum)
-            } else if (items[i].name == 'Flux RCD') {
-              rcd.push(itemNum)
-            } else if (items[i].name == 'Backpack') {
-              backpack.push(itemNum)
-            } else if (items[i].name == 'Blueprint Scanner') {
-              bp.push(itemNum)
-            } else if (items[i].name == 'Manifest Scanner') {
-              manifest.push(itemNum)
-            } else if (items[i].name == 'BoM Scanner') {
-              bom.push(itemNum)
-            } else if (items[i].name == 'Volleyball') {
-              volleyball.push(itemNum)
-            } else if (items[i].name == 'Basketball') {
-              basketball.push(itemNum)
-            } else if (items[i].name == 'Beach Ball') {
-              beachball.push(itemNum)
-            } else if (items[i].name == 'Football') {
-              football.push(itemNum)
-            } else if (items[i].name == 'Turret Booster - Rapid Fire') {
-              rapid.push(itemNum)
-            } else if (items[i].name == 'Turret Booster - Preservation') {
-              pres.push(itemNum)
-            } else if (items[i].name == 'Enhanced Turret Controller') {
-              controller.push(itemNum)
-            }
-            break;
-          }
-          i++;
-        }
-      }
-    }
 
-    document.addEventListener("change", graphChart);
+document.addEventListener("change", graphChart);
   
     function graphChart() {
       if (econDataFetched) {
@@ -256,7 +239,6 @@ function output(econ, items, date) {
       if (document.getElementById("vulture").checked) {
         graphDataSet.push({ label: 'Turret Booster - Rapid Fire', data: rapid.toReversed(), borderWidth: 4 }, { label: 'Turret Booster - Preservation', data: pres.toReversed(), borderWidth: 4 }, { label: 'Enhanced Turret Controller', data: controller.toReversed(), borderWidth: 4 })
       }
-
       const graphDays = days.toReversed();
       if (Chart.getChart("chart") !=  undefined){
       Chart.getChart("chart").destroy();
@@ -285,6 +267,6 @@ function output(econ, items, date) {
         }
       })
     }
-    }
+  }
 
 },{"dayjs":1,"dayjs/plugin/customParseFormat":2}]},{},[3]);
