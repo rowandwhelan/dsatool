@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 /* Reset default margins/paddings and box-sizing */
 * {
   margin: 0;
@@ -7,7 +8,7 @@
 
 /* Set a background color and add some spacing */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Rubik', sans-serif;
   background-color: #f8f8f8;
   padding: 20px;
   margin: 0;
