@@ -56,6 +56,7 @@ h1 {
 
 /* Input and label styles */
 label {
+  font-family: 'Rubik', sans-serif;
   font-weight: bold;
   margin-bottom: 8px;
   margin-top: 10px;
@@ -227,6 +228,7 @@ body.dark-mode h1 {
 
 /* Dark Mode Button Animation */
 button {
+  font-family: 'Rubik', sans-serif;
   background-color: #000;
   color: #fff;
   border: none;
