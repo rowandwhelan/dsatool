@@ -242,3 +242,19 @@ button {
 button:hover {
   background-color: #333;
 }
+
+    .checkbox-container {
+      display: flex;
+      align-items: left;
+      width: 15%; /* making all checkboxes the same size */
+    }
+    .checkbox-container input[type="checkbox"] {
+      margin-top: 20px;
+      margin-left: 3px;
+      flex: 0 0 auto;
+      width: 15px; /* setting the width of all checkboxes to be the same */
+      height: 15px; /* setting the height of all checkboxes to be the same */
+    }
+    label {
+      margin-left: 5px;
+    }
