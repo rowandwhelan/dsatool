@@ -13,9 +13,8 @@
 <body>
   <iframe src="./header.html" frameborder="0" width="100%" height="50px"></iframe>
   <h1>Economics</h1><br><br>
-  <h3>Select a start and end date, along with the types of items you want to view. Please be patient, the data may take several minutes to fetch</h3><br>
-  <h6>Note: selecting a time slot is not yet implemented, the graph is limited to the past 14 days</h6><br>
-  
+  <h3>Select a chart type, start and end date, and the items you want to view. Please be patient, the data may take several minutes to fetch</h3><br>
+  <h6>You can also click the item name at the top of the graph to hide individual items</h6><br><br>
   <div style="width: 90%;height: 60%;margin: auto;"><canvas id="chart"></canvas></div><br/>
   <span id="out" style="font-family: 'Rubik', sans-serif;"></span>
   <form>
@@ -23,14 +22,52 @@
     <input type="date" id="start" name="start" min="2022-11-23" /></label>
     <label for="start">End date:
     <input type="date" id="end" name="end" min="2022-11-23"/></label>
-    <label> <input checked type="checkbox" id="mats"></input> Mats (iron, explosives, rubber, and flux)</label><br>
-    <label> <input type="checkbox" id="shields"></input> Shield Items (cores, generators, and projectors)</label><br>
-    <label> <input type="checkbox" id="turrets"></input> Turrets (rc, auto, and burst)</label><br>
-    <label> <input type="checkbox" id="rares"></input> Ultra-Rares (null trophies, bug trophy, golden shredder, and legacy fabricators)</label><br>
-    <label> <input type="checkbox" id="misc"></input> Miscellaneous (ice glass, RCD, and backpacks)</label><br>
-    <label> <input type="checkbox" id="scanners"></input> Scanners (blueprint, manifest, and BoM)</label><br>
-    <label> <input type="checkbox" id="balls"></input> Balls (volleyball, basketball, beach ball, and football)</label><br>
-    <label> <input type="checkbox" id="vulture"></input> Vulure items (rapid fire, preservation, and enhanced controller)</label><br>
+    <!--
+    <div class="radio-container">
+      <input type="radio" id="fluxValue" name="chartTypes">
+      <label for="fluxValue">Flux Value</label>
+    </div>
+    <div class="radio-container">
+      <input checked type="radio" id="totalItems" name="chartTypes">
+      <label for="totalItems">Total Items</label>
+    </div>
+    <div class="radio-container">
+      <input type="radio" id="newItems" name="chartTypes">
+      <label for="newItems">New Items</label>
+    </div>
+    -->
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="mats">Mats (iron, explosives, rubber, and flux)</label>
+      <input checked type="checkbox" id="mats">
+    </div>
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="shields">Shield Items (cores, generators, and projectors)</label>
+      <input type="checkbox" id="shields">
+    </div>
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="turrets">Turrets (rc, auto, and burst turrets)</label>
+      <input type="checkbox" id="turrets">
+    </div>
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="rares">Ultra-Rares (nulls, gs, bug hunters, and legacy fabs)</label>
+      <input type="checkbox" id="rares">
+    </div>
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="misc">Miscellaneous (ice glass, RCD, and backpacks)</label>
+      <input type="checkbox" id="misc">
+    </div>
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="scanners">Scanners (blueprint, manifest, and BoM)</label>
+      <input type="checkbox" id="scanners">
+    </div>
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="balls">Balls (volleyball, basketball, beach ball, and football)</label>
+      <input type="checkbox" id="balls">
+    </div>
+    <div class="checkbox-container" style="width: 15%;">
+      <label for="vulture">Vulture items (rapid fire, preservation, and controllers)</label>
+      <input type="checkbox" id="vulture">
+    </div>
   </form>
   <script src="./econBundle.js"></script>
   <script src="./darkmode.js"></script>
