@@ -261,7 +261,6 @@ button:hover {
 
 footer {
   text-align: center;
-  page-break-before : always;
   padding: 3px;
   background-color: #f8f8f8;
   color: #333;
