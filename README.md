@@ -54,7 +54,7 @@ How to use the ship design calculator: <br>
   Shows the rate of fire per second per turret based on the type of ammo selected<br>
 
   -Total Damage per Second<br>
-  Shows the average total possible damage per second assuming that you can fire only half of all RCs at any one time<br>
+  Shows the maximum possible damage per second assuming that you can fire only half of all RCs at any one time<br>
 
   -Ammo Source<br>
   An input field that dictates whether the ammo is preloaded aka storered on board or if it is actively produced onboard via fabricators<br>
