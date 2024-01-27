@@ -208,7 +208,7 @@ function calculateShieldRegen() {
 function calculateTimeToFullHealth() {
   var totalHealth = document.getElementById("totalHealth").value;
   var shieldRegen = document.getElementById("shieldRegen").value;
-  var timeToFullHealth = Math.round(totalHealth / shieldRegen);
+  var timeToFullHealth = Math.round((totalHealth-2000) / shieldRegen);
   document.getElementById("timeToFullHealth").value = timeToFullHealth;
 }
 
