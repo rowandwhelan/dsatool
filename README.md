@@ -3,8 +3,7 @@ This is the Github repository for DSATool.com: the best tool for drednot.io. Str
 This guide was last updated on January 26th. For the most up to date guide please go to the changelog here: https://dsatool.com/public/changelog.html
 
 
-How to use the ship design calculator:
-
+How to use the ship design calculator: <br>
   Ship Information:
     -Units of Measurement
     The standard units for measurement include size in interior ship blocks (78x78), RCs (26x26), and world blocks (10x10). Each unit of measurement increments by 1 at a time, though you can imput any valid whole number manually. When you switch from one unit to another, the unit will not be converted to the new measurement type, the number will remain the same and if needed, it will be capped at the maximum for that unit type. Note that RCs and ship blocks do not count exterior blocks
