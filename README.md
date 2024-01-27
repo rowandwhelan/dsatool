@@ -22,6 +22,7 @@ How to use the ship design calculator:
    Displays how many loaders per RC are needed to sustain firing according to turret firing percentage
 
   Shield Information:
+  
   -Number of shield generators and tanks
   Input the number of shield generators and shield tanks in the first two boxes under the shield information section (the calculations assume that the generators are not boosted and that shield tanks are active)
 
