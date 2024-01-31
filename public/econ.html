@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Economics Viewer</title>
+  <title>Economy Viewer</title>
   <link rel="icon" type="image/x-icon" href="./diamondWrench.png">
   <link rel="stylesheet" href="./main.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -17,6 +17,7 @@
   <h1>Economics</h1><br><br>
   <h3>Select a chart type, start and end date, and the items you want to view. Please be patient, the data may take several minutes to fetch</h3><br>
   <h6>You can also click the item name at the top of the graph to hide individual items</h6><br><br>
+  <h6>Note: inputing a new date while one is currently being fetched will create interference between the two requests which will ruin the data, please wait for the old request to finish before requesting new data.</h6><br><br>
   <div style="width: 90%;height: 60%;margin: auto;"><canvas id="chart"></canvas></div><br/>
   <span id="out" style="font-family: 'Rubik', sans-serif;"></span>
   <form>
@@ -24,20 +25,6 @@
     <input type="date" id="start" name="start" min="2022-11-23" /></label>
     <label for="start">End date:
     <input type="date" id="end" name="end" min="2022-11-23"/></label>
-    <!--
-    <div class="radio-container">
-      <input type="radio" id="fluxValue" name="chartTypes">
-      <label for="fluxValue">Flux Value</label>
-    </div>
-    <div class="radio-container">
-      <input checked type="radio" id="totalItems" name="chartTypes">
-      <label for="totalItems">Total Items</label>
-    </div>
-    <div class="radio-container">
-      <input type="radio" id="newItems" name="chartTypes">
-      <label for="newItems">New Items</label>
-    </div>
-    -->
     <div class="checkbox-container" style="width: 15%;">
       <label for="mats">Mats (iron, explosives, rubber, and flux)</label>
       <input checked type="checkbox" id="mats">
