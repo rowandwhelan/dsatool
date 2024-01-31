@@ -431,7 +431,7 @@ combined();
     document.getElementById("output").innerHTML += `<br><h3> Manifest Scanner: ${Math.min(value1(manifest1), value(manifest))}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> BOM Scanner: ${Math.min(value1(bom1), value(bom))}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Volleyball: ${Math.min(value1(volleyball1), value(volleyball))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Basketball: ${Math.min(value1(baskbetball1), value(basketball))}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Basketball: ${Math.min(value1(basketball1), value(basketball))}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Football: ${Math.min(value1(football1), value(football))}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Beach Ball: ${Math.min(value1(beachball1), value(beachball))}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Rapid-Fire: ${Math.min(value1(rapid1), value(rapid))}</h3>`;
