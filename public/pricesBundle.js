@@ -349,63 +349,63 @@ combined();
             itemName = items[j].name;
           }
         }
-
+              console.log(econ.items_new)
             if (itemName  == 'Iron') {
-              iron1 += econ.items_new[i].grabbed
+              iron1 += econ.items_new[i].total;
             } else if (itemName == 'Explosives') {
-              exp1 += econ.items_new[i].grabbed;
+              exp1 += econ.items_new[i].total;
             } else if (itemName == 'Hyper Rubber') {
-              rubber1 += econ.items_new[i].grabbed;
+              rubber1 += econ.items_new[i].total;
             } else if (itemName == 'Flux Crystals') {
-              flux1 += econ.items_new[i].grabbed;
+              flux1 += econ.items_new[i].total;
             } else if (itemName == 'Shield Core') {
-              cores1+= econ.items_new[i].grabbed;
+              cores1+= econ.items_new[i].total;
             } else if (itemName == 'Shield Generator') {
-              gens1+= econ.items_new[i].grabbed;
+              gens1+= econ.items_new[i].total;
             } else if (itemName == 'Shield Projector') {
-              projs1+= econ.items_new[i].grabbed;
+              projs1+= econ.items_new[i].total;
             } else if (itemName == 'RC Turret (Packaged)') {
-              rcs1+= econ.items_new[i].grabbed;
+              rcs1+= econ.items_new[i].total;
             } else if (itemName == 'Auto Turret (Packaged)') {
-              auto1+= econ.items_new[i].grabbed;
+              auto1+= econ.items_new[i].total;
             } else if (itemName == 'Burst Turret (Packaged)') {
-              burst1+= econ.items_new[i].grabbed;
+              burst1+= econ.items_new[i].total;
             } else if (itemName == 'Gold Null Trophy') {
-              goldNull1+= econ.items_new[i].grabbed;
+              goldNull1+= econ.items_new[i].total;
             } else if (itemName == 'Silver Null Trophy') {
-              silverNull1+= econ.items_new[i].grabbed;
+              silverNull1+= econ.items_new[i].total;
             } else if (itemName == 'Bug Hunter Trophy') {
-              bug1+= econ.items_new[i].grabbed;
+              bug1+= econ.items_new[i].total;
             } else if (itemName == 'Golden Item Shredder') {
-              shredder1+= econ.items_new[i].grabbed;
+              shredder1+= econ.items_new[i].total;
             } else if (itemName == 'Fabricator (Legacy, Packaged)') {
-              legacy1+= econ.items_new[i].grabbed;
+              legacy1+= econ.items_new[i].total;
             } else if (itemName == 'Hyper Ice Block') {
-              glass1+= econ.items_new[i].grabbed;
+              glass1+= econ.items_new[i].total;
             } else if (itemName == 'Flux RCD') {
-              rcd1+= econ.items_new[i].grabbed;
+              rcd1+= econ.items_new[i].total;
             } else if (itemName == 'Backpack') {
-              backpack1+= econ.items_new[i].grabbed;
+              backpack1+= econ.items_new[i].total;
             } else if (itemName == 'Blueprint Scanner') {
-              bp1+= econ.items_new[i].grabbed;
+              bp1+= econ.items_new[i].total;
             } else if (itemName == 'Manifest Scanner') {
-              manifest1+= econ.items_new[i].grabbed;
+              manifest1+= econ.items_new[i].total;
             } else if (itemName == 'BoM Scanner') {
-              bom1+= econ.items_new[i].grabbed;
+              bom1+= econ.items_new[i].total;
             } else if (itemName == 'Volleyball') {
-              volleyball1+= econ.items_new[i].grabbed;
+              volleyball1+= econ.items_new[i].total;
             } else if (itemName == 'Basketball') {
-              basketball1+= econ.items_new[i].grabbed;
+              basketball1+= econ.items_new[i].total;
             } else if (itemName == 'Beach Ball') {
-              beachball1+= econ.items_new[i].grabbed;
+              beachball1+= econ.items_new[i].total;
             } else if (itemName == 'Football') {
-              football1+= econ.items_new[i].grabbed;
+              football1+= econ.items_new[i].total;
             } else if (itemName == 'Turret Booster - Rapid Fire') {
-              rapid1+= econ.items_new[i].grabbed;
+              rapid1+= econ.items_new[i].total;
             } else if (itemName == 'Turret Booster - Preservation') {
-              pres1+= econ.items_new[i].grabbed;
+              pres1+= econ.items_new[i].total;
             } else if (itemName == 'Enhanced Turret Controller') {
-              control1+= econ.items_new[i].grabbed;
+              control1+= econ.items_new[i].total;
             }
     }
   }
