@@ -168,7 +168,6 @@
   function value(item) {
     let itemAvg =  avg(flux) / avg(item);
     let roundedPrice = Number( itemAvg.toPrecision(3) )
-    console.log(roundedPrice);
     return roundedPrice;
   }
   
