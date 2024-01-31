@@ -19,7 +19,7 @@
     startYear = yesterday.format("YYYY");
 
 
-    const endSlot = dayjs().subtract(21, "days").subtract(1, "day");
+    const endSlot = dayjs().subtract(14, "days").subtract(1, "day");
     endDay = endSlot.format("D");
     endMonth = endSlot.format("M");
     endYear = endSlot.format("YYYY");
