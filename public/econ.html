@@ -12,20 +12,144 @@
   <meta name="google-adsense-account" content="ca-pub-4972043844070417">
 </head>
 
-<body>  
-<header class="site-header">
-  <nav class="site-nav">
-    <ul>
-      <li><a href="../index.html" target="_top">Home</a></li>
-      <li><a href="./calc.html" target="_top">Calculator</a></li>
-      <li><a href="./econ.html" target="_top">Economics</a></li>
-      <li><a href="./drops.html" target="_top">Item Drops</a></li>
-      <li><a href="./prices.html" target="_top">Exchange Rates</a></li>
-      <li><a href="./changelog.html" target="_top">Changelog</a></li>
-      <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
-    </ul>
-  </nav>
-</header>
+<body>
+<header>
+      <div id="brand"><a href="/">MyCompany</a></div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/calc.html">Calculator</a></li>
+          <li><a href="/econ.html">Economics</a></li>
+          <li><a href="/drops.html">Item Drops</a></li>
+          <li><a href="/prices.html">Exchange Rates</a></li>
+          <li><a href="/changelog.html">Changelog</a></li>
+          <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
+        </ul>
+      </nav>
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-menu">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/calc.html">Calculator</a></li>
+          <li><a href="/econ.html">Economics</a></li>
+          <li><a href="/drops.html">Item Drops</a></li>
+          <li><a href="/prices.html">Exchange Rates</a></li>
+          <li><a href="/changelog.html">Changelog</a></li>
+          <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
+        </ul>
+      </div>
+    </header>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #353836;
+  color: white;
+  font-family: 'Oswald', sans-serif; 
+}
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background-color: #1d1f1d;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+}
+
+</style>
+
+  
 <style>
    @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
    .site-header {
@@ -83,6 +207,11 @@
     color: #333;
   }
 </style>
+  <script>
+    function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+}
+  </script>
   <h1>Economics</h1><br><br>
   <h3>Select a chart type, start and end date, and the items you want to view. Please be patient, the data may take several minutes to fetch</h3><br>
   <h6>You can also click the item name at the top of the graph to hide individual items</h6><br><br>
