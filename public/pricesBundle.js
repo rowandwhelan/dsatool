@@ -334,22 +334,21 @@ combined();
   var control1 
 
   function value1(item) {
-    let itemAvg =  flux1 / item;
+    let itemAvg = flux1 / item;
     let roundedPrice = Number( itemAvg.toPrecision(3) )
     return roundedPrice;
   }
 
   function output1(econ, items, date) {    
       for (let i = 0; i < econ.items_new.length; i++) {
-        
+
         let itemName;
         for(let j = 0; j < items.length; j++){
-         
+
           if (econ.items_new[i].item == items[j].id){
             itemName = items[j].name;
           }
         }
-              console.log(econ.items_new)
             if (itemName  == 'Iron') {
               iron1 += econ.items_new[i].total;
             } else if (itemName == 'Explosives') {
@@ -410,33 +409,242 @@ combined();
     }
   }
   function combined(){
-    document.getElementById("output").innerHTML += `<br><h3> Iron: ${Math.min(value1(iron1), value(iron))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Explosives: ${Math.min(value1(exp1), value(exp))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Hyper Rubber: ${Math.min(value1(rubber1), value(rubber))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Shield Cores: ${value1(cores1)}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Shield Generators: ${Math.min(value1(gens1), value(gens))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Shield Projectors: ${Math.min(value1(projs1), value(projs))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> RCs: ${Math.min(value1(rcs1), value(rcs))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Auto Turret: ${Math.min(value1(auto1), value(auto))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Burst Turret: ${Math.min(value1(burst1), value(burst))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Gold Null Trophy: ${Math.min(value1(goldNull1), value(goldNull))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Silver Null Trophy: ${Math.min(value1(silverNull1), value(silverNull))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Bug Hunter Trophy: ${Math.min(value1(bug1), value(bug))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Golden Shredder: ${Math.min(value1(shredder1), value(shredder))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Legacy Fabricator: ${Math.min(value1(legacy1), value(legacy))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Hyper Ice: ${Math.min(value1(glass1), value(glass))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> RCD: ${Math.min(value1(rcd1), value(rcd))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Backpack: ${Math.min(value1(backpack1), value(backpack))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Blueprint Scanner: ${Math.min(value1(bp1), value(bp))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Manifest Scanner: ${Math.min(value1(manifest1), value(manifest))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> BOM Scanner: ${Math.min(value1(bom1), value(bom))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Volleyball: ${Math.min(value1(volleyball1), value(volleyball))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Basketball: ${Math.min(value1(basketball1), value(basketball))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Football: ${Math.min(value1(football1), value(football))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Beach Ball: ${Math.min(value1(beachball1), value(beachball))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Rapid-Fire: ${Math.min(value1(rapid1), value(rapid))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Preservation: ${Math.min(value1(pres1), value(pres))}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Advanced Turret Controllers: ${Math.min(value1(control1), value(control))}</h3>`;
+    
+    document.getElementById("output").innerHTML += `<br><h3> Iron: ${Number(((avg2(iron2) / avg(iron)) * 10 * value1(iron1)).toPrecision(3) )}</h3>`;   
+    document.getElementById("output").innerHTML += `<br><h3> Explosives: ${Number(((avg2(exp2) / avg(exp)) * 10 * value1(exp1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Hyper Rubber: ${Number(((avg2(rubber2) / avg(rubber)) * 9 * value1(rubber1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Shield Cores: ${Number(((avg2(cores2) / avg(cores)) * 2 * value1(cores1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Shield Generators: ${Number(((avg2(gens2) / avg(gens)) * 1.2 * value1(gens1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Shield Projectors: ${Number(((avg2(projs2) / avg(projs)) * 0.75 * value1(projs1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> RCs: ${Number(((avg2(rcs2) / avg(rcs)) * 2 * value1(rcs1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Auto Turret: ${Number(((avg2(auto2) / avg(auto)) * 0.25 * value1(auto1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Burst Turret: ${Number(((avg2(burst2) / avg(burst)) * 0.25 * value1(burst1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Gold Null Trophy: ${value(goldNull) * 1.8}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Silver Null Trophy: ${value(silverNull) * 1.8}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Bug Hunter Trophy: ${value(bug) * 1.8}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Golden Shredder: ${value(shredder)}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Legacy Fabricator: ${value(legacy) * 2}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Hyper Ice: ${Number(((avg2(glass2) / avg(glass)) * 3 * value1(glass1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> RCD: ${Number(((avg2(rcd2) / avg(rcd)) * 0.7 * value1(rcd1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Backpack: ${Number(((avg2(backpack2) / avg(backpack)) * 0.3 * value1(backpack1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Blueprint Scanner: ${Number(((avg2(bp2) / avg(bp)) * 0.8 * value1(bp1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Manifest Scanner: ${Number(((avg2(manifest2) / avg(manifest)) * 0.3 * value1(manifest1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> BOM Scanner: ${Number(((avg2(bom2) / avg(bom)) * 0.3 * value1(bom1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Volleyball: ${Number(((avg2(volleyball2) / avg(volleyball)) * value1(volleyball1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Basketball: ${Number(((avg2(basketball2) / avg(basketball)) * value1(basketball1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Football: ${Number(((avg2(football2) / avg(football)) * value1(football1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Beach Ball: ${Number(((avg2(beachball2) / avg(beachball)) * value1(beachball1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Rapid-Fire: ${Number(((avg2(rapid2) / avg(rapid)) * 0.2* value1(rapid1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Preservation: ${Number(((avg2(pres2) / avg(pres)) * 0.2 * value1(pres1)).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Advanced Turret Controllers: ${Number(((avg2(control2) / avg(control)) * 0.3 *value1(control1)).toPrecision(3) )}</h3>`; 
+  }
+  
+  econGetDate2();
+
+  async function econGetDate2() {
+
+    econDataFetched = false;
+
+    const yesterday = dayjs().subtract(1, "days");
+    startDay = yesterday.format("D");
+    startMonth = yesterday.format("M");
+    startYear = yesterday.format("YYYY");
+
+
+    const endSlot = dayjs().subtract(14, "days").subtract(1, "day");
+    endDay = endSlot.format("D");
+    endMonth = endSlot.format("M");
+    endYear = endSlot.format("YYYY");
+
+    days2 = [];
+    iron2 = [];
+    exp2 = [];
+    flux2 = [];
+    rubber2 = [];
+    cores2 = [];
+    gens2 = [];
+    projs2 = [];
+    rcs2 = [];
+    auto2 = [];
+    burst2 = [];
+    goldNull2 = [];
+    silverNull2 = [];
+    bug2 = [];
+    shredder2 = [];
+    legacy2 = [];
+    glass2 = [];
+    rcd2 = [];
+    backpack2 = [];
+    bp2 = [];
+    manifest2 = [];
+    bom2 = [];
+    volleyball2 = [];
+    basketball2 = [];
+    beachball2 = [];
+    football2 = [];
+    rapid2 = [];
+    pres2 = [];
+    control2 = [];
+
+    let endDate = dayjs(`${endYear}-${endMonth}-${endDay}`);
+    let currentDate = dayjs(`${startYear}-${startMonth}-${startDay}`);
+    let datesToFetch = [];
+    while (currentDate.isAfter(endDate) || currentDate.isSame(endDate)) {
+      let formattedDate = currentDate.format("YYYY_M_D");
+      datesToFetch.unshift(formattedDate);
+      currentDate = currentDate.subtract(1, "day");
+
+    }
+    for (const date of datesToFetch) {
+      await econGet2(date);
+    }
+  }
+
+  async function econGet2(date) {
+
+    const apiUrl = `https://uncors.vercel.app/?url=https://pub.drednot.io/prod/econ/${date}/summary.json`;
+
+    try {
+      const response = await fetch(apiUrl);
+      if (response.ok) {
+        const data = await response.json();
+        let econ = data;
+        const itemDataResponse = await fetch(
+          "https://uncors.vercel.app/?url=https://pub.drednot.io/prod/econ/item_schema.json",
+        );
+    if (itemDataResponse.ok) {
+          const itemData = await itemDataResponse.json();
+          output2(econ, itemData, date);
+        } else {
+          console.error("Failed to fetch item schema data");
+        }
+      } else {
+        console.error("Failed to fetch econ data");
+      }
+    } catch (error) {
+      if (error.name === 'AbortError') {
+        console.error('Fetch request was aborted by the user');
+      } else {
+        console.error("Error fetching data:", error);
+      }
+    }
+  }
+
+  var days2
+  var iron2 
+  var exp2 
+  var flux2 
+  var rubber2 
+  var cores2 
+  var gens2 
+  var projs2 
+  var rcs2
+  var auto2 
+  var burst2 
+  var goldNull2 
+  var silverNull2 
+  var bug2 
+  var shredder2 
+  var legacy2
+  var glass2
+  var rcd2
+  var backpack2
+  var bp2
+  var manifest2
+  var bom2
+  var volleyball2
+  var basketball2
+  var beachball2
+  var football2
+  var rapid2
+  var pres2
+  var control2 
+
+  function avg2(array){
+    let sum = 0;
+    for(let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+    const average = sum / array.length;
+    return average;
+  }
+
+  function value2(item) {
+    let itemAvg =  avg2(flux2) / avg2(item);
+    let roundedPrice = Number( itemAvg.toPrecision(3) )
+    return roundedPrice;
+  }
+
+  function output2(econ, items, date) {    
+    let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY")
+      days2.push(outputDate)
+      for (const [key, value] of Object.entries(econ.items_moved)) {
+        let itemNum = value;
+        let i = 0;
+        while (i < items.length) {
+          if (items[i].id == key) {
+            if (items[i].name == 'Iron') {
+              iron2.push(itemNum)
+            } else if (items[i].name == 'Explosives') {
+              exp2.push(itemNum)
+            } else if (items[i].name == 'Hyper Rubber') {
+              rubber2.push(itemNum)
+            } else if (items[i].name == 'Flux Crystals') {
+              flux2.push(itemNum)
+            } else if (items[i].name == 'Shield Core') {
+              cores2.push(itemNum)
+            } else if (items[i].name == 'Shield Generator') {
+              gens2.push(itemNum)
+            } else if (items[i].name == 'Shield Projector') {
+              projs2.push(itemNum)
+            } else if (items[i].name == 'RC Turret (Packaged)') {
+              rcs2.push(itemNum)
+            } else if (items[i].name == 'Auto Turret (Packaged)') {
+              auto2.push(itemNum)
+            } else if (items[i].name == 'Burst Turret (Packaged)') {
+              burst2.push(itemNum)
+            } else if (items[i].name == 'Gold Null Trophy') {
+              goldNull2.push(itemNum)
+            } else if (items[i].name == 'Silver Null Trophy') {
+              silverNull2.push(itemNum)
+            } else if (items[i].name == 'Bug Hunter Trophy') {
+              bug2.push(itemNum)
+            } else if (items[i].name == 'Golden Item Shredder') {
+              shredder2.push(itemNum)
+            } else if (items[i].name == 'Fabricator (Legacy, Packaged)') {
+              legacy2.push(itemNum)
+            } else if (items[i].name == 'Hyper Ice Block') {
+              glass2.push(itemNum)
+            } else if (items[i].name == 'Flux RCD') {
+              rcd2.push(itemNum)
+            } else if (items[i].name == 'Backpack') {
+              backpack2.push(itemNum)
+            } else if (items[i].name == 'Blueprint Scanner') {
+              bp2.push(itemNum)
+            } else if (items[i].name == 'Manifest Scanner') {
+              manifest2.push(itemNum)
+            } else if (items[i].name == 'BoM Scanner') {
+              bom2.push(itemNum)
+            } else if (items[i].name == 'Volleyball') {
+              volleyball2.push(itemNum)
+            } else if (items[i].name == 'Basketball') {
+              basketball2.push(itemNum)
+            } else if (items[i].name == 'Beach Ball') {
+              beachball2.push(itemNum)
+            } else if (items[i].name == 'Football') {
+              football2.push(itemNum)
+            } else if (items[i].name == 'Turret Booster - Rapid Fire') {
+              rapid2.push(itemNum)
+            } else if (items[i].name == 'Turret Booster - Preservation') {
+              pres2.push(itemNum)
+            } else if (items[i].name == 'Enhanced Turret Controller') {
+              control2.push(itemNum)
+            }
+            break;
+          }
+        i++;
+      }
+    }
   }
 
 },{"dayjs":1,"dayjs/plugin/customParseFormat":2}]},{},[3]);
