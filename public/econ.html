@@ -12,8 +12,77 @@
   <meta name="google-adsense-account" content="ca-pub-4972043844070417">
 </head>
 
-<body>
-  <embed src="./header.html" frameborder="0" width="100%" height="50px"></embed>
+<body>  
+<header class="site-header" style="frameborder="0" width="100%" height="50px"">
+  <nav class="site-nav">
+    <ul>
+      <li><a href="../index.html" target="_top">Home</a></li>
+      <li><a href="./calc.html" target="_top">Calculator</a></li>
+      <li><a href="./econ.html" target="_top">Economics</a></li>
+      <li><a href="./drops.html" target="_top">Item Drops</a></li>
+      <li><a href="./prices.html" target="_top">Exchange Rates</a></li>
+      <li><a href="./changelog.html" target="_top">Changelog</a></li>
+      <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
+    </ul>
+  </nav>
+</header>
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+   .site-header {
+    font-family: 'Oswald', sans-serif; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f4f4f4;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+
+  .site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .site-nav ul li {
+    margin-right: 20px;
+  }
+
+  .site-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s;
+  }
+
+  .site-nav ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* Dark Mode */
+  body.dark-mode .site-header {
+    background-color: #333;
+  }
+
+   body.dark-mode .site-nav ul li a {
+    color: #f4f4f4;
+    background-color: #333;
+  }
+
+  body.dark-mode .site-nav ul li a:hover {
+    background-color: #0066cc;
+    color: #333;
+  }
+</style>
   <h1>Economics</h1><br><br>
   <h3>Select a chart type, start and end date, and the items you want to view. Please be patient, the data may take several minutes to fetch</h3><br>
   <h6>You can also click the item name at the top of the graph to hide individual items</h6><br><br>
