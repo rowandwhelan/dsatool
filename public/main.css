@@ -9,7 +9,8 @@
 /* Set a background color and add some spacing */
 body {
   font-family: 'Rubik', sans-serif;
-  background-color: #f8f8f8;
+  background-color: #353836;
+  color: white;
   padding: 20px;
   margin: 0;
 }
@@ -18,7 +19,7 @@ body {
 h1 {
   text-align: center;
   margin-top: 20px;
-  color: #333;
+  color: #white;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 2.5rem;
@@ -39,8 +40,8 @@ h1 {
   margin: 10px;
   transition: transform 0.3s ease-in-out;
   position: relative;
-  color: #333;
-  background-color: #f4f4f4;
+  color: #white;
+  background-color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
