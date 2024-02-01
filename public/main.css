@@ -157,8 +157,8 @@ input[type="range"]:hover::-webkit-slider-thumb {
 }
 
 #output {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #333;
+  border: 1px solid #222;
   padding: 20px;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
