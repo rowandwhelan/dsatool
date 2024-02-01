@@ -1,10 +1,5 @@
 // Dark Mode Toggle
-const darkModeToggle = document.createElement('button');
-darkModeToggle.textContent = 'Dark Mode';
-darkModeToggle.style.position = 'absolute';
-darkModeToggle.style.top = '27px';
-darkModeToggle.style.right = '27px';
-darkModeToggle.style.zIndex = '9999';
+const darkModeToggle =  document.getElementById("darkMode")
 darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   if (document.body.classList.contains('dark-mode')) {
