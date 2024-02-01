@@ -31,12 +31,12 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
         <ul class="mobile-menu">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="./calc.html">Calculator</a></li>
-          <li><a href="./econ.html">Economics</a></li>
-          <li><a href="./drops.html">Item Drops</a></li>
-          <li><a href="./prices.html">Exchange Rates</a></li>
-          <li><a href="./changelog.html">Changelog</a></li>
+          <li id="e"><a href="../index.html">Home</a></li>
+          <li id="e"><a href="./calc.html">Calculator</a></li>
+          <li id="e"><a href="./econ.html">Economics</a></li>
+          <li id="e"><a href="./drops.html">Item Drops</a></li>
+          <li id="e"><a href="./prices.html">Exchange Rates</a></li>
+          <li id="e"><a href="./changelog.html">Changelog</a></li>
           <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
           <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
         </ul>
@@ -72,7 +72,7 @@ header {
   color: #09c372;
 }
   
-ul {
+#e ul {
   list-style: none;
   height: 100%;
   display: flex;
@@ -80,16 +80,16 @@ ul {
   justify-content: space-around;
 }
 
-ul a {
+#e ul a {
   color: white;
 }
 
-ul li {
+#e ul li {
   padding: 5px;
   margin-left: 10px;
 }
 
-ul li:hover {
+#e ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
