@@ -310,3 +310,9 @@ body.dark-mode footer {
   background-color: transparent;
   text-decoration: underline;
 }
+
+#brand a:hover {
+  color: #66FF00;
+  background-color: transparent;
+  text-decoration: none;
+}
