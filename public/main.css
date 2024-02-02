@@ -291,19 +291,19 @@ body.dark-mode footer {
   height: 2.5rem;            /* Footer height */
 }
 
-a:link {
+#page-container a:link {
   color: lime;
   background-color: transparent;
   text-decoration: none;
 }
 
-a:visited {
+#page-container a:visited {
   color: #03C03C;
   background-color: transparent;
   text-decoration: none;
 }
 
-a:hover {
+.page-container a:hover {
   color: #66FF00;
   background-color: transparent;
   text-decoration: underline;
