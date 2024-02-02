@@ -290,3 +290,21 @@ body.dark-mode footer {
   width: 99%;
   height: 2.5rem;            /* Footer height */
 }
+
+a:link {
+  color: lime;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #03C03C;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #66FF00;
+  background-color: transparent;
+  text-decoration: underline;
+}
