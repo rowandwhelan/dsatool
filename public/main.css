@@ -305,7 +305,7 @@ body.dark-mode footer {
   text-decoration: none;
 }
 
-.page-container a:hover {
+#page-container a:hover {
   color: #66FF00;
   background-color: transparent;
   text-decoration: underline;
