@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <header style="font-family: 'Oswald', sans-serif;">
+<header style="font-family: 'Oswald', sans-serif;">
       <div id="brand"><a href="../index.html">DSA Tool</a></div>
       <nav>
         <ul>
@@ -61,6 +61,8 @@ header {
   height: 50px;
   display: flex;
   justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 #brand {
@@ -71,7 +73,7 @@ header {
 }
 
 #brand a {
-  color: #03C03C;
+  color: #09c372;
 }
   
 ul {
@@ -155,14 +157,18 @@ ul li:hover {
 .mobile-menu {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 90px;
   left: 0;
   height: calc(100vh - 50px);
   width: 100%;
+  z-index: 9999;
+  background-color: #1d1f1d;
+  border-radius: 20px;
 }
 
 .mobile-menu li {
   margin-bottom: 10px;
+  z-index: 99999;
 }
 
 @media only screen and (max-width: 600px) {
@@ -192,7 +198,6 @@ ul li:hover {
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    z-index: 9999;
   }
 
   .site-nav ul {
