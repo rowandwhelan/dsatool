@@ -422,7 +422,7 @@ combined();
     document.getElementById("output").innerHTML += `<br><h3> Gold Null Trophy: ${Number((value(goldNull) * 1.8).toPrecision(3) )}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Silver Null Trophy: ${Number((value(silverNull) * 1.8).toPrecision(3) )}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Bug Hunter Trophy: ${Number((value(bug) * 1.8).toPrecision(3) )}</h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> Golden Shredder: ${Number((value(shredder).toPrecision(3) )}</h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> Golden Shredder: ${Number((value(shredder) * 1.1).toPrecision(3) )}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Legacy Fabricator: ${Number((value(legacy) * 2.8).toPrecision(3) )}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Hyper Ice: ${Number(((avg2(glass2) / avg(glass)) * 3 * value1(glass1)).toPrecision(3) )}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> RCD: ${Number(((avg2(rcd2) / avg(rcd)) * 0.7 * value1(rcd1)).toPrecision(3) )}</h3>`;
