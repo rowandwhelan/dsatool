@@ -157,10 +157,12 @@ ul li:hover {
   left: 0;
   height: calc(100vh - 50px);
   width: 100%;
+  z-index: 9999;
 }
 
 .mobile-menu li {
   margin-bottom: 10px;
+  z-index: 99999;
 }
 
 @media only screen and (max-width: 600px) {
@@ -190,7 +192,6 @@ ul li:hover {
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    z-index: 9999;
   }
 
   .site-nav ul {
