@@ -21,8 +21,6 @@
           <li><a href="./prices.html">Exchange Rates</a></li>
           <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html">Privacy Policy</li> -->
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -37,8 +35,6 @@
           <li><a href="./prices.html">Exchange Rates</a></li>
           <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
         </ul>
       </div>
     </header>
@@ -86,35 +82,14 @@ ul a {
   color: white;
 }
 
-li {
+ul li {
   padding: 5px;
   margin-left: 10px;
 }
 
-li:hover {
+ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
-}
-
-#darkMode {
-  border-radius: 5px;
-  padding: 5px 8px;
-  border: 1px solid #ff3860;
-  list-style: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 5px;
-  margin-left: 10px;
-}
-  #darkMode:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
-
-#darkMode a {
-  color: #ff3860;
 }
 
 #hamburger-icon {
@@ -178,69 +153,7 @@ li:hover {
     display: block;
   }
 }
-  
-  ul {
-    text-decoration: none;
-    list-style: none;
-  }
-</style>
 
-  
-<style>
-   @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-   .site-header {
-    font-family: 'Oswald', sans-serif; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #f4f4f4;
-    padding: 20px 0 20px 0;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  }
-
-  .site-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-
-  .site-nav ul li {
-    margin-left: 20px;
-  }
-
-  .site-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-    transition: background-color 0.3s;
-  }
-
-  .site-nav ul li a:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-
-  /* Dark Mode */
-  body.dark-mode .site-header {
-    background-color: #333;
-  }
-
-   body.dark-mode .site-nav ul li a {
-    color: #f4f4f4;
-    background-color: #333;
-  }
-
-  body.dark-mode .site-nav ul li a:hover {
-    background-color: #0066cc;
-    color: #333;
-  }
 </style>
   <script>
     function toggleMobileMenu(menu) {
