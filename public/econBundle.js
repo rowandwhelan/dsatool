@@ -8,7 +8,7 @@ const customParseFormat = require("dayjs/plugin/customParseFormat");
 dayjs.extend(customParseFormat);
 
 let timeSlot = 0;
-let econDataFetched = false;
+let econDataFetched = true;
 let days, iron, exp, flux, rubber, cores, gens, projs, rcs, auto, burst, goldNull, silverNull, bug, shredder, legacy, glass, rcd, backpack, bp, manifest, bom, volleyball, basketball, beachball, football, rapid, pres, controller 
 document.getElementById("start").addEventListener("change", econInit);
 document.getElementById("end").addEventListener("change", econInit);
