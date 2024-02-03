@@ -226,3 +226,28 @@ footer {
   background-color: transparent;
   text-decoration: none;
 }
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background-color: #1d1f1d;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+#brand {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: lime;
+}
