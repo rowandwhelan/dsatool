@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-/* Reset default margins/paddings and box-sizing */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Set a background color and add some spacing */
 body {
   font-family: 'Rubik', sans-serif;
   background-color: #353836;
@@ -15,7 +14,6 @@ body {
   margin: 0;
 }
 
-/* Main heading style */
 h1 {
   text-align: center;
   margin-top: 20px;
@@ -25,7 +23,6 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* Updated Grid container style */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -55,7 +52,6 @@ h1 {
   background-color: #333;
 }
 
-/* Input and label styles */
 label {
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
@@ -73,12 +69,11 @@ select {
   border-radius: 6px;
   width: 100%;
   margin-bottom: 14px;
-  background-color: #fff;
-  color: #333;
+  background-color: #666; /*fff */
+  color: #fff; /*333 */
   font-size: 1rem;
 }
 
-/* Radio button style */
 .radio-container {
   display: flex;
   align-items: center;
@@ -95,7 +90,7 @@ select {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 2px solid #ccc;
+  border: 2px solid #999;
   border-radius: 50%;
   position: relative;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -111,17 +106,16 @@ select {
 }
 
 .radio-container input[type="radio"]:checked+label:before {
-  background-color: #333;
+  background-color: #fff;
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .radio-container input[type="radio"]:not(:checked)+label:before {
-  background-color: #fff;
-  border: 2px solid #ccc;
+  background-color: #333;
+  border: 2px solid #999;
 }
 
-/* Range slider style */
 input[type="range"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -129,7 +123,7 @@ input[type="range"] {
   width: 100%;
   height: 10px;
   border-radius: 5px;
-  background: #d3d3d3;
+  background: #333;
   outline: none;
   opacity: 0.7;
   transition: opacity .2s, background-color 0.3s, transform 0.2s;
@@ -143,7 +137,8 @@ input[type="range"]::-webkit-slider-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #333;
+  background: #222;
+  outline: #fff;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -157,117 +152,33 @@ input[type="range"]:hover::-webkit-slider-thumb {
 }
 
 #output {
-  background-color: #333;
-  border: 1px solid #222;
+  background-color: #444;
+  border: 1px solid #fff;
   padding: 20px;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-  
-body.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
 
-body.dark-mode .section {
-  background-color: #222;
-  color: #fff;
+.checkbox-container {
+  display: flex;
+  align-items: left;
+  width: 15%;
 }
-
-body.dark-mode label {
-  font-weight: bold;
-  margin-bottom: 8px;
-  margin-top: 10px;
-  display: block;
-  color: #fff;
-}
-
-body.dark-mode input,
-body.dark-mode select {
-  background-color: #666;
-  color: #fff;
-}
-
-body.dark-mode .radio-container label:before {
-  border: 2px solid #555;
-}
-
-body.dark-mode .radio-container input[type="radio"]:checked+label:before {
-  background-color: #fff;
-}
-
-body.dark-mode .radio-container input[type="radio"]:not(:checked)+label:before {
-  background-color: #333;
-  border: 2px solid #ccc;
-}
-
-body.dark-mode input[type="range"] {
-  background: #555;
-}
-
-body.dark-mode input[type="range"]::-webkit-slider-thumb {
-  background: #fff;
-}
-
-body.dark-mode .noInput {
-  background: #333;
-}
-
-body.dark-mode #output {
-  background-color: #444;
-  color: #fff;
-}
-
-body.dark-mode h1 {
-  text-align: center;
+.checkbox-container input[type="checkbox"] {
   margin-top: 20px;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 2.5rem;
+  margin-left: 3px;
+  flex: 0 0 auto;
+  width: 15px; 
+  height: 15px; 
 }
 
-/* Dark Mode Button Animation */
-button {
-  font-family: 'Rubik', sans-serif;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  outline: none;
-  position: absolute;
+label {
+  margin-left: 5px;
 }
-
-button:hover {
-  background-color: #333;
-}
-
-    .checkbox-container {
-      display: flex;
-      align-items: left;
-      width: 15%; /* making all checkboxes the same size */
-    }
-    .checkbox-container input[type="checkbox"] {
-      margin-top: 20px;
-      margin-left: 3px;
-      flex: 0 0 auto;
-      width: 15px; /* setting the width of all checkboxes to be the same */
-      height: 15px; /* setting the height of all checkboxes to be the same */
-    }
-    label {
-      margin-left: 5px;
-    }
 
 footer {
   text-align: center;
   padding: 3px;
-  background-color: #f8f8f8;
-  color: #333;
-}
-
-body.dark-mode footer {
   background-color: #333;
   color: #f8f8f8;
 }
