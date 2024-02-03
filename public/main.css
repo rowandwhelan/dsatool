@@ -148,6 +148,23 @@ input[type="range"]:hover::-webkit-slider-thumb {
   background: #05db44;
 }
 
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #222;
+  outline: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  background: #05db44;
+}
+
 .noInput {
   background: #444;
 }
