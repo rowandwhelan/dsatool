@@ -107,6 +107,7 @@ select {
 
 .radio-container input[type="radio"]:checked+label:before {
   background-color: #66ff00;
+  border: 1px solid #ffffff;
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
