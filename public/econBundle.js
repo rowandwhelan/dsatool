@@ -15,7 +15,6 @@ document.getElementById("end").addEventListener("change", econInit);
 econInit();
 
 async function econInit() {
-  console.log(econDataFetched);
   if (econDataFetched) {
   econDataFetched = false;
   days = [];
@@ -48,9 +47,15 @@ async function econInit() {
   rapid = [];
   pres = [];
   controller = [];
+
+  if (dayjs(document.getElementById("end").value, "YYYY-MM-DD").isAfter(dayjs(document.getElementById("start").value, "YYYY-MM-DD"))) {
+    let endDate = dayjs(document.getElementById("start").value, "YYYY-MM-DD");
+    let startDate = dayjs(document.getElementById("end").value, "YYYY-MM-DD");
+  } else {
+    let startDate = dayjs(document.getElementById("start").value, "YYYY-MM-DD");
+    let endDate = dayjs(document.getElementById("end").value, "YYYY-MM-DD");
+  }
   
-  let startDate = dayjs(document.getElementById("start").value, "YYYY-MM-DD");
-  let endDate = dayjs(document.getElementById("end").value, "YYYY-MM-DD");
   let startDay = startDate.date();
   let endDay = endDate.date();
   let startMonth = startDate.month();
