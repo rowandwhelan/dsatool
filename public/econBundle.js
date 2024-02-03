@@ -103,9 +103,9 @@ async function econGetDate(
 
   for (const date of datesToFetch) {
     if (miniCounter == 0) {
-      document.getElementById("out").innerHTML = `Loading. ${Math.round((countdown/timeSlot) * 100)}%`;
+      document.getElementById("out").innerHTML = `Loading.   ${Math.round((countdown/timeSlot) * 100)}%`;
     } else if (miniCounter == 1) {
-      document.getElementById("out").innerHTML = `Loading.. ${Math.round((countdown/timeSlot) * 100)}%`;
+      document.getElementById("out").innerHTML = `Loading..  ${Math.round((countdown/timeSlot) * 100)}%`;
     } else if (miniCounter == 2) {
       document.getElementById("out").innerHTML = `Loading... ${Math.round((countdown/timeSlot) * 100)}%`;
     }
