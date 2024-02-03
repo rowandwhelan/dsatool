@@ -15,6 +15,7 @@ document.getElementById("end").addEventListener("change", econInit);
 econInit();
 
 async function econInit() {
+  console.log(econDataFetched);
   if (econDataFetched) {
   econDataFetched = false;
   days = [];
