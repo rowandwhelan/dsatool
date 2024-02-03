@@ -7,7 +7,7 @@ function swapDarkMode() {
   } else {
     localStorage.setItem('darkMode', 'disabled');
   }
-});
+};
 
 // Check local storage for dark mode setting
 if (localStorage.getItem('darkMode') === 'enabled') {
