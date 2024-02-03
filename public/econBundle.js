@@ -133,7 +133,7 @@ async function econGet(date) {
   }
 }
   
-let econDataFetched, days, iron, exp, flux, rubber, cores, gens, projs, rcs, auto, burst, goldNull, silverNull, bug, shredder, legacy, glass, rcd, backpack, bp, manifest, bom, backpack, volleyball, basketball, beachball, football, rapid, pres, controller 
+let econDataFetched, days, iron, exp, flux, rubber, cores, gens, projs, rcs, auto, burst, goldNull, silverNull, bug, shredder, legacy, glass, rcd, backpack, bp, manifest, bom, volleyball, basketball, beachball, football, rapid, pres, controller 
 
 function output(econ, items, date) {
   let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY")
