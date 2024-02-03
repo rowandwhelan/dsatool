@@ -106,7 +106,7 @@ select {
 }
 
 .radio-container input[type="radio"]:checked+label:before {
-  background-color: lime;
+  background-color: #05db44;
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -144,7 +144,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
-  background: lime;
+  background: #05db44;
 }
 
 .noInput {
@@ -204,7 +204,7 @@ footer {
 }
 
 #page-container a:link {
-  color: lime;
+  color: #05db44;
   background-color: transparent;
   text-decoration: none;
 }
@@ -249,5 +249,5 @@ header {
 }
 
 #brand a {
-  color: lime;
+  color: #05db44;
 }
