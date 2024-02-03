@@ -47,13 +47,14 @@ async function econInit() {
   rapid = [];
   pres = [];
   controller = [];
-
+  let endDate, startDate;
+    
   if (dayjs(document.getElementById("end").value, "YYYY-MM-DD").isAfter(dayjs(document.getElementById("start").value, "YYYY-MM-DD"))) {
-    let endDate = dayjs(document.getElementById("start").value, "YYYY-MM-DD");
-    let startDate = dayjs(document.getElementById("end").value, "YYYY-MM-DD");
+    endDate = dayjs(document.getElementById("start").value, "YYYY-MM-DD");
+    startDate = dayjs(document.getElementById("end").value, "YYYY-MM-DD");
   } else {
-    let startDate = dayjs(document.getElementById("start").value, "YYYY-MM-DD");
-    let endDate = dayjs(document.getElementById("end").value, "YYYY-MM-DD");
+    startDate = dayjs(document.getElementById("start").value, "YYYY-MM-DD");
+    endDate = dayjs(document.getElementById("end").value, "YYYY-MM-DD");
   }
   
   let startDay = startDate.date();
