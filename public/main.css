@@ -106,7 +106,7 @@ select {
 }
 
 .radio-container input[type="radio"]:checked+label:before {
-  background-color: #05db44;
+  background-color: #66ff00;
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -144,7 +144,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
-  background: #05db44;
+  background: #66ff00;
 }
 
 .noInput {
