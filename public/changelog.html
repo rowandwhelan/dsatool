@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<header style="font-family: 'Oswald', sans-serif;">
+  <header style="font-family: 'Oswald', sans-serif;">
       <div id="brand"><a href="../index.html">DSA Tool</a></div>
       <nav>
         <ul>
@@ -21,12 +21,11 @@
           <li><a href="./econ.html">Economics</a></li>
           <li><a href="./drops.html">Item Drops</a></li>
           <li><a href="./prices.html">Exchange Rates</a></li>
+          <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html">Privacy Policy</li> -->
         </ul>
       </nav>
-      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+      <div id="hamburger-icon" onclick="tonotHeaderLIleMobileMenu(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
@@ -36,9 +35,8 @@
           <li><a href="./econ.html">Economics</a></li>
           <li><a href="./drops.html">Item Drops</a></li>
           <li><a href="./prices.html">Exchange Rates</a></li>
+          <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
         </ul>
       </div>
     </header>
@@ -74,7 +72,7 @@ header {
   color: #09c372;
 }
   
-ul:not(#gg2) {
+ul:not(#notHeaderUL) {
   list-style: none;
   height: 100%;
   display: flex;
@@ -82,39 +80,18 @@ ul:not(#gg2) {
   justify-content: space-around;
 }
 
-ul:not(#gg2) a {
+ul:not(#notHeaderUL) a {
   color: white;
 }
 
-li:not(#gg) {
+li:not(#notHeaderLI) {
   padding: 5px;
   margin-left: 10px;
 }
 
-li:not(#gg):hover {
+li:not(#notHeaderLI):hover {
   transform: scale(1.1);
   transition: 0.3s;
-}
-
-#darkMode {
-  border-radius: 5px;
-  padding: 5px 8px;
-  border: 1px solid #ff3860;
-  list-style: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 5px;
-  margin-left: 10px;
-}
-  #darkMode:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
-
-#darkMode a {
-  color: #ff3860;
 }
 
 #hamburger-icon {
@@ -184,81 +161,10 @@ li:not(#gg):hover {
     list-style: none;
   }
 
-  #gg2 {
-    
-}
-
-#gg2 a {
-}
-
-#gg {
-}
-
-#gg:hover {
-}
-
-</style>
-
-  
-<style>
-   @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-   .site-header {
-    font-family: 'Oswald', sans-serif; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #f4f4f4;
-    padding: 20px 0 20px 0;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  }
-
-  .site-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-
-  .site-nav ul li {
-    margin-left: 20px;
-  }
-
-  .site-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-    transition: background-color 0.3s;
-  }
-
-  .site-nav ul li a:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-
-  /* Dark Mode */
-  body.dark-mode .site-header {
-    background-color: #333;
-  }
-
-   body.dark-mode .site-nav ul li a {
-    color: #f4f4f4;
-    background-color: #333;
-  }
-
-  body.dark-mode .site-nav ul li a:hover {
-    background-color: #0066cc;
-    color: #333;
-  }
 </style>
   <script>
-    function toggleMobileMenu(menu) {
-    menu.classList.toggle('open');
+    function tonotHeaderLIleMobileMenu(menu) {
+    menu.classList.tonotHeaderLIle('open');
 }
   </script>
   <br>
@@ -266,64 +172,64 @@ li:not(#gg):hover {
   <div id="page-container">
     <br><br>
     <h2>v0.3.1 Beta (Febuary 2 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Added a mobile-friendly navigation bar</li>
-  <li id="gg">Added custom link highlights and other visual improvements</li>
-  <li id="gg">Adjusted item prices to be more accurate</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Added a mobile-friendly navigation bar</li>
+  <li id="notHeaderLI">Added custom link highlights and other visual improvements</li>
+  <li id="notHeaderLI">Adjusted item prices to be more accurate</li>
 </ul>
   <br><br><br>
     <h2>v0.3.0 Beta (Febuary 1 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Added a new tool: Exchange Rates</li>
-  <li id="gg">Exchange rates shows the current price for items by calculating it's usefulness and then multiplying that by the ratio of new flux to new items to calculate it's rarity.</li>
-  <li id="gg">The prices are still a work in progress, if you think that they should be adjusted then go to the <a href="https://github.com/rowandwhelan/dsatool/discussions" target="_blank">DSATool Discussions</a> on Github</li>
-  <li id="gg">Removed light mode for the time being, it may be re-added later</li>
-  <li id="gg">Added a new navigation menu</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Added a new tool: Exchange Rates</li>
+  <li id="notHeaderLI">Exchange rates shows the current price for items by calculating it's usefulness and then multiplying that by the ratio of new flux to new items to calculate it's rarity.</li>
+  <li id="notHeaderLI">The prices are still a work in progress, if you think that they should be adjusted then go to the <a href="https://github.com/rowandwhelan/dsatool/discussions" target="_blank">DSATool Discussions</a> on Github</li>
+  <li id="notHeaderLI">Removed light mode for the time being, it may be re-added later</li>
+  <li id="notHeaderLI">Added a new navigation menu</li>
 </ul>
 <br><br><br>
   <h2>v0.2.0 Beta (January 23 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Implemented a graph for the economy tool</li>
-  <li id="gg">Removed the old text-based list for the economy tool</li>
-  <li id="gg">Added a calculation for loaders needed per turret</li>
-  <li id="gg">Added a description of DSATool to the homepage</li>
-  <li id="gg">Added DSA-IP as an offical partener</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Implemented a graph for the economy tool</li>
+  <li id="notHeaderLI">Removed the old text-based list for the economy tool</li>
+  <li id="notHeaderLI">Added a calculation for loaders needed per turret</li>
+  <li id="notHeaderLI">Added a description of DSATool to the homepage</li>
+  <li id="notHeaderLI">Added DSA-IP as an offical partener</li>
 </ul>
 <br><br><br>
 <h2>v0.1.4 Beta (January 19 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Added a core consumption calculation</li>
-  <li id="gg">Added a slider to determine what percent of maximum core consumption the core consumption calculation uses (go to zero for idle consumption calculation)</li>
-  <li id="gg">Added a conversion between ship blocks, rcs, and world blocks</li>
-  <li id="gg">Added a total damage per second calculation</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Added a core consumption calculation</li>
+  <li id="notHeaderLI">Added a slider to determine what percent of maximum core consumption the core consumption calculation uses (go to zero for idle consumption calculation)</li>
+  <li id="notHeaderLI">Added a conversion between ship blocks, rcs, and world blocks</li>
+  <li id="notHeaderLI">Added a total damage per second calculation</li>
 </ul>
 <br><br><br>
 <h2>v0.1.3 Beta (January 17 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Fixed the positioning of the dark mode button (the dark mode header is a work in progress)</li>
-  <li id="gg">Improved the calcuation for shield regen to take into account the shield leak (counts all shields as active)</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Fixed the positioning of the dark mode button (the dark mode header is a work in progress)</li>
+  <li id="notHeaderLI">Improved the calcuation for shield regen to take into account the shield leak (counts all shields as active)</li>
 </ul>
 <br><br><br>
 <h2>v0.1.2 Beta (January 16 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Added a dark mode (still a work in progress)</li>
-  <li id="gg">Improved formatting for Item Drops</li>
-  <li id="gg">Other minor fixes</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Added a dark mode (still a work in progress)</li>
+  <li id="notHeaderLI">Improved formatting for Item Drops</li>
+  <li id="notHeaderLI">Other minor fixes</li>
 </ul>
   <br><br><br>
 <h2>v0.1.1 Beta (January 15 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Added a new webpage: Item Drops (not a finalized name)</li>
-  <li id="gg">Bot drops shows only the bot drops txt file but this will likely be expanded upon with adding images of the bots and their stats, in addition to other sources of loot like pits and canary</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Added a new webpage: Item Drops (not a finalized name)</li>
+  <li id="notHeaderLI">Bot drops shows only the bot drops txt file but this will likely be expanded upon with adding images of the bots and their stats, in addition to other sources of loot like pits and canary</li>
 </ul>
   <br><br><br>
 <h2>v0.1.0 Beta (January 11 2024)</h2><br>
-<ul id="gg2">
-  <li id="gg">Moved to a new website: <a href="https://dsatool.com">dsatool.com</a></li>
-  <li id="gg">Separated the website into different pages including: the home page, the calculator tool, the economy data dumps viewer, and the changelog.</li>
-  <li id="gg">Fixed a bug that prevented inputting single numbers for ship size in the calculator.</li>
-  <li id="gg">Made non-input areas more clear in the calculator.</li>
-  <li id="gg">Added navigation between pages in the website.</li>
+<ul id="notHeaderUL">
+  <li id="notHeaderLI">Moved to a new website: <a href="https://dsatool.com">dsatool.com</a></li>
+  <li id="notHeaderLI">Separated the website into different pages including: the home page, the calculator tool, the economy data dumps viewer, and the changelog.</li>
+  <li id="notHeaderLI">Fixed a bug that prevented inputting single numbers for ship size in the calculator.</li>
+  <li id="notHeaderLI">Made non-input areas more clear in the calculator.</li>
+  <li id="notHeaderLI">Added navigation between pages in the website.</li>
 </ul>
   <br><br><br>
    </div>
