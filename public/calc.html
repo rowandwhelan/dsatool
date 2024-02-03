@@ -7,8 +7,6 @@
   <title>Ship Design Calculator</title>
   <link rel="icon" type="image/x-icon" href="./diamondWrench.png">
   <link rel="stylesheet" href="./main.css" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4972043844070417" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-4972043844070417">
 </head>
 
 <body>
@@ -21,9 +19,8 @@
           <li><a href="./econ.html">Economics</a></li>
           <li><a href="./drops.html">Item Drops</a></li>
           <li><a href="./prices.html">Exchange Rates</a></li>
+          <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html">Privacy Policy</li> -->
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -36,9 +33,8 @@
           <li><a href="./econ.html">Economics</a></li>
           <li><a href="./drops.html">Item Drops</a></li>
           <li><a href="./prices.html">Exchange Rates</a></li>
+          <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
         </ul>
       </div>
     </header>
@@ -94,27 +90,6 @@ ul li {
 ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
-}
-
-#darkMode {
-  border-radius: 5px;
-  padding: 5px 8px;
-  border: 1px solid #ff3860;
-  list-style: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 5px;
-  margin-left: 10px;
-}
-  #darkMode:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
-
-#darkMode a {
-  color: #ff3860;
 }
 
 #hamburger-icon {
@@ -180,64 +155,6 @@ ul li:hover {
 }
 
 </style>
-
-  
-<style>
-   @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-   .site-header {
-    font-family: 'Oswald', sans-serif; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #f4f4f4;
-    padding: 20px 0 20px 0;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  }
-
-  .site-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-
-  .site-nav ul li {
-    margin-left: 20px;
-  }
-
-  .site-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-    transition: background-color 0.3s;
-  }
-
-  .site-nav ul li a:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-
-  /* Dark Mode */
-  body.dark-mode .site-header {
-    background-color: #333;
-  }
-
-   body.dark-mode .site-nav ul li a {
-    color: #f4f4f4;
-    background-color: #333;
-  }
-
-  body.dark-mode .site-nav ul li a:hover {
-    background-color: #0066cc;
-    color: #333;
-  }
-</style>
   <script>
     function toggleMobileMenu(menu) {
     menu.classList.toggle('open');
@@ -282,7 +199,7 @@ ul li:hover {
         <label for="shieldRegen" id="labelForShieldRegen">Shield Regen (HP/second):</label>
         <input class="noInput" type="string" id="shieldRegen" name="shieldRegen" disabled />
         <label for="shieldLoad" id="labelForShieldLoadIndicator">Percent of Maximum Shield Load:
-          <span id="shieldLoadIndicator"></span></label>
+        <span id="shieldLoadIndicator"></span></label>
         <input type="range" id="shieldLoad" name="shieldLoad" value="50" style="padding: 0px" />
         <label for="coresConsumed">Cores consumed per minute:</label>
         <input class="noInput" type="string" id="coresConsumed" name="coresConsumed" disabled />
