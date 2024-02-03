@@ -74,7 +74,7 @@ header {
   color: #09c372;
 }
   
-ul {
+ul:not(#gg2) {
   list-style: none;
   height: 100%;
   display: flex;
@@ -82,16 +82,16 @@ ul {
   justify-content: space-around;
 }
 
-ul a {
+ul:not(#gg2) a {
   color: white;
 }
 
-li {
+li:not(#gg) {
   padding: 5px;
   margin-left: 10px;
 }
 
-li:hover {
+li:not(#gg):hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
