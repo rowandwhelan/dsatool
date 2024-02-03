@@ -1,6 +1,6 @@
 // Dark Mode Toggle
 const darkModeToggle =  document.getElementById("darkMode")
-function swapDarkMode() {
+function swapViewingMode() {
   document.body.classList.toggle('dark-mode');
   if (document.body.classList.contains('dark-mode')) {
     localStorage.setItem('darkMode', 'enabled');
