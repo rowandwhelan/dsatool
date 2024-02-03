@@ -222,7 +222,7 @@ document.addEventListener("change", graphChart);
       if (econDataFetched) {
       var graphDataSet = [];
       var borderWidth = 3;
-      var pointRadius = 0;
+      var pointRadius = 2;
       if (document.getElementById("mats").checked) {
         graphDataSet.push({ label: 'Iron', data: iron, borderWidth: borderWidth, pointRadius: pointRadius }, { label: 'Explosives', data: exp, borderWidth: borderWidth, pointRadius: pointRadius }, { label: 'Hyper Rubber', data: rubber , borderWidth: borderWidth, pointRadius: pointRadius }, { label: 'Flux Crystals', data: flux , borderWidth: borderWidth, pointRadius: pointRadius })
       }
