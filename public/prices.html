@@ -20,10 +20,8 @@
           <li><a href="./econ.html">Economics</a></li>
           <li><a href="./drops.html">Item Drops</a></li>
           <li><a href="./prices.html">Exchange Rates</a></li>
-          <li id="gg"><a href="./resources.html">Resources</a></li>
+          <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html">Privacy Policy</li> -->
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -36,10 +34,8 @@
           <li><a href="./econ.html">Economics</a></li>
           <li><a href="./drops.html">Item Drops</a></li>
           <li><a href="./prices.html">Exchange Rates</a></li>
-          <li id="gg"><a href="./resources.html">Resources</a></li>
+          <li><a href="./resources.html">Resources</a></li>
           <li><a href="./changelog.html">Changelog</a></li>
-          <!-- <li id="darkMode onclick="swapDarkMode()"><a href="./econ.html">Dark Mode</a></li> -->
-          <!-- <li><a href="../privacyPolicy.html" target="_top">Privacy Policy</li> -->
         </ul>
       </div>
     </header>
@@ -95,27 +91,6 @@ ul li {
 ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
-}
-
-#darkMode {
-  border-radius: 5px;
-  padding: 5px 8px;
-  border: 1px solid #ff3860;
-  list-style: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 5px;
-  margin-left: 10px;
-}
-  #darkMode:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
-
-#darkMode a {
-  color: #ff3860;
 }
 
 #hamburger-icon {
@@ -181,74 +156,16 @@ ul li:hover {
 }
 
 </style>
-
-  
-<style>
-   @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-   .site-header {
-    font-family: 'Oswald', sans-serif; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #f4f4f4;
-    padding: 20px 0 20px 0;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  }
-
-  .site-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-
-  .site-nav ul li {
-    margin-left: 20px;
-  }
-
-  .site-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-    transition: background-color 0.3s;
-  }
-
-  .site-nav ul li a:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-
-  /* Dark Mode */
-  body.dark-mode .site-header {
-    background-color: #333;
-  }
-
-   body.dark-mode .site-nav ul li a {
-    color: #f4f4f4;
-    background-color: #333;
-  }
-
-  body.dark-mode .site-nav ul li a:hover {
-    background-color: #0066cc;
-    color: #333;
-  }
-</style>
   <script>
     function toggleMobileMenu(menu) {
     menu.classList.toggle('open');
 }
   </script>
+  
     <h1>Item Exchange Rates</h1><br><br>
   <h3>This shows the flux value of each item, averaged across the past two weeks. Please be patient, data may take serveral seconds to load.</h3><br>
-  <h6>Note: While the prices have been fine-tuned for accuracy, they are still based on imperfect economy data. Use your best judgement when engaging in trade</h6>
-  <div id="output" style="font-family:'Arial', sans-serif;"></div>
-  <script src="./econBundle.js"></script>
+  <h6>Note: These prices are not perfect, use your best judgement when engaging in trade</h6>
+  <div id="output" style="font-family:'Rubik', sans-serif;"></div>
   <span id="out" style="font-family: 'Rubik', sans-serif;"></span>
   <script src="./pricesBundle.js"></script>
   <script src="./darkmode.js"></script>
