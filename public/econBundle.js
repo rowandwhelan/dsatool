@@ -8,11 +8,14 @@ const customParseFormat = require("dayjs/plugin/customParseFormat");
 dayjs.extend(customParseFormat);
 
 let timeSlot = 0;
+let econDataFetched = false;
+let days, iron, exp, flux, rubber, cores, gens, projs, rcs, auto, burst, goldNull, silverNull, bug, shredder, legacy, glass, rcd, backpack, bp, manifest, bom, volleyball, basketball, beachball, football, rapid, pres, controller 
 document.getElementById("start").addEventListener("change", econInit);
 document.getElementById("end").addEventListener("change", econInit);
 econInit();
 
 async function econInit() {
+  if (econDataFetched) {
   econDataFetched = false;
   days = [];
   iron = [];
@@ -68,6 +71,7 @@ async function econInit() {
   }
 
   await econGetDate(startDay, startMonth, startYear, endDay, endMonth, endYear);
+  }
 }
 
 async function econGetDate(
@@ -132,8 +136,6 @@ async function econGet(date) {
     console.error("Error fetching data:", error);
   }
 }
-  
-let econDataFetched, days, iron, exp, flux, rubber, cores, gens, projs, rcs, auto, burst, goldNull, silverNull, bug, shredder, legacy, glass, rcd, backpack, bp, manifest, bom, volleyball, basketball, beachball, football, rapid, pres, controller 
 
 function output(econ, items, date) {
   let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY")
