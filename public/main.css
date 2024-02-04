@@ -269,3 +269,7 @@ header {
 #brand a {
   color: #05db44;
 }
+
+#numberOutput:hover {
+  color: #05db44;
+}
