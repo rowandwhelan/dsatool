@@ -72,6 +72,12 @@ select {
   background-color: #666; /*fff */
   color: #fff; /*333 */
   font-size: 1rem;
+  transition: 0.6s;
+}
+
+input:hover {
+  border: 1px solid #05db44;
+  transition: 0.3s;
 }
 
 .radio-container {
@@ -106,8 +112,8 @@ select {
 }
 
 .radio-container input[type="radio"]:checked+label:before {
-  background-color: #05db44;
-  border: 2px solid #00ff00;
+  background-color: #00ff00;
+  border: 2px solid #05db44;
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
