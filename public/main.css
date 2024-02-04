@@ -144,9 +144,10 @@ input[type="range"]::-webkit-slider-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #222;
+  background: #333;
   outline: #fff;
   cursor: pointer;
+  border: 2px solid #777;
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -161,8 +162,9 @@ input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #222;
+  background: #333;
   outline: #fff;
+  border: 2px solid #777;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
