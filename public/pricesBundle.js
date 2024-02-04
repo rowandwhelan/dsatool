@@ -425,7 +425,7 @@ combined();
     document.getElementById("output").innerHTML += `<br><h3> Golden Shredder: <span id="numberOutput">${Number((value(shredder) * 1.1).toPrecision(3) )}</span></h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number((value(legacy) * 2.8).toPrecision(3) )}</span></h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Hyper Ice: <span id="numberOutput">${Number(((avg2(glass2) / avg(glass)) * 2.5 * value1(glass1)).toPrecision(3) )}</span></h3>`;
-    document.getElementById("output").innerHTML += `<br><h3> RCD: <span id="numberOutput">${Number(((avg2(rcd2) / avg(rcd)) * 0.5 * value1(rcd1)).toPrecision(3) )}</span></h3>`;
+    document.getElementById("output").innerHTML += `<br><h3> RCD: <span id="numberOutput">${Number(((avg2(rcd2) / avg(rcd)) * 0.4 * value1(rcd1)).toPrecision(3) )}</span></h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Backpack: <span id="numberOutput">${Number(((avg2(backpack2) / avg(backpack)) * 0.2 * value1(backpack1)).toPrecision(3) )}</span></h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Blueprint Scanner: <span id="numberOutput">${Number(((avg2(bp2) / avg(bp)) * 0.6 * value1(bp1)).toPrecision(3) )}</span></h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Manifest Scanner: <span id="numberOutput">${Number(((avg2(manifest2) / avg(manifest)) * 0.1 * value1(manifest1)).toPrecision(3) )}</span></h3>`;
