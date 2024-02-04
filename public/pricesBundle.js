@@ -410,7 +410,7 @@ combined();
   }
   function combined(){
     
-    document.getElementById("output").innerHTML += `<br><h3> Iron: ${Number(((avg2(iron2) / avg(iron)) * 10 * value1(iron1)).toPrecision(3) )}</h3>`;   
+    document.getElementById("output").innerHTML += `<br><h3> Iron: <span id="numberOutput">${Number(((avg2(iron2) / avg(iron)) * 10 * value1(iron1)).toPrecision(3) )}</span></h3>`;   
     document.getElementById("output").innerHTML += `<br><h3> Explosives: ${Number(((avg2(exp2) / avg(exp)) * 10 * value1(exp1)).toPrecision(3) )}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Hyper Rubber: ${Number(((avg2(rubber2) / avg(rubber)) * 9 * value1(rubber1)).toPrecision(3) )}</h3>`;
     document.getElementById("output").innerHTML += `<br><h3> Shield Cores: ${Number(((avg2(cores2) / avg(cores)) * 2 * value1(cores1)).toPrecision(3) )}</h3>`;
