@@ -270,6 +270,10 @@ header {
   color: #05db44;
 }
 
+#numberOutput {
+transition: 0.6s;
+}
+
 #numberOutput:hover {
   color: #05db44;
   transition: 0.3s;
