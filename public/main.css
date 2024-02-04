@@ -211,7 +211,7 @@ footer {
 #page-container {
   position: relative;
   min-height: 100vh;
-  padding: 50vw
+  width: 100vw;
 }
 
 #content-wrap {
