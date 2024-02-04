@@ -272,4 +272,5 @@ header {
 
 #numberOutput:hover {
   color: #05db44;
+  transition: 0.3s;
 }
