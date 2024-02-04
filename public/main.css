@@ -225,6 +225,7 @@ footer {
   color: #05db44;
   background-color: transparent;
   text-decoration: none;
+  transition: 0.6s;
 }
 
 #page-container a:visited {
@@ -237,10 +238,12 @@ footer {
   color: #66FF00;
   background-color: transparent;
   text-decoration: underline;
+  transition: 0.3s;
 }
 
 #brand a:hover {
   color: #66FF00;
+  transition: 0.3s;
   background-color: transparent;
   text-decoration: none;
 }
@@ -268,6 +271,7 @@ header {
 
 #brand a {
   color: #05db44;
+  transition: 0.6s;
 }
 
 #numberOutput {
