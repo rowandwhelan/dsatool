@@ -519,15 +519,15 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
-      (value(goldNull) * 1.7).toPrecision(3),
+      (value(goldNull) * 1.5).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Silver Null Trophy: <span id="numberOutput">${Number(
-      (value(silverNull) * 1.7).toPrecision(3),
+      (value(silverNull) * 1.5).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Bug Hunter Trophy: <span id="numberOutput">${Number(
-      (value(bug) * 1.7).toPrecision(3),
+      (value(bug) * 1.5).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
@@ -543,7 +543,7 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> RCD: <span id="numberOutput">${Number(
-      ((avg2(rcd2) / avg(rcd)) * 0.4 * value1(rcd1)).toPrecision(3),
+      ((avg2(rcd2) / avg(rcd)) * 0.45 * value1(rcd1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Backpack: <span id="numberOutput">${Number(
