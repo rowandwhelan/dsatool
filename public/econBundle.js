@@ -256,7 +256,7 @@ document.addEventListener("change", graphChart);
           labels: days,
           datasets: graphDataSet,
           options: {
-            responsive: false,
+            maintainAspectRatio: false,
             interaction: {
               mode: 'x',
               intersection: false
@@ -269,8 +269,6 @@ document.addEventListener("change", graphChart);
           }
         }
       })
-        document.getElementById("chart").style.width = "93vw";
-        document.getElementById("chart").style.height = "93vh";
     }
   }
 
