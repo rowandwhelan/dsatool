@@ -269,6 +269,8 @@ document.addEventListener("change", graphChart);
           }
         }
       })
+        document.getElementById("chart").style.width = "93vw";
+        document.getElementById("chart").style.height = "93vh";
     }
   }
 
