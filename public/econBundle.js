@@ -256,6 +256,7 @@ document.addEventListener("change", graphChart);
           labels: days,
           datasets: graphDataSet,
           options: {
+            maintainAspectRatio: false,
             interaction: {
               mode: 'x',
               intersection: false
