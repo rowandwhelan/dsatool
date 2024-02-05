@@ -483,11 +483,11 @@ function value2(item) {
 function combined() {
   document.getElementById("output").innerHTML +=
     `<br><h3> Iron: <span id="numberOutput">${Number(
-      ((avg2(iron2) / avg(iron)) * 10 * value1(iron1)).toPrecision(3),
+      ((avg2(iron2) / avg(iron)) * 9 * value1(iron1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Explosives: <span id="numberOutput">${Number(
-      ((avg2(exp2) / avg(exp)) * 10 * value1(exp1)).toPrecision(3),
+      ((avg2(exp2) / avg(exp)) * 9 * value1(exp1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Rubber: <span id="numberOutput">${Number(
@@ -495,11 +495,11 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Cores: <span id="numberOutput">${Number(
-      ((avg2(cores2) / avg(cores)) * 2 * value1(cores1)).toPrecision(3),
+      ((avg2(cores2) / avg(cores)) * 1.8 * value1(cores1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Generators: <span id="numberOutput">${Number(
-      ((avg2(gens2) / avg(gens)) * 1.2 * value1(gens1)).toPrecision(3),
+      ((avg2(gens2) / avg(gens)) * 1.1 * value1(gens1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Projectors: <span id="numberOutput">${Number(
@@ -507,7 +507,7 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> RCs: <span id="numberOutput">${Number(
-      ((avg2(rcs2) / avg(rcs)) * 3 * value1(rcs1)).toPrecision(3),
+      ((avg2(rcs2) / avg(rcs)) * 3.2 * value1(rcs1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Auto Turret: <span id="numberOutput">${Number(
