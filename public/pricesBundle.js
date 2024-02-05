@@ -123,6 +123,7 @@ async function econGetDate() {
   for (const date of datesToFetch) {
     await econGet(date);
   }
+  combined();
 }
 
 async function econGet(date) {
@@ -441,8 +442,6 @@ function output(econ, items, date) {
       i++;
     }
   }
-
-  combined();
 }
 
 function avg(array) {
@@ -520,15 +519,15 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
-      (value(goldNull) * 1.8).toPrecision(3),
+      (value(goldNull) * 1.7).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Silver Null Trophy: <span id="numberOutput">${Number(
-      (value(silverNull) * 1.8).toPrecision(3),
+      (value(silverNull) * 1.7).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Bug Hunter Trophy: <span id="numberOutput">${Number(
-      (value(bug) * 1.8).toPrecision(3),
+      (value(bug) * 1.7).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
@@ -536,7 +535,7 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number(
-      (value(legacy) * 3).toPrecision(3),
+      (value(legacy) * 3.5).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Ice: <span id="numberOutput">${Number(
@@ -564,19 +563,19 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Volleyball: <span id="numberOutput">${Number(
-      ((avg2(volleyball2) / avg(volleyball)) * 0.3 * value1(volleyball1)).toPrecision(3),
+      ((avg2(volleyball2) / avg(volleyball)) * 0.25 * value1(volleyball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Basketball: <span id="numberOutput">${Number(
-      ((avg2(basketball2) / avg(basketball)) * 0.3 * value1(basketball1)).toPrecision(3),
+      ((avg2(basketball2) / avg(basketball)) * 0.25 * value1(basketball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Football: <span id="numberOutput">${Number(
-      ((avg2(football2) / avg(football)) * 0.3 * value1(football1)).toPrecision(3),
+      ((avg2(football2) / avg(football)) * 0.25 * value1(football1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Beach Ball: <span id="numberOutput">${Number(
-      ((avg2(beachball2) / avg(beachball)) * 0.3 * value1(beachball1)).toPrecision(3),
+      ((avg2(beachball2) / avg(beachball)) * 0.25 * value1(beachball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Rapid-Fire: <span id="numberOutput">${Number(
