@@ -176,7 +176,8 @@ input[type="range"]:hover::-moz-range-thumb {
   background: #444;
 }
 
-#output, #output2 {
+#output, 
+#output2 {
   background-color: #444;
   border: 1px solid #fff;
   padding: 20px;
