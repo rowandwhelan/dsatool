@@ -217,8 +217,8 @@ function calculateCoresConsumed() {
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   var shieldLoad = document.getElementById("shieldLoad").value / 100;
   if (shieldLoad != 0) {
-  if (Math.round(((shieldRegen*shieldLoad-100)*60) / 5000) > 0) {
-  var coresConsumed = Math.round(((shieldRegen*shieldLoad-100)*60) / 5000);
+  if (Math.round(((shieldRegen*shieldLoad-100 + 2 * (tanks*500*0.02) )*60) / 5000) > 0) {
+  var coresConsumed = Math.round(((shieldRegen*shieldLoad-100 + 2 * (tanks*500*0.02) )*60) / 5000);
   } else {
     var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
   }
