@@ -491,31 +491,31 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Rubber: <span id="numberOutput">${Number(
-      ((avg2(rubber2) / avg(rubber)) * 9 * value1(rubber1)).toPrecision(3),
+      ((avg2(rubber2) / avg(rubber)) * 8 * value1(rubber1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Cores: <span id="numberOutput">${Number(
-      ((avg2(cores2) / avg(cores)) * 1.8 * value1(cores1)).toPrecision(3),
+      ((avg2(cores2) / avg(cores)) * 2.2 * value1(cores1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Generators: <span id="numberOutput">${Number(
-      ((avg2(gens2) / avg(gens)) * 1.1 * value1(gens1)).toPrecision(3),
+      ((avg2(gens2) / avg(gens)) * 1.2 * value1(gens1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Projectors: <span id="numberOutput">${Number(
-      ((avg2(projs2) / avg(projs)) * 0.65 * value1(projs1)).toPrecision(3),
+      ((avg2(projs2) / avg(projs)) * 0.4 * value1(projs1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> RCs: <span id="numberOutput">${Number(
-      ((avg2(rcs2) / avg(rcs)) * 3.2 * value1(rcs1)).toPrecision(3),
+      ((avg2(rcs2) / avg(rcs)) * 3 * value1(rcs1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Auto Turret: <span id="numberOutput">${Number(
-      ((avg2(auto2) / avg(auto)) * 0.1 * value1(auto1)).toPrecision(3),
+      ((avg2(auto2) / avg(auto)) * 0.05 * value1(auto1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Burst Turret: <span id="numberOutput">${Number(
-      ((avg2(burst2) / avg(burst)) * 0.1 * value1(burst1)).toPrecision(3),
+      ((avg2(burst2) / avg(burst)) * 0.05 * value1(burst1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
@@ -543,11 +543,11 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> RCD: <span id="numberOutput">${Number(
-      ((avg2(rcd2) / avg(rcd)) * 0.45 * value1(rcd1)).toPrecision(3),
+      ((avg2(rcd2) / avg(rcd)) * 0.3 * value1(rcd1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Backpack: <span id="numberOutput">${Number(
-      ((avg2(backpack2) / avg(backpack)) * 0.2 * value1(backpack1)).toPrecision(3),
+      ((avg2(backpack2) / avg(backpack)) * 0.3 * value1(backpack1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Blueprint Scanner: <span id="numberOutput">${Number(
@@ -555,27 +555,27 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Manifest Scanner: <span id="numberOutput">${Number(
-      ((avg2(manifest2) / avg(manifest)) * 0.1 * value1(manifest1)).toPrecision(3),
+      ((avg2(manifest2) / avg(manifest)) * 0.15 * value1(manifest1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> BOM Scanner: <span id="numberOutput">${Number(
-      ((avg2(bom2) / avg(bom)) * 0.1 * value1(bom1)).toPrecision(3),
+      ((avg2(bom2) / avg(bom)) * 0.15 * value1(bom1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Volleyball: <span id="numberOutput">${Number(
-      ((avg2(volleyball2) / avg(volleyball)) * 0.25 * value1(volleyball1)).toPrecision(3),
+      ((avg2(volleyball2) / avg(volleyball)) * 0.2 * value1(volleyball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Basketball: <span id="numberOutput">${Number(
-      ((avg2(basketball2) / avg(basketball)) * 0.25 * value1(basketball1)).toPrecision(3),
+      ((avg2(basketball2) / avg(basketball)) * 0.2 * value1(basketball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Football: <span id="numberOutput">${Number(
-      ((avg2(football2) / avg(football)) * 0.25 * value1(football1)).toPrecision(3),
+      ((avg2(football2) / avg(football)) * 0.2 * value1(football1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Beach Ball: <span id="numberOutput">${Number(
-      ((avg2(beachball2) / avg(beachball)) * 0.25 * value1(beachball1)).toPrecision(3),
+      ((avg2(beachball2) / avg(beachball)) * 0.2 * value1(beachball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Rapid-Fire: <span id="numberOutput">${Number(
@@ -603,31 +603,31 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Hyper Rubber: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rubber2) / avg(rubber)) * 9 * value1(rubber1))).toPrecision(3),
+      ( 1 / ((avg2(rubber2) / avg(rubber)) * 8 * value1(rubber1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Shield Cores: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(cores2) / avg(cores)) * 1.8 * value1(cores1))).toPrecision(3),
+      ( 1 / ((avg2(cores2) / avg(cores)) * 2.2 * value1(cores1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Shield Generators: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(gens2) / avg(gens)) * 1.1 * value1(gens1))).toPrecision(3),
+      ( 1 / ((avg2(gens2) / avg(gens)) * 1.2 * value1(gens1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Shield Projectors: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(projs2) / avg(projs)) * 0.65 * value1(projs1))).toPrecision(3),
+      ( 1 / ((avg2(projs2) / avg(projs)) * 0.4 * value1(projs1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> RCs: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rcs2) / avg(rcs)) * 3.2 * value1(rcs1))).toPrecision(3),
+      ( 1 / ((avg2(rcs2) / avg(rcs)) * 3 * value1(rcs1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Auto Turret: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(auto2) / avg(auto)) * 0.1 * value1(auto1))).toPrecision(3),
+      ( 1 / ((avg2(auto2) / avg(auto)) * 0.05 * value1(auto1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Burst Turret: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(burst2) / avg(burst)) * 0.1 * value1(burst1))).toPrecision(3),
+      ( 1 / ((avg2(burst2) / avg(burst)) * 0.05 * value1(burst1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
@@ -655,11 +655,11 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> RCD: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rcd2) / avg(rcd)) * 0.45 * value1(rcd1))).toPrecision(3),
+      ( 1 / ((avg2(rcd2) / avg(rcd)) * 0.3 * value1(rcd1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Backpack: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(backpack2) / avg(backpack)) * 0.2 * value1(backpack1))).toPrecision(3),
+      ( 1 / ((avg2(backpack2) / avg(backpack)) * 0.3 * value1(backpack1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Blueprint Scanner: <span id="numberOutput">${Number(
@@ -667,27 +667,27 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Manifest Scanner: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(manifest2) / avg(manifest)) * 0.1 * value1(manifest1))).toPrecision(3),
+      ( 1 / ((avg2(manifest2) / avg(manifest)) * 0.15 * value1(manifest1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> BOM Scanner: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(bom2) / avg(bom)) * 0.1 * value1(bom1))).toPrecision(3),
+      ( 1 / ((avg2(bom2) / avg(bom)) * 0.15 * value1(bom1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Volleyball: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(volleyball2) / avg(volleyball)) * 0.25 * value1(volleyball1))).toPrecision(3),
+      ( 1 / ((avg2(volleyball2) / avg(volleyball)) * 0.2 * value1(volleyball1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Basketball: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(basketball2) / avg(basketball)) * 0.25 * value1(basketball1))).toPrecision(3),
+      ( 1 / ((avg2(basketball2) / avg(basketball)) * 0.2 * value1(basketball1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Football: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(football2) / avg(football)) * 0.25 * value1(football1))).toPrecision(3),
+      ( 1 / ((avg2(football2) / avg(football)) * 0.2 * value1(football1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Beach Ball: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(beachball2) / avg(beachball)) * 0.25 * value1(beachball1))).toPrecision(3),
+      ( 1 / ((avg2(beachball2) / avg(beachball)) * 0.2 * value1(beachball1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Rapid-Fire: <span id="numberOutput">${Number(
