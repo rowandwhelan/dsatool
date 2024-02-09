@@ -192,9 +192,9 @@ function calculateShieldRegen() {
   var generators = parseInt(document.getElementById("shieldGenerators").value);
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   if (generators > 0){
-    var regenRate = Math.round(((1 / ((-0.95 * generators) + 0.95 + generators)) * generators * 100) - (tanks*500*0.02)) + 100;
+    var regenRate = Math.round(((1 / ((-0.95 * generators) + 0.9 + generators)) * generators * 100) - (tanks*500*0.02)) + 100;
   } else {
-  var regenRate = Math.round((1 / ((-0.95 * generators) + 0.95 + generators)) * generators * 100) + 100;
+  var regenRate = Math.round((1 / ((-0.95 * generators) + 0.9 + generators)) * generators * 100) + 100;
   }
   if (regenRate <= 0) {
     regenRate = 0
@@ -220,7 +220,7 @@ function calculateCoresConsumed() {
   if (Math.round(((shieldRegen*shieldLoad-100 + 2 * (tanks*500*0.02) )*60) / 5000) > 0) {
   var coresConsumed = Math.round(((shieldRegen*shieldLoad-100 + 2 * (tanks*500*0.02) )*60) / 5000);
   } else {
-    var coresConsumed = Math.round(((shieldRegen*shieldLoad)*60) / 5000);
+    var coresConsumed = 0;
   }
   } else if (shieldLoad == 0){
     var coresConsumed = Math.round((tanks*500*0.02*60) / 5000);
