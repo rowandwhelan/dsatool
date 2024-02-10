@@ -531,11 +531,11 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
-      (value(shredder) * 1.2).toPrecision(3),
+      (value(shredder) * 1).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number(
-      (value(legacy) * 3.5).toPrecision(3),
+      (value(legacy) * 4.1).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Ice: <span id="numberOutput">${Number(
@@ -543,7 +543,7 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> RCD: <span id="numberOutput">${Number(
-      ((avg2(rcd2) / avg(rcd)) * 0.3 * value1(rcd1)).toPrecision(3),
+      ((avg2(rcd2) / avg(rcd)) * 0.15 * value1(rcd1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Backpack: <span id="numberOutput">${Number(
@@ -631,11 +631,11 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
-      ( 1 / (value(goldNull) * 1.5)).toPrecision(3),
+      ( 1 / (value(goldNull) * 0.7)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Silver Null Trophy: <span id="numberOutput">${Number(
-      ( 1 / (value(silverNull) * 1.5)).toPrecision(3),
+      ( 1 / (value(silverNull) * 0.7)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Bug Hunter Trophy: <span id="numberOutput">${Number(
@@ -643,11 +643,11 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
-      ( 1 / (value(shredder) * 1.2)).toPrecision(3),
+      ( 1 / (value(shredder) * 1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number(
-      ( 1 / (value(legacy) * 3.5)).toPrecision(3),
+      ( 1 / (value(legacy) * 4.1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Hyper Ice: <span id="numberOutput">${Number(
@@ -655,7 +655,7 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> RCD: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rcd2) / avg(rcd)) * 0.3 * value1(rcd1))).toPrecision(3),
+      ( 1 / ((avg2(rcd2) / avg(rcd)) * 0.15 * value1(rcd1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Backpack: <span id="numberOutput">${Number(
