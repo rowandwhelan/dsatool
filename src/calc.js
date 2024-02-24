@@ -192,9 +192,9 @@ function calculateShieldRegen() {
   var generators = parseInt(document.getElementById("shieldGenerators").value);
   var tanks = parseInt(document.getElementById("shieldTanks").value);
   if (generators > 0){
-    var regenRate = Math.round(((1 / ((-0.95 * generators) + 0.9 + generators)) * generators * 100) - (tanks*500*0.02)) + 100;
+    var regenRate = Math.round(((1 / ((-0.9 * generators) + 0.9 + generators)) * generators * 100) - (tanks*500*0.02)) + 100;
   } else {
-  var regenRate = Math.round((1 / ((-0.95 * generators) + 0.9 + generators)) * generators * 100) + 100;
+  var regenRate = Math.round((1 / ((-0.9 * generators) + 0.9 + generators)) * generators * 100) + 100;
   }
   if (regenRate <= 0) {
     regenRate = 0
