@@ -491,31 +491,31 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Rubber: <span id="numberOutput">${Number(
-      ((avg2(rubber2) / avg(rubber)) * 8 * value1(rubber1)).toPrecision(3),
+      ((avg2(rubber2) / avg(rubber)) * 7.5 * value1(rubber1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Cores: <span id="numberOutput">${Number(
-      ((avg2(cores2) / avg(cores)) * 2.2 * value1(cores1)).toPrecision(3),
+      ((avg2(cores2) / avg(cores)) * 2 * value1(cores1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Generators: <span id="numberOutput">${Number(
-      ((avg2(gens2) / avg(gens)) * 1.2 * value1(gens1)).toPrecision(3),
+      ((avg2(gens2) / avg(gens)) * 1.1 * value1(gens1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Projectors: <span id="numberOutput">${Number(
-      ((avg2(projs2) / avg(projs)) * 0.4 * value1(projs1)).toPrecision(3),
+      ((avg2(projs2) / avg(projs)) * 0.2 * value1(projs1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> RCs: <span id="numberOutput">${Number(
-      ((avg2(rcs2) / avg(rcs)) * 3 * value1(rcs1)).toPrecision(3),
+      ((avg2(rcs2) / avg(rcs)) * 2 * value1(rcs1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Auto Turret: <span id="numberOutput">${Number(
-      ((avg2(auto2) / avg(auto)) * 0.05 * value1(auto1)).toPrecision(3),
+      ((avg2(auto2) / avg(auto)) * 0.03 * value1(auto1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Burst Turret: <span id="numberOutput">${Number(
-      ((avg2(burst2) / avg(burst)) * 0.05 * value1(burst1)).toPrecision(3),
+      ((avg2(burst2) / avg(burst)) * 0.03 * value1(burst1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
@@ -527,11 +527,11 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Bug Hunter Trophy: <span id="numberOutput">${Number(
-      (value(bug) * 0.4).toPrecision(3),
+      (value(bug) * 0.5).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
-      (value(shredder) * 1).toPrecision(3),
+      (value(shredder) * 2).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number(
@@ -579,15 +579,15 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Rapid-Fire: <span id="numberOutput">${Number(
-      ((avg2(rapid2) / avg(rapid)) * 0.1 * value1(rapid1)).toPrecision(3),
+      ((avg2(rapid2) / avg(rapid)) * 0.03 * value1(rapid1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Preservation: <span id="numberOutput">${Number(
-      ((avg2(pres2) / avg(pres)) * 0.1 * value1(pres1)).toPrecision(3),
+      ((avg2(pres2) / avg(pres)) * 0.03 * value1(pres1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Advanced Turret Controllers: <span id="numberOutput">${Number(
-      ((avg2(control2) / avg(control)) * 0.2 * value1(control1)).toPrecision(3),
+      ((avg2(control2) / avg(control)) * 0.03 * value1(control1)).toPrecision(3),
     )}</span></h3>`;
   combined2();
 }
@@ -607,27 +607,27 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Shield Cores: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(cores2) / avg(cores)) * 2.2 * value1(cores1))).toPrecision(3),
+      ( 1 / ((avg2(cores2) / avg(cores)) * 2 * value1(cores1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Shield Generators: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(gens2) / avg(gens)) * 1.2 * value1(gens1))).toPrecision(3),
+      ( 1 / ((avg2(gens2) / avg(gens)) * 1.1 * value1(gens1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Shield Projectors: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(projs2) / avg(projs)) * 0.4 * value1(projs1))).toPrecision(3),
+      ( 1 / ((avg2(projs2) / avg(projs)) * 0.2 * value1(projs1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> RCs: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rcs2) / avg(rcs)) * 3 * value1(rcs1))).toPrecision(3),
+      ( 1 / ((avg2(rcs2) / avg(rcs)) * 2 * value1(rcs1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Auto Turret: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(auto2) / avg(auto)) * 0.05 * value1(auto1))).toPrecision(3),
+      ( 1 / ((avg2(auto2) / avg(auto)) * 0.03 * value1(auto1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Burst Turret: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(burst2) / avg(burst)) * 0.05 * value1(burst1))).toPrecision(3),
+      ( 1 / ((avg2(burst2) / avg(burst)) * 0.03 * value1(burst1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
@@ -639,11 +639,11 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Bug Hunter Trophy: <span id="numberOutput">${Number(
-      ( 1 / (value(bug) * 0.4)).toPrecision(3),
+      ( 1 / (value(bug) * 0.5)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
-      ( 1 / (value(shredder) * 1)).toPrecision(3),
+      ( 1 / (value(shredder) * 2)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number(
@@ -691,15 +691,15 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Rapid-Fire: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rapid2) / avg(rapid)) * 0.1 * value1(rapid1))).toPrecision(3),
+      ( 1 / ((avg2(rapid2) / avg(rapid)) * 0.03 * value1(rapid1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Preservation: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(pres2) / avg(pres)) * 0.1 * value1(pres1))).toPrecision(3),
+      ( 1 / ((avg2(pres2) / avg(pres)) * 0.03 * value1(pres1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Advanced Turret Controllers: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(control2) / avg(control)) * 0.2 * value1(control1))).toPrecision(3),
+      ( 1 / ((avg2(control2) / avg(control)) * 0.03 * value1(control1))).toPrecision(3),
     )}</span></h3>`;
 }
 
