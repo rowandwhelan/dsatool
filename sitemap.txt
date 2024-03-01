@@ -1,5 +1,4 @@
 http://dsatool.com/
-https://dsatool.com/index.html
 https://dsatool.com/public/calc.html
 https://dsatool.com/public/econ.html
 https://dsatool.com/public/drops.html
