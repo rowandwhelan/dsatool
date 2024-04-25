@@ -58,7 +58,7 @@
   color: white;
   }
   
-ul {
+ul:not(.page-container *) {
   list-style: none;
   height: 100%;
   display: flex;
@@ -66,11 +66,11 @@ ul {
   justify-content: space-around;
 }
 
-ul a {
+ul a:not(.page-container *) {
   color: white;
 }
 
-ul li {
+ul li:not(.page-container *) {
   padding: 5px;
   margin-left: 10px;
 }
