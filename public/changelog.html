@@ -75,7 +75,7 @@ ul li {
   margin-left: 10px;
 }
 
-ul li:hover {
+ul li:not(.page-container):hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -150,7 +150,7 @@ function toggleMobileMenu(menu) {
   </script>
   <br>
   <h1>Changelog - DSA Tool</h1>
-  <div id="page-container">
+  <div id="page-container" class="page-container">
     <br><br>
     <h2>v0.3.3 Beta (April 24 2024)</h2><br>
 <ul>
