@@ -53,11 +53,33 @@
     </header>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-body {
+  body {
   background-color: #353836;
   color: white;
-}
+  }
   
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
 #hamburger-icon {
   margin: auto 0;
   display: none;
@@ -118,36 +140,6 @@ body {
   #hamburger-icon {
     display: block;
   }
-}
-
-ul {
-  text-decoration: none;
-  list-style: none;
-  list-style: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-ul a {
-  text-decoration: none;
-  list-style: none;
-  color: white;
-}
-
-li {
-  text-decoration: none;
-  list-style: none;
-  padding: 5px;
-  margin-left: 10px;
-}
-
-li:hover {
-  text-decoration: none;
-  list-style: none;
-  transform: scale(1.1);
-  transition: 0.3s;
 }
 
 </style>
