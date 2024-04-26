@@ -12,17 +12,18 @@
 </head>
 
 <body>
-<header style="font-family: 'Oswald', sans-serif;">
+  <header style="font-family: 'Oswald', sans-serif;">
       <div id="brand"><a href="../index.html">DSA Tool</a></div>
       <nav>
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./public/calc.html">Calculator</a></li>
-          <li><a href="./public/econ.html">Economics</a></li>
-          <li><a href="./public/drops.html">Item Drops</a></li>
-          <li><a href="./public/prices.html">Exchange Rates</a></li>
-          <li><a href="./public/resources.html">Resources</a></li>
-          <li><a href="./public/changelog.html">Changelog</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./calc.html">Calculator</a></li>
+          <li><a href="./cost.html">BP Cost</a></li>
+          <li><a href="./econ.html">Economics</a></li>
+          <li><a href="./drops.html">Item Drops</a></li>
+          <li><a href="./prices.html">Exchange Rates</a></li>
+          <li><a href="./resources.html">Resources</a></li>
+          <li><a href="./changelog.html">Changelog</a></li>
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -30,13 +31,14 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
         <ul class="mobile-menu">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./public/calc.html">Calculator</a></li>
-          <li><a href="./public/econ.html">Economics</a></li>
-          <li><a href="./public/drops.html">Item Drops</a></li>
-          <li><a href="./public/prices.html">Exchange Rates</a></li>
-          <li><a href="./public/resources.html">Resources</a></li>
-          <li><a href="./public/changelog.html">Changelog</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./calc.html">Calculator</a></li>
+          <li><a href="./cost.html">BP Cost</a></li>
+          <li><a href="./econ.html">Economics</a></li>
+          <li><a href="./drops.html">Item Drops</a></li>
+          <li><a href="./prices.html">Exchange Rates</a></li>
+          <li><a href="./resources.html">Resources</a></li>
+          <li><a href="./changelog.html">Changelog</a></li>
         </ul>
       </div>
     </header>
@@ -46,8 +48,12 @@
   background-color: #353836;
   color: white;
   }
-  
+
 ul {
+   list-style: none;
+}
+  
+ul:not(.page-container *, .mobile-menu) {
   list-style: none;
   height: 100%;
   display: flex;
@@ -55,16 +61,16 @@ ul {
   justify-content: space-around;
 }
 
-ul a {
+ul a:not(.page-container *, .mobile-menu) {
   color: white;
 }
 
-ul li {
+ul li:not(.page-container *, .mobile-menu) {
   padding: 5px;
   margin-left: 10px;
 }
 
-ul li:hover {
+ul li:not(.page-container *, .mobile-menu):hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -133,7 +139,7 @@ ul li:hover {
 
 </style>
   <script>
-    function toggleMobileMenu(menu) {
+function toggleMobileMenu(menu) {
     menu.classList.toggle('open');
 }
   </script>
