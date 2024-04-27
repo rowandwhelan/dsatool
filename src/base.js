@@ -3,14 +3,14 @@ document.body.innerHTML += `
     <div id="brand"><a href="../index.html">DSA Tool</a></div>
     <nav>
       <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./public/calc.html">Calculator</a></li>
-        <li><a href="./public/cost.html">BP Cost</a></li>
-        <li><a href="./public/econ.html">Economics</a></li>
-        <li><a href="./public/drops.html">Item Drops</a></li>
-        <li><a href="./public/prices.html">Exchange Rates</a></li>
-        <li><a href="./public/resources.html">Affiliates</a></li>
-        <li><a href="./public/changelog.html">Changelog</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./calc.html">Calculator</a></li>
+        <li><a href="./cost.html">BP Cost</a></li>
+        <li><a href="./econ.html">Economics</a></li>
+        <li><a href="./drops.html">Item Drops</a></li>
+        <li><a href="./prices.html">Exchange Rates</a></li>
+        <li><a href="./resources.html">Affiliates</a></li>
+        <li><a href="./changelog.html">Changelog</a></li>
       </ul>
     </nav>
     <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -18,14 +18,14 @@ document.body.innerHTML += `
       <div class="bar2"></div>
       <div class="bar3"></div>
       <ul class="mobile-menu">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./public/calc.html">Calculator</a></li>
-        <li><a href="./public/cost.html">BP Cost</a></li>
-        <li><a href="./public/econ.html">Economics</a></li>
-        <li><a href="./public/drops.html">Item Drops</a></li>
-        <li><a href="./public/prices.html">Exchange Rates</a></li>
-        <li><a href="./public/resources.html">Affiliates</a></li>
-        <li><a href="./public/changelog.html">Changelog</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./calc.html">Calculator</a></li>
+        <li><a href="./cost.html">BP Cost</a></li>
+        <li><a href="./econ.html">Economics</a></li>
+        <li><a href="./drops.html">Item Drops</a></li>
+        <li><a href="./prices.html">Exchange Rates</a></li>
+        <li><a href="./resources.html">Affiliates</a></li>
+        <li><a href="./changelog.html">Changelog</a></li>
       </ul>
     </div>
   </header>
