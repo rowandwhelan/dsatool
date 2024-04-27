@@ -137,12 +137,4 @@ document.body.innerHTML += `
       function toggleMobileMenu(menu) {
       menu.classList.toggle('open');
   }
-    </script>
-    <script type="text/javascript">
-    window.onload = function () {
-        setTimeout(function() {
-            document.getElementById("body").style.display = "";        
-        }, 200);
-    }
-</script>
   `
