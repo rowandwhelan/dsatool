@@ -1,7 +1,6 @@
-This is the Github repository for DSATool.com: the best tool for drednot.io. Streamline the process of ship designing using the calculator app, gather data about the economy with easy to understand graphs in the economy data tool, optimize your farming strategies using the item drops page, and more!<br>
+This is the Github repository for DSATool.com!
 
 This guide was last updated on January 26th. For the most up to date guide please go to the changelog here: https://dsatool.com/public/changelog.html<br>
-
 
 How to use the ship design calculator: <br>
   Ship Information:<br>
