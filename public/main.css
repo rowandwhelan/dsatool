@@ -80,6 +80,16 @@ input:hover {
   transition: 0.3s;
 }
 
+select:hover {
+  border: 1px solid #05db44;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: 2px dashed #05db44;
+  transition: 0s;
+}
+
 .radio-container {
   display: flex;
   align-items: center;
@@ -121,6 +131,16 @@ input:hover {
 .radio-container input[type="radio"]:not(:checked)+label:before {
   background-color: #333;
   border: 2px solid #777;
+}
+
+.radio-container input[type="radio"]:not(:checked)+label:hover:before{
+  border: 2px dashed #05db44;
+  transition: 0.3s;
+}
+
+.radio-container input[type="radio"]:checked+label:hover:before{
+  border: 2px dashed #333;
+  transition: 0.3s;
 }
 
 input[type="range"] {
