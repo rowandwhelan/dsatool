@@ -25,84 +25,100 @@
     <div class="section">
       <br><h2>Ship Information</h2><br>
       <form style="font-family: 'Rubik', sans-serif;">
-        <br> 
-        <label for="unitType">Select Unit of Measurement:</label>
+        <label for="unitType">Select unit of measurement:</label>
         <div class="radio-container">
           <input type="radio" id="shipBlocks" name="unitType" value="shipBlocks" checked />
-          <label for="shipBlocks">Ship Blocks</label>
+          <label for="shipBlocks">Ship blocks</label>
           <input type="radio" id="RCs" name="unitType" value="RCs" />
           <label for="RCs">RCs</label>
           <input type="radio" id="worldBlocks" name="unitType" value="worldBlocks" />
-          <label for="worldBlocks">World Blocks</label>
+          <label for="worldBlocks">World blocks</label>
         </div>
-        <label for="shipSizeX" id="label-for-shipSizeX">Ship Size X (in ship blocks):</label>
-        <input type="number" id="shipSizeX" name="shipSizeX" placeholder="30" value="30" />
-        <label for="shipSizeY" id="label-for-shipSizeY">Ship Size Y (in ship blocks):</label>
-        <input type="number" id="shipSizeY" name="shipSizeY" placeholder="30" value="30" />
-        <label for="thrusterCount">Total Number of Thrusters:</label>
-        <input type="number" id="thrusterCount" name="thrusterCount" max="104" min="0" placeholder="16" value="16" />
-        <label for="shipSpeed">Maximum Speed:</label>
-        <input class="noInput" type="string" id="shipSpeed" name="shipSpeed" disabled />
+        <label for="shipSizeX" id="label-for-shipSizeX">Ship size X (in ship blocks):</label>
+        <input type="number" id="shipSizeX" name="shipSizeX" placeholder="30" value="30" min="0" max="78"/>
+        <label for="shipSizeY" id="label-for-shipSizeY">Ship size Y (in ship blocks):</label>
+        <input type="number" id="shipSizeY" name="shipSizeY" placeholder="30" value="30" min="0" max="78"/>
+        <label for="thrusterCount" id="label-for-thrusterCount">Total number of thrusters:</label>
+        <input type="number" id="thrusterCount" name="thrusterCount" max="104" min="0" placeholder="8" value="8" />
         <label for="loadingType">Loading type:</label>
         <input class="noInput" type="string" id="loadingType" name="loadingType" disabled />
       </form>
     </div>
     <div class="section">
-      <h2>Shield Information</h2>
+      <br><h2>Shield Information</h2><br>
       <form>
-        <label for="shieldGenerators">Number of Shield Generators:</label>
-        <input type="number" id="shieldGenerators" name="shieldGenerators" placeholder="20" value="20" />
-        <label for="shieldTanks">Number of Shield Tanks:</label>
-        <input type="number" id="shieldTanks" name="shieldTanks" placeholder="20" value="20" />
-        <label for="totalHealth">Total Health:</label>
+        <div class="radio-container">
+          <input type="radio" id="cores" name="coresOrBoosters" value="cores" checked />
+          <label for="cores">Cores</label>
+          <input type="radio" id="boosters" name="coresOrBoosters" value="boosters" />
+          <label for="boosters">Boosters</label>
+        </div>
+        <input id="addBattery" name="batteryCount" type="button" style="display: inline-block; align-items: center; width: 150px; height: 40px; font-family: 'Rubik', sans-serif; font-weight: bold;" value="Add a battery">
+        <input id="removeBattery" name="batteryCount" type="button" style="display: inline-block; align-items: center; width: 150px; height: 40px; font-family: 'Rubik', sans-serif; font-weight: bold;" value="Remove a battery">
+        <div id="shieldBatteryEndpoint"></div>
+        <div class="checkbox-container"  style="width: 100%;">
+          <label for="batterySwap" id="label-for-batterySwap" style="margin-right: 8px;margin-top:16px">Battery swapping:</label>
+        <input type="checkbox" id="batterySwap"> 
+        </div>
+        <label for="totalHealth">Total available health:</label>
         <input class="noInput" type="string" id="totalHealth" name="totalHealth" disabled />
-        <label for="shieldRegen" id="labelForShieldRegen">Shield Regen (HP/second):</label>
+        <label for="shieldRegen" id="labelForShieldRegen">Shield regen (HP/second):</label>
         <input class="noInput" type="string" id="shieldRegen" name="shieldRegen" disabled />
-        <label for="shieldLoad" id="labelForShieldLoadIndicator">Percent of Maximum Shield Load:
+        <label for="shieldLoad" id="labelForShieldLoadIndicator">Percent of maximum shield load:
         <span id="shieldLoadIndicator"></span></label>
         <input type="range" id="shieldLoad" name="shieldLoad" value="50" style="padding: 0px" />
-        <label for="coresConsumed">Cores consumed per minute:</label>
-        <input class="noInput" type="string" id="coresConsumed" name="coresConsumed" disabled />
-        <label for="timeToFullHealth">Time to Full Health (s):</label>
+        <label for="coreConsumption" id="label-for-coreConsumption">Cores consumed per minute:</label>
+        <input class="noInput" type="string" id="coreConsumption" name="coreConsumption" disabled />
+        <label for="matsRequiredForBoosters" id="label-for-matsRequiredForBoosters">Metal consumption (20 minutes of combat):</label>
+        <input class="noInput" type="string" id="matsRequiredForBoosters" name="matsRequiredForBoosters" disabled />
+        <label for="timeToFullHealth">Time to full health (s):</label>
         <input class="noInput" type="string" id="timeToFullHealth" name="timeToFullHealth" disabled />
-        <label for="shieldSpace">Space needed:</label>
+        <label for="shieldSpace">Estimated space needed:</label>
         <input class="noInput" type="string" id="shieldSpace" name="shieldSpace" disabled />
       </form>
     </div>
     <div class="section">
-      <h2>Weapons Information</h2>
+      <br><h2>Weapons Information</h2><br>
       <form>
-        <label for="numTurrets">Maximum Number of Turrets:</label>
+        <label for="numTurrets">Maximum number of turrets:</label>
         <input class="noInput" type="string" id="numTurrets" name="numTurrets" value="80" disabled />
-        <label for="ammoType">Select Ammo Type:</label>
+        <label for="ammoType">Select ammo type:</label>
         <select id="ammoType" name="ammoType" placeholder="Standard Ammo" value="standardAmmo">
-          <option value="trashAmmo">Trash Ammo</option>
-          <option value="standardAmmo" selected>Standard Ammo</option>
-          <option value="flakAmmoFar">Flak Ammo (far)</option>
-          <option value="flakAmmoNear">Flak Ammo (near)</option>
-          <option value="slugAmmo">Slug Ammo</option>
-          <option value="punchAmmo">Punch Ammo</option>
-          <option value="yankAmmo">Yank Ammo</option>
-          <option value="scattershotAmmo">Scattershot Ammo</option>
-          <option value="sniperAmmo">Sniper Ammo</option>
+          <option value="trashAmmo">Trash ammo</option>
+          <option value="standardAmmo" selected>Standard ammo</option>
+          <option value="flakAmmoFar">Flak ammo (far)</option>
+          <option value="flakAmmoNear">Flak ammo (near)</option>
+          <option value="slugAmmo">Slug ammo</option>
+          <option value="punchAmmo">Punch ammo</option>
+          <option value="yankAmmo">Yank ammo</option>
+          <option value="scattershotAmmo">Scattershot ammo</option>
+          <option value="sniperAmmo">Sniper ammo</option>
         </select>
-        <label for="ammoConsumptionRate">Rate of Fire (per second per turret):</label>
+        <label for="ammoConsumptionRate">Rate of fire (per second per turret):</label>
         <input class="noInput" type="string" id="ammoConsumptionRate" name="ammoConsumptionRate" disabled />
-        <label for="damagePerSecond">Total Damage per Second:</label>
+        <label for="damagePerSecond">Total damage per second:</label>
         <input class="noInput" type="string" id="damagePerSecond" name="damagePerSecond" disabled />
-        <label for="ammoSource">Select Ammo Source:</label>
+        <label for="ammoSource">Select ammo source:</label>
         <div class="radio-container">
           <input type="radio" id="preloaded" name="ammoSource" value="preloaded" checked />
           <label for="preloaded">Preloaded</label>
           <input type="radio" id="fabricators" name="ammoSource" value="fabricators" />
           <label for="fabricators">Fabricators</label>
         </div>
-        <label for="firePercentage">Percent of Time Firing Turrets:
+        <label for="firePercentage">Percent of time firing turrets:
           <span id="firePercentageIndicator"></span></label>
         <input type="range" id="firePercentage" name="firePercentage" value="50" style="padding: 0px" />
-        <label for="fabricatorsRequired" id="label-for-fabricatorsRequired">Fabricators Required:</label>
+        <label for="fabricatorsRequired" id="label-for-fabricatorsRequired">Fabricators required:</label>
         <input class="noInput" type="string" id="fabricatorsRequired" name="fabricatorsRequired" disabled />
       </form>
+    </div>
+    <div class="section">
+      <br><h2>Other Information</h2><br>
+        <h3>Total resource consumption in 20 minutes:</h3>
+        <br><span id="metalConsumed">Metal: 0</span>
+        <br><span id="expConsumed">Explosives: 0</span>
+        <br><span id="coresConsumed">Cores: 0</span>
+        <br><span id="fuelConsumed">Fuel: 0</span>
     </div>
   </div>
 <script src="../src/calc.js"></script>
