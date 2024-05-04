@@ -17,7 +17,7 @@ document.body.innerHTML += `
         <li><a href=".${public}/econ.html">Economics</a></li>
         <li><a href=".${public}/drops.html">Item Drops</a></li>
         <li><a href=".${public}/prices.html">Exchange Rates</a></li>
-        <li><a href=".${public}/resources.html">Affiliates</a></li>
+        <li><a href=".${public}/affiliates.html">Affiliates</a></li>
         <li><a href=".${public}/changelog.html">Changelog</a></li>
       </ul>
     </nav>
@@ -32,7 +32,7 @@ document.body.innerHTML += `
         <li><a href=".${public}/econ.html">Economics</a></li>
         <li><a href=".${public}/drops.html">Item Drops</a></li>
         <li><a href=".${public}/prices.html">Exchange Rates</a></li>
-        <li><a href=".${public}/resources.html">Affiliates</a></li>
+        <li><a href=".${public}/affiliates.html">Affiliates</a></li>
         <li><a href=".${public}/changelog.html">Changelog</a></li>
       </ul>
     </div>
