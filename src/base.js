@@ -39,10 +39,10 @@ document.body.innerHTML += `
   </header>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-      body {
+    body {
       background-color: #353836;
       color: white;
-      }
+    }
 
     ul {
        list-style: none;
@@ -135,6 +135,7 @@ document.body.innerHTML += `
     </style>
     <script>
       function toggleMobileMenu(menu) {
-      menu.classList.toggle('open');
-  }
+        menu.classList.toggle('open');
+      }
+    </script>
   `
