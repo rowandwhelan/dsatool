@@ -1,61 +1,81 @@
 var productionRate = 0;
-var pastUnitType = "shipBlocks";
 var trueShipX = 30;
 var trueShipY = 30;
+var totalGens = 20;
+var totalTanks = 10;
+var batteryNumber = 0;
 
-function updateUnitType(){
-  var unitType = document.querySelector('input[name="unitType"]:checked').value;
-  var sizeX = parseInt(document.getElementById("shipSizeX").value);
-  var sizeY = parseInt(document.getElementById("shipSizeY").value);
-  if (unitType == "shipBlocks") {
-    document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in ship blocks):";
-    document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in ship blocks):";
-    if (pastUnitType == "RCs") {
-      document.getElementById("shipSizeX").value = Math.round(sizeX*3)
-      document.getElementById("shipSizeY").value = Math.round(sizeY*3)
+document.getElementById("addBattery").addEventListener("click", addBattery);
+document.getElementById("removeBattery").addEventListener("click", removeBattery);
+addBattery();
+
+function addBattery(){
+  batteryNumber++
+  document.getElementById("shieldBatteryEndpoint").insertAdjacentHTML("beforebegin", `  
+    <h3 id="batteryHeading${batteryNumber}">Shield battery #${batteryNumber}:</h3>
+    <label for="shieldGenerators${batteryNumber}" id="label-for-shieldGenerators${batteryNumber}">Number of shield generators:</label>
+    <input type="number" id="shieldGenerators${batteryNumber}" name="shieldGenerators${batteryNumber}" placeholder="20" value="20" min="0"/>
+    <label for="shieldTanks${batteryNumber}" id="label-for-shieldTanks${batteryNumber}">Number of shield tanks:</label>
+    <input type="number" id="shieldTanks${batteryNumber}" name="shieldTanks${batteryNumber}" placeholder="10" value="10" min="0"/>`)
+updateAllCalculations();
+}
+
+function removeBattery(){
+  document.getElementById(`batteryHeading${batteryNumber}`).remove();
+  document.getElementById(`shieldGenerators${batteryNumber}`).remove();
+  document.getElementById(`label-for-shieldGenerators${batteryNumber}`).remove();
+  document.getElementById(`shieldTanks${batteryNumber}`).remove();
+  document.getElementById(`label-for-shieldTanks${batteryNumber}`).remove();
+  batteryNumber--
+  updateAllCalculations();
+}
+
+document.addEventListener("input", function (e) {
+  if (e.target.name === "unitType") {
+    var unitType = document.querySelector('input[name="unitType"]:checked').value;
+    if (unitType === "shipBlocks") {
+      document.getElementById("label-for-shipSizeX").innerText = "Ship size X (in ship blocks):";
+      document.getElementById("label-for-shipSizeY").innerText = "Ship size Y (in ship blocks):";
+      document.getElementById("shipSizeX").value = trueShipX;
+      document.getElementById("shipSizeY").value = trueShipY;
+    } else if (unitType === "RCs") {
+      document.getElementById("label-for-shipSizeX").innerText = "Ship size X (in RCs):";
+      document.getElementById("label-for-shipSizeY").innerText = "Ship size Y (in RCs):";
+      document.getElementById("shipSizeX").value = (trueShipX / 3).toFixed(1);
+      document.getElementById("shipSizeY").value = (trueShipY / 3).toFixed(1);
+    } else if (unitType === "worldBlocks") {
+      document.getElementById("label-for-shipSizeX").innerText = "Ship size X (in world blocks):";
+      document.getElementById("label-for-shipSizeY").innerText = "Ship size Y (in world blocks):";
+      document.getElementById("shipSizeX").value = ((trueShipX + 2) / 8).toFixed(3);
+      document.getElementById("shipSizeY").value = ((trueShipY + 2) / 8).toFixed(3);
     }
-    if (pastUnitType == "worldBlocks") {
-      document.getElementById("shipSizeX").value = Math.round(sizeX*8-2)
-      document.getElementById("shipSizeY").value = Math.round(sizeY*8-2)
-    } 
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, 78));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, 78));
-    trueShipX = document.getElementById("shipSizeX").value;
-    trueShipY = document.getElementById("shipSizeY").value;
-    pastUnitType = "shipBlocks";
-  }  else if (unitType === "RCs") {
-    document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in RCs):";
-    document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in RCs):";
-      if (pastUnitType === "shipBlocks") {
-      document.getElementById("shipSizeX").value = Math.round((sizeX/3) * 10) / 10;
-      document.getElementById("shipSizeY").value = Math.round((sizeY/3) * 10) / 10; 
-    } 
-      if (pastUnitType === "worldBlocks") {
-      document.getElementById("shipSizeX").value = Math.round((sizeX*(8/3)-2/3) * 10) / 10;
-      document.getElementById("shipSizeY").value = Math.round((sizeY*(8/3)- 2/3) * 10) / 10;
-    } 
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, (Math.round(26*10)/10)));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, (Math.round(26*10)/10)));
-    trueShipX = Math.round(document.getElementById("shipSizeX").value*3);
-    trueShipY = Math.round(document.getElementById("shipSizeY").value*3);
-    pastUnitType = "RCs";
-  } else if (unitType === "worldBlocks") {
-    document.getElementById("label-for-shipSizeX").innerText = "Ship Size X (in world blocks):";
-    document.getElementById("label-for-shipSizeY").innerText = "Ship Size Y (in world blocks):";
-      if (pastUnitType === "shipBlocks") {
-      document.getElementById("shipSizeX").value = Math.round((sizeX/8+2) * 100) / 100;
-      document.getElementById("shipSizeY").value = Math.round((sizeY/8+2) * 100) / 100;
-    } 
-    if (pastUnitType === "RCs") {
-      document.getElementById("shipSizeX").value = Math.round((sizeX/(8/3)+2/3) * 100) / 100;
-      document.getElementById("shipSizeY").value = Math.round((sizeY/(8/3)+2/3) * 100) / 100;
-    } 
-    document.getElementById("shipSizeX").value = Math.max(0, Math.min(sizeX, 10));
-    document.getElementById("shipSizeY").value = Math.max(0, Math.min(sizeY, 10));
-    trueShipX = Math.round(document.getElementById("shipSizeX").value*8-2);
-    trueShipY = Math.round(document.getElementById("shipSizeY").value*8-2);
-    pastUnitType = "worldBlocks";
   }
+});
+
+function updateUnitCount() {
+  var unitType = document.querySelector('input[name="unitType"]:checked').value;
+  X = document.getElementById("shipSizeX").value;
+  Y = document.getElementById("shipSizeY").value;  
+  if (unitType === "shipBlocks") {
+    trueShipX = Math.round(X);
+    trueShipY = Math.round(Y);
+  } else if (unitType === "RCs") {
+    trueShipX = Math.round(X * 3);
+    trueShipY = Math.round(Y * 3);
+  } else if (unitType === "worldBlocks") {
+    trueShipX = Math.round(X * 8 - 2);
+    trueShipY = Math.round(Y * 8 - 2);
+  }
+  document.getElementById("shipSizeX").style.borderColor = '';
+  document.getElementById("shipSizeY").style.borderColor = '';
+  if ((trueShipX > 78) || (trueShipX < 0)){
+    document.getElementById("shipSizeX").style.borderColor = 'red';
+  } 
+  if ((trueShipY > 78) || (trueShipY < 0)){
+    document.getElementById("shipSizeY").style.borderColor = 'red';
+  } 
+  trueShipX = Math.max(0, Math.min(trueShipX, 78));
+  trueShipY = Math.max(0, Math.min(trueShipY, 78));
 }
 
 function updateNumTurrets() {
@@ -106,19 +126,24 @@ function calculateAmmoConsumption() {
   }
   document.getElementById("ammoConsumptionRate").value = ammoConsumptionRate;
   var numTurrets = parseInt(document.getElementById("numTurrets").value);
-  document.getElementById("damagePerSecond").value = (ammoConsumptionRate*damage*numTurrets/2);
+  document.getElementById("damagePerSecond").value = (ammoConsumptionRate * damage * numTurrets) / 2;
 }
 
 function updateShieldLoadIndicator() {
-  if (parseInt(document.getElementById("shieldLoad").value) == 0) {
-    document.getElementById("labelForShieldLoadIndicator").innerText = "Core Leak when Idle:";
+  var coresOrBoosters = document.querySelector('input[name="coresOrBoosters"]:checked').value;
+  if (parseInt(document.getElementById("shieldLoad").value) === 0) {
+    if (coresOrBoosters === "cores"){
+    document.getElementById("labelForShieldLoadIndicator").innerText = "Core leak when batteries off:";
+    } else if (coresOrBoosters === "boosters"){
+      document.getElementById("labelForShieldLoadIndicator").innerText = "Booster leak when batteries off:";
+    }
   } else {
-  document.getElementById("labelForShieldLoadIndicator").innerText = "Shield Load: " + parseInt(document.getElementById("shieldLoad").value) + '%';
+    document.getElementById("labelForShieldLoadIndicator").innerText = "Shield load: " + parseInt(document.getElementById("shieldLoad").value) + "%";
   }
 }
 
 function updateFirePercentageIndicator() {
-  document.getElementById("firePercentageIndicator").innerText = parseInt(document.getElementById("firePercentage").value) + '%';
+  document.getElementById("firePercentageIndicator").innerText = parseInt(document.getElementById("firePercentage").value) + "%";
 }
 
 function updateAmmoOutput() {
@@ -151,52 +176,73 @@ function calculateFabricatorsRequired() {
 function calculateLoadingType() {
   var firePercentage = document.getElementById("firePercentage").value / 100;
   var ammoConsumptionRate = document.getElementById("ammoConsumptionRate").value;
-  var loadingType = Math.ceil( 3.5 * ammoConsumptionRate * firePercentage );
-  if (loadingType == 1) {
-      document.getElementById("loadingType").value = "Single Loaded";
-  }   if (loadingType == 2) {
-      document.getElementById("loadingType").value = "Double Loaded";
-  } if (loadingType > 2) {
-      document.getElementById("loadingType").value = "Triple Loaded";
+  var loadingType = Math.ceil(3.5 * ammoConsumptionRate * firePercentage);
+  if (loadingType === 1) {
+    document.getElementById("loadingType").value = "Single loaded";
+  } else if (loadingType === 2) {
+    document.getElementById("loadingType").value = "Double loaded";
+  } else if (loadingType === 3) {
+    document.getElementById("loadingType").value = "Triple loaded";
+  } else if (loadingType === 4) {
+    document.getElementById("loadingType").value = "Quadruple loaded";
+  } else {
+    document.getElementById("loadingType").value = "N/A";
   }
 }
 
 function calculateSpeed() {
   var thrusterCount = document.getElementById("thrusterCount").value;
-  var mass = (trueShipX * trueShipY) ** 0.5 * 2;
+  if (Math.round(20 + (0.4 * (((thrusterCount-1) / 4) * 2000 + 2000)) / ((trueShipX * trueShipY) ** 0.5 * 2)) > 60) {
+    document.getElementById("label-for-thrusterCount").innerText = "Total number of thrusters [above speed limit]:";
+    document.getElementById("thrusterCount").style.borderColor = 'red';
+  } else if (Math.round(20 + (0.4 * ((thrusterCount / 4) * 2000 + 2000)) / ((trueShipX * trueShipY) ** 0.5 * 2)) < 60) {
+    document.getElementById("label-for-thrusterCount").innerText = "Total number of thrusters [below speed limit]:";
+    document.getElementById("thrusterCount").style.borderColor = 'red'; 
+  } else {
+    document.getElementById("label-for-thrusterCount").innerText = "Total number of thrusters [at speed limit, perfect!]:";
+    document.getElementById("thrusterCount").style.borderColor = '';
+  } 
+}
 
-  var total_thrust = (thrusterCount / 4 * 2000) + 2000;
-  var max_thrust = mass * 100;
-  if (max_thrust > total_thrust) { total_thrust = max_thrust }
-  var max_speed = Math.round(20 + 0.4 * total_thrust / mass);
-
-  document.getElementById("shipSpeed").value = Math.max(0, max_speed);
+function calculateGensAndTanks(){
+  totalGens = 0;
+  totalTanks = 0;
+  for (var i = 1; i <= batteryNumber; i++){
+    totalGens += parseInt(document.getElementById(`shieldGenerators${i}`).value);
+    totalTanks += parseInt(document.getElementById(`shieldTanks${i}`).value);
+  }
+  if (batteryNumber <= 1){
+    document.getElementById("label-for-batterySwap").style.display = "none";
+    document.getElementById("batterySwap").style.display = "none";
+  } else if (batteryNumber > 1){
+      document.getElementById("label-for-batterySwap").style.display = "";
+      document.getElementById("batterySwap").style.display = "";
+  }
 }
 
 function calculateSpace() {
   var totalShipSize = trueShipY * trueShipX;
-  var generators = parseInt(document.getElementById("shieldGenerators").value);
-  var tanks = parseInt(document.getElementById("shieldTanks").value);
-  var space = generators * 8 + tanks * 4;
+  var space = (totalGens * 8 + totalTanks * 4) * (4/3);
   var spacePercent = Math.round((space / totalShipSize) * 100);
   document.getElementById("shieldSpace").value = spacePercent + "%";
 }
 
 function calculateTotalShieldCapacity() {
-  var tanks = document.getElementById("shieldTanks").value;
-  var totalShieldCapacity = 2000 + tanks * 500;
-  document.getElementById("totalHealth").value = totalShieldCapacity;
+  document.getElementById("totalHealth").value = 2000 + totalTanks * 500;
+  if (document.getElementById("batterySwap").checked && (batteryNumber > 1) && (totalGens > 0)) {
+    document.getElementById("totalHealth").value = 2000 + totalTanks * 500 / 2;
+  }
 }
 
 function calculateShieldRegen() {
-  var generators = parseInt(document.getElementById("shieldGenerators").value);
-  var tanks = parseInt(document.getElementById("shieldTanks").value);
-  var regenRate = Math.round(((1 / ((-0.9 * generators) + 0.9 + generators)) * generators * 100) - (tanks*500*0.02)) + 100;
-  if (regenRate <= 0) {
-    regenRate = 0
-    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second): [Warning: Shield regen cannot support the shield system and calculations will be inaccurate. Add more generators]";
-  } if (regenRate > 0) {
-    document.getElementById("labelForShieldRegen").innerText = "Shield Regen (HP/second):";
+  var regenRate = Math.max(0, Math.round((1 / (-0.9 * totalGens + 0.9 + totalGens)) * totalGens * 100 - totalTanks * 500 * 0.02) + 100);
+ if (document.getElementById("batterySwap").checked && (batteryNumber > 1) && (totalGens > 0)){
+    regenRate = Math.max(0, Math.round((1 / (-0.9 * totalGens + 0.9 + totalGens)) * totalGens * (100+100*((totalGens/batteryNumber)/totalGens)) - totalTanks * 500 * (0.02-0.01*((totalGens/batteryNumber)/totalGens))) + 100);
+  } 
+  if (regenRate === 0) {
+    document.getElementById("labelForShieldRegen").innerText = "Shield regen (HP/second): [Warning: Shield regen too low! Add more generators]";
+  } else if (regenRate > 0) {
+    document.getElementById("labelForShieldRegen").innerText = "Shield regen (HP/second):";
   }
   document.getElementById("shieldRegen").value = regenRate;
 }
@@ -204,53 +250,74 @@ function calculateShieldRegen() {
 function calculateTimeToFullHealth() {
   var totalHealth = document.getElementById("totalHealth").value;
   var shieldRegen = document.getElementById("shieldRegen").value;
-  var timeToFullHealth = Math.round((totalHealth-2000) / shieldRegen);
+  var timeToFullHealth = Math.round(totalHealth / shieldRegen);
   document.getElementById("timeToFullHealth").value = timeToFullHealth;
 }
 
-function calculateCoresConsumed() {
+function calculateCoreConsumption() {
   var shieldRegen = parseInt(document.getElementById("shieldRegen").value);
-  var tanks = parseInt(document.getElementById("shieldTanks").value);
   var shieldLoad = document.getElementById("shieldLoad").value / 100;
-  if (shieldLoad != 0) {
-  if (Math.round(((shieldRegen*shieldLoad-100 + 2 * (tanks*500*0.02) )*60) / 5000) > 0) {
-  var coresConsumed = Math.round(((shieldRegen*shieldLoad-100 + 2 * (tanks*500*0.02) )*60) / 5000);
+  var coreConsumption = 0;
+  var coresOrBoosters = document.querySelector('input[name="coresOrBoosters"]:checked').value;
+  if (shieldLoad === 0) {
+    coreConsumption = Math.round((totalTanks * 500 * 0.01 * 60) / 5000);
   } else {
-    var coresConsumed = 0;
+    coreConsumption = Math.max(0, ((shieldRegen * shieldLoad - 100 + 2 * (totalTanks * 500 * 0.02)) * 60) / 5000);
+    if (document.getElementById("batterySwap").checked && (batteryNumber > 1) && (totalGens > 0)) {
+      coreConsumption = Math.max(0, ((shieldRegen * shieldLoad - 100 + 2 * (totalTanks * 500 * (0.02-0.01*((totalGens/batteryNumber)/totalGens)))) * 60) / 5000);
+    }
+
   }
-  } else if (shieldLoad == 0){
-    var coresConsumed = Math.round((tanks*500*0.02*60) / 5000);
+  if (coresOrBoosters === "cores"){
+    document.getElementById("coreConsumption").value = Math.round(coreConsumption);
+    document.getElementById("label-for-coreConsumption").innerText = "Cores consumed per minute:";
+    document.getElementById("label-for-matsRequiredForBoosters").style.display = 'none';
+    document.getElementById("matsRequiredForBoosters").style.display = 'none';
+  } else if (coresOrBoosters === "boosters") {
+    document.getElementById("coreConsumption").value = Math.round(10*coreConsumption);
+    document.getElementById("label-for-coreConsumption").innerText = "Boosters consumed per minute:";
+    document.getElementById("label-for-matsRequiredForBoosters").style.display = '';
+    document.getElementById("matsRequiredForBoosters").style.display = '';
+    document.getElementById("matsRequiredForBoosters").value = Math.round(10*coreConsumption)*4*20;
   }
-  document.getElementById("coresConsumed").value = coresConsumed;
+}
+
+function calculateMatConsumption(){
+  document.getElementById("metalConsumed").innerText = `Metal: ${(Math.ceil(document.getElementById("ammoConsumptionRate").value * document.getElementById("numTurrets").value * (document.getElementById("firePercentage").value / 100) * 0.5 * 60 * 20 / 4)) + document.getElementById("matsRequiredForBoosters").value}`
+  document.getElementById("expConsumed").innerText = `Explosives: ${Math.ceil(document.getElementById("ammoConsumptionRate").value * document.getElementById("numTurrets").value * (document.getElementById("firePercentage").value / 100) * 0.5 * 60 * 20 / 4)}`
+  if (document.querySelector('input[name="coresOrBoosters"]:checked').value === "cores"){
+  document.getElementById("coresConsumed").innerText = `Cores: ${document.getElementById("coreConsumption").value * 20}`
+  } else {
+    document.getElementById("coresConsumed").innerText = `Cores: 0`;
+    }
+  document.getElementById("fuelConsumed").innerText = `Fuel: ${document.getElementById("thrusterCount").value * 20}`
 }
 
 function limitValues() {
   var thrusterCount = document.getElementById("thrusterCount").value;
-  var generators = document.getElementById("shieldGenerators").value;
-  var tanks = document.getElementById("shieldTanks").value;
   var shieldSpace = document.getElementById("shieldSpace").value;
   var totalShipSize = trueShipX * trueShipY;
 
-  document.getElementById("thrusterCount").value = Math.max(0, Math.min(thrusterCount, (Math.floor(trueShipX / 3) * 2 + Math.floor(trueShipY / 3) * 2)));
-
-  document.getElementById("shieldGenerators").max = Math.floor((totalShipSize - (tanks * 4)) / 8);
-  document.getElementById("shieldTanks").max = Math.floor((totalShipSize - (generators * 8)) / 4);
+  document.getElementById("thrusterCount").value = Math.max(0, Math.min(thrusterCount, Math.floor(trueShipX / 3) * 2 + Math.floor(trueShipY / 3) * 2));
+  /*
+  document.getElementById("shieldGenerators").max = Math.floor((totalShipSize - tanks * 4) / 8);
+  document.getElementById("shieldTanks").max = Math.floor((totalShipSize - generators * 8) / 4);
   document.getElementById("shieldGenerators").value = Math.max(0, Math.min(generators, document.getElementById("shieldGenerators").max));
   document.getElementById("shieldTanks").value = Math.max(0, Math.min(tanks, document.getElementById("shieldTanks").max));
-
+  */
   document.getElementById("shieldSpace").value = Math.max(0, Math.min(100, shieldSpace));
-
 }
 
 document.addEventListener("input", updateAllCalculations);
 
 function updateAllCalculations() {
   limitValues();
-  updateUnitType();
+  updateUnitCount();
+  calculateGensAndTanks();
   calculateTotalShieldCapacity();
   calculateShieldRegen();
   calculateTimeToFullHealth();
-  calculateCoresConsumed();
+  calculateCoreConsumption();
   calculateSpace();
   calculateSpeed();
   calculateAmmoConsumption();
@@ -261,6 +328,7 @@ function updateAllCalculations() {
   updateAmmoOutput();
   updateShieldLoadIndicator();
   calculateLoadingType();
+  calculateMatConsumption();
 }
 
 updateAllCalculations();
