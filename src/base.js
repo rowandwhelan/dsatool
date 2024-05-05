@@ -1,14 +1,15 @@
 var path = window.location.pathname;
 var page = path.split("/").pop();
-let public = ""
-let dot ="."
-if ((page === "index.html") || (page === "")){
-  public = "/public"
-  dot = ""
-}
+let public = "";
+let dot =".";
+if ((page === "index.html") || (page === "")) {
+  public = "/public";
+  dot = "";
+};
+
 document.body.innerHTML += `
   <header style="font-family: 'Oswald', sans-serif;">
-    <div id="brand"><a href="../index.html">DSA Tool</a></div>
+    <div id="brand"><a href="${dot}./index.html">DSA Tool</a></div>
     <nav>
       <ul>
         <li><a href="${dot}./index.html">Home</a></li>
@@ -39,6 +40,7 @@ document.body.innerHTML += `
   </header>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
     body {
       background-color: #353836;
       color: white;
@@ -48,7 +50,7 @@ document.body.innerHTML += `
       list-style: none;
     }
 
-    ul:not(.page-container *, .mobile-menu) {
+    ul:not(.page-container *) {
       list-style: none;
       height: 100%;
       display: flex;
@@ -56,16 +58,16 @@ document.body.innerHTML += `
       justify-content: space-around;
     }
 
-    ul a:not(.page-container *, .mobile-menu) {
+    ul a:not(.page-container *) {
       color: white;
     }
 
-    ul li:not(.page-container *, .mobile-menu) {
+    ul li:not(.page-container *) {
       padding: 5px;
       margin-left: 10px;
     }
 
-    ul li:not(.page-container *, .mobile-menu):hover {
+    ul li:not(.page-container *):hover {
       transform: scale(1.1);
       transition: 0.3s;
     }
@@ -138,4 +140,4 @@ document.body.innerHTML += `
         menu.classList.toggle('open');
       }
     </script>
-  `
+    `
