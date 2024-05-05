@@ -50,7 +50,7 @@ document.body.innerHTML += `
       list-style: none;
     }
 
-    ul:not(.page-container *, .mobile-menu) {
+    ul:not(.page-container *) {
       list-style: none;
       height: 100%;
       display: flex;
@@ -58,16 +58,16 @@ document.body.innerHTML += `
       justify-content: space-around;
     }
 
-    ul a:not(.page-container *) {
+    ul a:not(.page-container *, .mobile-menu) {
       color: white;
     }
 
-    ul li:not(.page-container *) {
+    ul li:not(.page-container *, .mobile-menu) {
       padding: 5px;
       margin-left: 10px;
     }
 
-    ul li:not(.page-container *):hover {
+    ul li:not(.page-container *, .mobile-menu):hover {
       transform: scale(1.1);
       transition: 0.3s;
     }
