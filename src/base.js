@@ -45,7 +45,7 @@ document.body.innerHTML += `
     }
 
     ul {
-       list-style: none;
+      list-style: none;
     }
 
     ul:not(.page-container *, .mobile-menu) {
