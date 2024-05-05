@@ -50,7 +50,7 @@ document.body.innerHTML += `
       list-style: none;
     }
 
-    ul:not(.page-container *) {
+    ul:not(.page-container *, .mobile-menu) {
       list-style: none;
       height: 100%;
       display: flex;
