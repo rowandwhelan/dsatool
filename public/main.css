@@ -80,6 +80,16 @@ input:hover {
   transition: 0.3s;
 }
 
+select:hover {
+  border: 1px solid #05db44;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: 1px dashed #05db44;
+  transition: 0s;
+}
+
 .radio-container {
   display: flex;
   align-items: center;
