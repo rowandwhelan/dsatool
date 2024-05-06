@@ -47,9 +47,9 @@ h1 {
 }
 
 .section:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  background-color: #313131;
+  background-color: #3f3f3f;
 }
 
 label {
