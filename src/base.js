@@ -22,7 +22,7 @@ document.body.innerHTML += `
         <li><a href=".${public}/changelog.html">Changelog</a></li>
       </ul>
     </nav>
-    <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+    <div id="hamburger-icon" onclick="this.classList.toggle('open');">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
@@ -48,13 +48,6 @@ document.body.innerHTML += `
 
     ul {
       list-style: none;
-    }
-
-    ul:not(.page-container *) {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
     }
 
     ul:not(.page-container *, .mobile-menu) {
@@ -142,9 +135,4 @@ document.body.innerHTML += `
     }
 
     </style>
-    <script>
-      function toggleMobileMenu(menu) {
-        menu.classList.toggle('open');
-      }
-    </script>
     `
