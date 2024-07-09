@@ -1,4 +1,4 @@
-var productionRate = 4 / 3;
+var productionRate = 1;
 var trueShipX = 30;
 var trueShipY = 30;
 var totalGens = 20;
