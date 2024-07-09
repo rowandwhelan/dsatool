@@ -1,9 +1,10 @@
-var productionRate = 0;
+var productionRate = 4 / 3;
 var trueShipX = 30;
 var trueShipY = 30;
 var totalGens = 20;
 var totalTanks = 10;
 var batteryNumber = 0;
+var ammoConsumptionRate = 1/1.5;
 
 document.getElementById("addBattery").addEventListener("click", addBattery);
 document.getElementById("removeBattery").addEventListener("click", removeBattery);
@@ -88,41 +89,30 @@ function updateNumTurrets() {
 function calculateAmmoConsumption() {
   var ammoType = document.getElementById("ammoType").value;
   if (ammoType === "standardAmmo") {
-    var ammoConsumptionRate = 1;
-    var damage = 100;
-    productionRate = 4 / 3;
+    //var damage = 100;
+    var damage = 255;
   } else if (ammoType === "trashAmmo") {
-    var ammoConsumptionRate = 0.5;
-    var damage = 100;
-    productionRate = 1 / 3;
   } else if (ammoType === "flakAmmoFar") {
-    var ammoConsumptionRate = 0.5;
-    var damage = 350;
-    productionRate = 4 / 3;
+    //var damage = 350;
+    var damage = 300;
   } else if (ammoType === "flakAmmoNear") {
-    var ammoConsumptionRate = 0.5;
-    var damage = 100;
-    productionRate = 4 / 3;
-  } else if (ammoType === "punchAmmo") {
-    var ammoConsumptionRate = 0.5;
-    var damage = 50;
-    productionRate = 4 / 3;
+    //var damage = 100;
+    var damage = 150;
+  } else if (ammoType === "punchAmmo") {;
+    //var damage = 50;
+    var damage = 75;
   } else if (ammoType === "yankAmmo") {
-    var ammoConsumptionRate = 0.5;
-    var damage = 50;
-    productionRate = 4 / 3;
+    //var damage = 50;
+    var damage = 75;
   } else if (ammoType === "scattershotAmmo") {
-    var ammoConsumptionRate = 0.5;
-    var damage = 150;
-    productionRate = 4 / 3;
+    //var damage = 150;
+    var damage = 300;
   } else if (ammoType === "sniperAmmo") {
-    var ammoConsumptionRate = 0.5;
+    //var damage = 150;
     var damage = 150;
-    productionRate = 4 / 3;
   } else if (ammoType === "slugAmmo") {
-    var ammoConsumptionRate = 0.25;
-    var damage = 250;
-    productionRate = 4 / 3;
+    //var damage = 250;
+    var damage = 300;
   }
   document.getElementById("ammoConsumptionRate").value = ammoConsumptionRate;
   var numTurrets = parseInt(document.getElementById("numTurrets").value);
