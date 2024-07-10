@@ -273,8 +273,11 @@ function calculateCoreConsumption() {
 }
 
 function calculateMatConsumption(){
-  console.log(document.getElementById("matsRequiredForBoosters").value)
+ if (parseInt(document.getElementById("matsRequiredForBoosters").value) === "NaN"){
+  document.getElementById("metalConsumed").innerText = `Metal: ${(Math.ceil(document.getElementById("ammoConsumptionRate").value * document.getElementById("numTurrets").value * (document.getElementById("firePercentage").value / 100) * 0.5 * 60 * 20 / 4))}`
+ } else {
   document.getElementById("metalConsumed").innerText = `Metal: ${(Math.ceil(document.getElementById("ammoConsumptionRate").value * document.getElementById("numTurrets").value * (document.getElementById("firePercentage").value / 100) * 0.5 * 60 * 20 / 4)) + parseInt(document.getElementById("matsRequiredForBoosters").value)}`
+ }
   document.getElementById("expConsumed").innerText = `Explosives: ${Math.ceil(document.getElementById("ammoConsumptionRate").value * document.getElementById("numTurrets").value * (document.getElementById("firePercentage").value / 100) * 0.5 * 60 * 20 / 4)}`
   if (document.querySelector('input[name="coresOrBoosters"]:checked').value === "cores"){
   document.getElementById("coresConsumed").innerText = `Cores: ${document.getElementById("coreConsumption").value * 20}`
