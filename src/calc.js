@@ -203,6 +203,10 @@ function calculateGensAndTanks(){
       document.getElementById("label-for-batterySwap").style.display = "";
       document.getElementById("batterySwap").style.display = "";
   }
+  if (totalTanks > 45){
+    totalTanks = 45
+    alert("nuh uh")
+  }
 }
 
 function calculateSpace() {
@@ -296,7 +300,6 @@ function limitValues() {
   document.getElementById("shieldTanks").value = Math.max(0, Math.min(tanks, document.getElementById("shieldTanks").max));
   */
   document.getElementById("shieldSpace").value = Math.max(0, Math.min(100, shieldSpace));
-  document.getElementById("totalHealth").value = Math.max(0, Math.min(45, totalHealth));
 }
 
 document.addEventListener("input", updateAllCalculations);
