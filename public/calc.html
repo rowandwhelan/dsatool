@@ -84,15 +84,16 @@
         <input class="noInput" type="string" id="numTurrets" name="numTurrets" value="80" disabled />
         <label for="ammoType">Select ammo type:</label>
         <select id="ammoType" name="ammoType" placeholder="Standard Ammo" value="standardAmmo">
-          <option value="trashAmmo">Trash ammo</option>
           <option value="standardAmmo" selected>Standard ammo</option>
           <option value="flakAmmoFar">Flak ammo (far)</option>
           <option value="flakAmmoNear">Flak ammo (near)</option>
-          <option value="slugAmmo">Slug ammo</option>
+          <option value="slugAmmoMax">Slug ammo (max)</option>
+          <option value="slugAmmoMin">Slug ammo (min)</option>
           <option value="punchAmmo">Punch ammo</option>
           <option value="yankAmmo">Yank ammo</option>
-          <option value="scattershotAmmo">Scattershot ammo</option>
-          <option value="sniperAmmo">Sniper ammo</option>
+          <option value="scattershotAmmo">Scattershot ammo (max)</option>
+          <option value="sniperAmmoMax">Sniper ammo (bounce)</option>
+          <option value="sniperAmmoMin">Sniper ammo (no bounce)</option>
         </select>
         <label for="ammoConsumptionRate">Rate of fire (per second per turret):</label>
         <input class="noInput" type="string" id="ammoConsumptionRate" name="ammoConsumptionRate" disabled />
