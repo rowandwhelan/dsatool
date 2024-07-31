@@ -195,6 +195,9 @@ function calculateGensAndTanks(){
   for (var i = 1; i <= batteryNumber; i++){
     totalGens += parseInt(document.getElementById(`shieldGenerators${i}`).value);
     totalTanks += parseInt(document.getElementById(`shieldTanks${i}`).value);
+    if (totalTanks > 45){
+      document.getElementById(`shieldTanks${i}`).value--
+    }
   }
   if (batteryNumber <= 1){
     document.getElementById("label-for-batterySwap").style.display = "none";
@@ -202,10 +205,6 @@ function calculateGensAndTanks(){
   } else if (batteryNumber > 1){
       document.getElementById("label-for-batterySwap").style.display = "";
       document.getElementById("batterySwap").style.display = "";
-  }
-  if (totalTanks > 45){
-    totalTanks = 45
-    alert("nuh uh")
   }
 }
 
