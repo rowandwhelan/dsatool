@@ -213,16 +213,16 @@ function calculateSpace() {
 }
 
 function calculateTotalShieldCapacity() {
-  document.getElementById("totalHealth").value = 2000 + totalTanks * 500;
+  document.getElementById("totalHealth").value = 5000 + totalTanks * 1000;
   if (document.getElementById("batterySwap").checked && (batteryNumber > 1) && (totalGens > 0)) {
-    document.getElementById("totalHealth").value = 2000 + totalTanks * 500 / 2;
+    document.getElementById("totalHealth").value = 5000 + totalTanks * 1000 / 2;
   }
 }
 
 function calculateShieldRegen() {
-  var regenRate = Math.max(0, Math.round((1 / (-0.9 * totalGens + 0.9 + totalGens)) * totalGens * 100 - totalTanks * 500 * 0.02) + 100);
+  var regenRate = Math.max(0, Math.round((1 / (-0.9 * totalGens + 0.9 + totalGens)) * totalGens * 100 - totalTanks * 1000 * 0.01) + 100);
  if (document.getElementById("batterySwap").checked && (batteryNumber > 1) && (totalGens > 0)){
-    regenRate = Math.max(0, Math.round((1 / (-0.9 * totalGens + 0.9 + totalGens)) * totalGens * (100+100*((totalGens/batteryNumber)/totalGens)) - totalTanks * 500 * (0.02-0.01*((totalGens/batteryNumber)/totalGens))) + 100);
+    regenRate = Math.max(0, Math.round((1 / (-0.9 * totalGens + 0.9 + totalGens)) * totalGens * (100+100*((totalGens/batteryNumber)/totalGens)) - totalTanks * 1000 * (0.01-0.01*((totalGens/batteryNumber)/totalGens))) + 100);
   } 
   if (regenRate === 0) {
     document.getElementById("labelForShieldRegen").innerText = "Shield regen (HP/second): [Warning: Shield regen too low! Add more generators]";
