@@ -177,10 +177,10 @@ function calculateLoadingType() {
 
 function calculateSpeed() {
   var thrusterCount = document.getElementById("thrusterCount").value;
-  if (Math.floor((0.4 * (((thrusterCount-1) / 4) * 2000 + 2000)) / (((trueShipX+2) * (trueShipY+2)) ** 0.5 * 2)) > 60) {
+  if (Math.floor((20 + 0.4 * ((thrusterCount-1) * 750 + 1125)) / (((trueShipX+2) * (trueShipY+2)) ** 0.5 * 2)) > 60) {
     document.getElementById("label-for-thrusterCount").innerText = "Total number of thrusters [above speed limit]:";
     document.getElementById("thrusterCount").style.borderColor = 'red';
-  } else if (Math.floor((0.4 * ((thrusterCount / 4) * 2000 + 2000)) / (((trueShipX+2) * (trueShipY+2)) ** 0.5 * 2)) < 60) {
+  } else if (Math.floor((20 + 0.4 * (thrusterCount * 750 + 1125)) / (((trueShipX+2) * (trueShipY+2)) ** 0.5 * 2)) < 60) {
     document.getElementById("label-for-thrusterCount").innerText = "Total number of thrusters [below speed limit]:";
     document.getElementById("thrusterCount").style.borderColor = 'red'; 
   } else {
