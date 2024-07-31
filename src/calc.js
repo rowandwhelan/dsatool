@@ -296,6 +296,7 @@ function limitValues() {
   document.getElementById("shieldTanks").value = Math.max(0, Math.min(tanks, document.getElementById("shieldTanks").max));
   */
   document.getElementById("shieldSpace").value = Math.max(0, Math.min(100, shieldSpace));
+  document.getElementById("totalHealth").value = Math.max(0, Math.min(45, totalHealth));
 }
 
 document.addEventListener("input", updateAllCalculations);
