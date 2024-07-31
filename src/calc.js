@@ -89,30 +89,25 @@ function updateNumTurrets() {
 function calculateAmmoConsumption() {
   var ammoType = document.getElementById("ammoType").value;
   if (ammoType === "standardAmmo") {
-    //var damage = 100;
-    var damage = 255;
-  } else if (ammoType === "trashAmmo") {
+    var damage = 200;
   } else if (ammoType === "flakAmmoFar") {
-    //var damage = 350;
     var damage = 300;
   } else if (ammoType === "flakAmmoNear") {
-    //var damage = 100;
     var damage = 150;
   } else if (ammoType === "punchAmmo") {;
-    //var damage = 50;
     var damage = 75;
   } else if (ammoType === "yankAmmo") {
-    //var damage = 50;
     var damage = 75;
   } else if (ammoType === "scattershotAmmo") {
-    //var damage = 150;
     var damage = 300;
-  } else if (ammoType === "sniperAmmo") {
-    //var damage = 150;
+  } else if (ammoType === "sniperAmmoMin") {
     var damage = 150;
-  } else if (ammoType === "slugAmmo") {
-    //var damage = 250;
+  } else if (ammoType === "sniperAmmoMax") {
     var damage = 300;
+  } else if (ammoType === "slugAmmoMin") {
+    var damage = 200;
+  } else if (ammoType === "slugAmmoMax") {
+    var damage = 400;
   }
   document.getElementById("ammoConsumptionRate").value = ammoConsumptionRate;
   var numTurrets = parseInt(document.getElementById("numTurrets").value);
