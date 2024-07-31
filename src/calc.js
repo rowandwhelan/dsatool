@@ -180,7 +180,7 @@ function calculateSpeed() {
   if (Math.floor((0.4 * (((thrusterCount-1) / 4) * 2000 + 2000)) / ((trueShipX * trueShipY) ** 0.5 * 2)) > 60) {
     document.getElementById("label-for-thrusterCount").innerText = "Total number of thrusters [above speed limit]:";
     document.getElementById("thrusterCount").style.borderColor = 'red';
-  } else if (Math.floor((0.4 * ((thrusterCount / 4) * 2000 + 2000)) / ((trueShipX * trueShipY) ** 0.5 * 2)) < 60) {
+  } else if (Math.floor((0.4 * ((thrusterCount+1 / 4) * 2000 + 2000)) / ((trueShipX * trueShipY) ** 0.5 * 2)) < 60) {
     document.getElementById("label-for-thrusterCount").innerText = "Total number of thrusters [below speed limit]:";
     document.getElementById("thrusterCount").style.borderColor = 'red'; 
   } else {
