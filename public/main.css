@@ -47,7 +47,6 @@ h1 {
 }
 
 .section:hover {
-  transform: scale(1.05);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   background-color: #3f3f3f;
 }
@@ -124,7 +123,6 @@ input:focus {
 .radio-container input[type="radio"]:checked+label:before {
   background-color: #00ff00;
   border: 2px solid #05db44;
-  transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
