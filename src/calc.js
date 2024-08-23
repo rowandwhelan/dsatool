@@ -161,7 +161,7 @@ function calculateFabricatorsRequired() {
 function calculateLoadingType() {
   var firePercentage = document.getElementById("firePercentage").value / 100;
   var ammoConsumptionRate = document.getElementById("ammoConsumptionRate").value;
-  var loadingType = Math.ceil(3.5 * ammoConsumptionRate * firePercentage);
+  var loadingType = Math.ceil(2 * ammoConsumptionRate * firePercentage);
   if (loadingType === 1) {
     document.getElementById("loadingType").value = "Single loaded";
   } else if (loadingType === 2) {
