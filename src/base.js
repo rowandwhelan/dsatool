@@ -68,8 +68,8 @@ document.body.innerHTML += `
     }
 
     ul li:not(.page-container *, .mobile-menu):hover {
-      transform: scale(1.1);
       transition: 0.3s;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
     }
 
     #hamburger-icon {
