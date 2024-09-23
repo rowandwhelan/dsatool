@@ -218,7 +218,7 @@ function calculateSpace() {
 function calculateTotalShieldCapacity() {
   document.getElementById("totalHealth").value = 5000 + totalTanks * 1000;
   if (document.getElementById("batterySwap").checked && (batteryNumber > 1) && (totalGens > 0)) {
-    document.getElementById("totalHealth").value = 5000 + totalTanks * 1000 / 2;
+    document.getElementById("totalHealth").value = 5000 + totalTanks * 1000 / batteryNumber;
   }
 }
 
