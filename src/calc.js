@@ -154,7 +154,7 @@ function calculateFabricatorsRequired() {
   var firePercentage = document.getElementById("firePercentage").value / 100;
   var ammoConsumptionRate = document.getElementById("ammoConsumptionRate").value;
   var turretNumber = document.getElementById("numTurrets").value;
-  var fabricatorsRequired = Math.ceil(productionRate / (ammoConsumptionRate * turretNumber * firePercentage * 0.5));
+  var fabricatorsRequired = Math.ceil((ammoConsumptionRate * turretNumber * 0.5 * firePercentage) / productionRate);
   document.getElementById("fabricatorsRequired").value = fabricatorsRequired;
 }
 
