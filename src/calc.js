@@ -82,6 +82,7 @@ function updateUnitCount() {
 function updateNumTurrets() {
   var thrusterCount = parseInt(document.getElementById("thrusterCount").value);
   var numTurrets = Math.floor(trueShipX / 3) * 2 + Math.floor(trueShipY / 3) * 2 - thrusterCount;
+  console.log(Math.floor(trueShipX / 3) * 2, Math.floor(trueShipY / 3) * 2, thrusterCount)
   numTurrets = Math.max(0, Math.min(numTurrets, 104));
   document.getElementById("numTurrets").value = numTurrets;
 }
