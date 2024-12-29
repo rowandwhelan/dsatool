@@ -48,9 +48,10 @@ async function econGetDate() {
   basketball = [];
   beachball = [];
   football = [];
-  rapid = [];
-  pres = [];
   control = [];
+  msu = [];
+  acute = [];
+  obtuse = [];
 
   days1 = [];
   iron1 = 0;
@@ -78,9 +79,10 @@ async function econGetDate() {
   basketball1 = 0;
   beachball1 = 0;
   football1 = 0;
-  rapid1 = 0;
-  pres1 = 0;
   control1 = 0;
+  msu = 0;
+  acute = 0;
+  obtuse = 0;
 
   days2 = [];
   iron2 = [];
@@ -108,9 +110,10 @@ async function econGetDate() {
   basketball2 = [];
   beachball2 = [];
   football2 = [];
-  rapid2 = [];
-  pres2 = [];
   control2 = [];
+  msu2 = [];
+  acute2 = [];
+  obtuse2 = [];
 
   let endDate = dayjs(`${endYear}-${endMonth}-${endDay}`);
   let currentDate = dayjs(`${startYear}-${startMonth}-${startDay}`);
