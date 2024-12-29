@@ -411,11 +411,11 @@ function output(econ, items, date) {
           gens2.push(itemNum);
         } else if (items[i].name == "Shield Projector") {
           projs2.push(itemNum);
-        } else if (items[i].name == "RC Turret (Packaged)") {
+        } else if (items[i].name == "Cannon (Packaged)") {
           rcs2.push(itemNum);
-        } else if (items[i].name == "Auto Turret (Packaged)") {
+        } else if (items[i].name == "Machine Cannon (Packaged)") {
           auto2.push(itemNum);
-        } else if (items[i].name == "Burst Turret (Packaged)") {
+        } else if (items[i].name == "Burst Cannon (Packaged)") {
           burst2.push(itemNum);
         } else if (items[i].name == "Gold Null Trophy") {
           goldNull2.push(itemNum);
