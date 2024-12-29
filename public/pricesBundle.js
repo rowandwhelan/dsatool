@@ -181,9 +181,10 @@ var volleyball;
 var basketball;
 var beachball;
 var football;
-var rapid;
-var pres;
 var control;
+var msu;
+var acute;
+var obtuse;
 
 var iron1;
 var exp1;
@@ -205,9 +206,10 @@ var volleyball1;
 var basketball1;
 var beachball1;
 var football1;
-var rapid1;
-var pres1;
 var control1;
+var msu1;
+var acute1;
+var obtuse1;
 
 var iron2;
 var exp2;
@@ -234,9 +236,10 @@ var volleyball2;
 var basketball2;
 var beachball2;
 var football2;
-var rapid2;
-var pres2;
 var control2;
+var msu2;
+var acute2;
+var obtuse2;
 
 function output(econ, items, date) {
   let outputDate = dayjs(date, "YYYY_M_D").format("ddd[,] DD MMM YYYY");
@@ -260,11 +263,11 @@ function output(econ, items, date) {
           gens.push(itemNum);
         } else if (items[i].name == "Shield Projector") {
           projs.push(itemNum);
-        } else if (items[i].name == "RC Turret (Packaged)") {
+        } else if (items[i].name == "Cannon (Packaged)") {
           rcs.push(itemNum);
-        } else if (items[i].name == "Auto Turret (Packaged)") {
+        } else if (items[i].name == "Machine Cannon (Packaged)") {
           auto.push(itemNum);
-        } else if (items[i].name == "Burst Turret (Packaged)") {
+        } else if (items[i].name == "Burst Cannon (Packaged)") {
           burst.push(itemNum);
         } else if (items[i].name == "Gold Null Trophy") {
           goldNull.push(itemNum);
@@ -296,13 +299,17 @@ function output(econ, items, date) {
           beachball.push(itemNum);
         } else if (items[i].name == "Football") {
           football.push(itemNum);
-        } else if (items[i].name == "Turret Booster - Rapid Fire") {
-          rapid.push(itemNum);
-        } else if (items[i].name == "Turret Booster - Preservation") {
-          pres.push(itemNum);
         } else if (items[i].name == "Enhanced Turret Controller") {
           control.push(itemNum);
-        }
+        } else if (items[i].name == "Munitions Supply Unit (Packaged)") {
+          msu.push(itemNum);
+        }  else if (items[i].name == "Acute Cannon (Packaged)") {
+          acute.push(itemNum);
+        }  else if (items[i].name == "Obtuse Cannon (Packaged)") {
+          obtuse.push(itemNum);
+        }  else if (items[i].name == "Elimination Loot Box") {
+          elim.push(itemNum);
+        } 
         break;
       }
       i++;
@@ -330,11 +337,11 @@ function output(econ, items, date) {
       gens1 += econ.items_new[i].total;
     } else if (itemName == "Shield Projector") {
       projs1 += econ.items_new[i].total;
-    } else if (itemName == "RC Turret (Packaged)") {
+    } else if (itemName == "Cannon (Packaged)") {
       rcs1 += econ.items_new[i].total;
-    } else if (itemName == "Auto Turret (Packaged)") {
+    } else if (itemName == "Machine Cannon (Packaged)") {
       auto1 += econ.items_new[i].total;
-    } else if (itemName == "Burst Turret (Packaged)") {
+    } else if (itemName == "Burst Cannon (Packaged)") {
       burst1 += econ.items_new[i].total;
     } else if (itemName == "Gold Null Trophy") {
       goldNull1 += econ.items_new[i].total;
@@ -366,13 +373,17 @@ function output(econ, items, date) {
       beachball1 += econ.items_new[i].total;
     } else if (itemName == "Football") {
       football1 += econ.items_new[i].total;
-    } else if (itemName == "Turret Booster - Rapid Fire") {
-      rapid1 += econ.items_new[i].total;
-    } else if (itemName == "Turret Booster - Preservation") {
-      pres1 += econ.items_new[i].total;
     } else if (itemName == "Enhanced Turret Controller") {
       control1 += econ.items_new[i].total;
-    }
+    } else if (itemName == "Munitions Supply Unit (Packaged)") {
+      msu1 += econ.items_new[i].total;
+    } else if (itemName == "Acute Cannon (Packaged)") {
+      acute1 += econ.items_new[i].total;
+    } else if (itemName == "Obtuse Cannon (Packaged)") {
+      obtuse1 += econ.items_new[i].total;
+    } else if (itemName == "Elimination Loot Box") {
+      elim1 += econ.items_new[i].total;
+    } 
   }
 
   for (const [key, value] of Object.entries(econ.items_moved)) {
@@ -436,7 +447,15 @@ function output(econ, items, date) {
           pres2.push(itemNum);
         } else if (items[i].name == "Enhanced Turret Controller") {
           control2.push(itemNum);
-        }
+        } else if (itemName == "Munitions Supply Unit (Packaged)") {
+          msu2.push(itemNum);
+        } else if (itemName == "Acute Cannon (Packaged)") {
+          acute2.push(itemNum);
+        } else if (itemName == "Obtuse Cannon (Packaged)") {
+          obtuse2.push(itemNum);
+        } else if (itemName == "Elimination Loot Box") {
+          elim2.push(itemNum);
+        } 
         break;
       }
       i++;
@@ -503,7 +522,7 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Shield Projectors: <span id="numberOutput">${Number(
-      ((avg2(projs2) / avg(projs)) * 0.2 * value1(projs1)).toPrecision(3),
+      ((avg2(projs2) / avg(projs)) * 0.4 * value1(projs1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> RCs: <span id="numberOutput">${Number(
@@ -519,11 +538,11 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
-      (value(goldNull) * 1.3).toPrecision(3),
+      (value(goldNull) * 1).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Silver Null Trophy: <span id="numberOutput">${Number(
-      (value(silverNull) * 0.7).toPrecision(3),
+      (value(silverNull) * 1).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Bug Hunter Trophy: <span id="numberOutput">${Number(
@@ -531,11 +550,11 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
-      (value(shredder) * 2).toPrecision(3),
+      (value(shredder) * 1.5).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number(
-      (value(legacy) * 5).toPrecision(3),
+      (value(legacy) * 3).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Ice: <span id="numberOutput">${Number(
@@ -547,11 +566,11 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Backpack: <span id="numberOutput">${Number(
-      ((avg2(backpack2) / avg(backpack)) * 0.3 * value1(backpack1)).toPrecision(3),
+      ((avg2(backpack2) / avg(backpack)) * 0.1 * value1(backpack1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Blueprint Scanner: <span id="numberOutput">${Number(
-      ((avg2(bp2) / avg(bp)) * 0.6 * value1(bp1)).toPrecision(3),
+      ((avg2(bp2) / avg(bp)) * 0.5 * value1(bp1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Manifest Scanner: <span id="numberOutput">${Number(
@@ -563,143 +582,151 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Volleyball: <span id="numberOutput">${Number(
-      ((avg2(volleyball2) / avg(volleyball)) * 0.2 * value1(volleyball1)).toPrecision(3),
+      ((avg2(volleyball2) / avg(volleyball)) * 0.4 * value1(volleyball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Basketball: <span id="numberOutput">${Number(
-      ((avg2(basketball2) / avg(basketball)) * 0.2 * value1(basketball1)).toPrecision(3),
+      ((avg2(basketball2) / avg(basketball)) * 0.4 * value1(basketball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Football: <span id="numberOutput">${Number(
-      ((avg2(football2) / avg(football)) * 0.2 * value1(football1)).toPrecision(3),
+      ((avg2(football2) / avg(football)) * 0.4 * value1(football1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Beach Ball: <span id="numberOutput">${Number(
-      ((avg2(beachball2) / avg(beachball)) * 0.2 * value1(beachball1)).toPrecision(3),
-    )}</span></h3>`;
-  document.getElementById("output").innerHTML +=
-    `<br><h3> Rapid-Fire: <span id="numberOutput">${Number(
-      ((avg2(rapid2) / avg(rapid)) * 0.03 * value1(rapid1)).toPrecision(3),
-    )}</span></h3>`;
-  document.getElementById("output").innerHTML +=
-    `<br><h3> Preservation: <span id="numberOutput">${Number(
-      ((avg2(pres2) / avg(pres)) * 0.03 * value1(pres1)).toPrecision(3),
+      ((avg2(beachball2) / avg(beachball)) * 0.4 * value1(beachball1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Advanced Turret Controllers: <span id="numberOutput">${Number(
       ((avg2(control2) / avg(control)) * 0.03 * value1(control1)).toPrecision(3),
     )}</span></h3>`;
+    document.getElementById("output").innerHTML +=
+    `<br><h3> Munition Supply Units: <span id="numberOutput">${Number(
+      ((avg2(msu2) / avg(msu)) * 1 * value1(msu1)).toPrecision(3),
+    )}</span></h3>`;
+    document.getElementById("output").innerHTML +=
+    `<br><h3> Acute Cannons: <span id="numberOutput">${Number(
+      ((avg2(acute2) / avg(acute)) * 1 * value1(acute1)).toPrecision(3),
+    )}</span></h3>`;
+    document.getElementById("output").innerHTML +=
+    `<br><h3> Obtuse Cannons: <span id="numberOutput">${Number(
+      ((avg2(obtuse2) / avg(obtuse)) * 1 * value1(obtuse1)).toPrecision(3),
+    )}</span></h3>`;
   combined2();
 }
 
 function combined2() {
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Iron: <span id="numberOutput">${Number(
       ( 1 / ((avg2(iron2) / avg(iron)) * 9 * value1(iron1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Explosives: <span id="numberOutput">${Number(
       ( 1 / ((avg2(exp2) / avg(exp)) * 9 * value1(exp1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Rubber: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rubber2) / avg(rubber)) * 8 * value1(rubber1))).toPrecision(3),
+      ( 1 / ((avg2(rubber2) / avg(rubber)) * 7.5 * value1(rubber1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Shield Cores: <span id="numberOutput">${Number(
       ( 1 / ((avg2(cores2) / avg(cores)) * 2 * value1(cores1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Shield Generators: <span id="numberOutput">${Number(
       ( 1 / ((avg2(gens2) / avg(gens)) * 1.1 * value1(gens1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Shield Projectors: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(projs2) / avg(projs)) * 0.2 * value1(projs1))).toPrecision(3),
+      ( 1 / ((avg2(projs2) / avg(projs)) * 0.4 * value1(projs1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> RCs: <span id="numberOutput">${Number(
       ( 1 / ((avg2(rcs2) / avg(rcs)) * 2 * value1(rcs1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Auto Turret: <span id="numberOutput">${Number(
       ( 1 / ((avg2(auto2) / avg(auto)) * 0.03 * value1(auto1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Burst Turret: <span id="numberOutput">${Number(
       ( 1 / ((avg2(burst2) / avg(burst)) * 0.03 * value1(burst1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
-      ( 1 / (value(goldNull) * 1.3)).toPrecision(3),
+      ( 1 / (value(goldNull) * 1)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Silver Null Trophy: <span id="numberOutput">${Number(
-      ( 1 / (value(silverNull) * 0.7)).toPrecision(3),
+      ( 1 / (value(silverNull) * 1)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Bug Hunter Trophy: <span id="numberOutput">${Number(
       ( 1 / (value(bug) * 0.5)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Golden Shredder: <span id="numberOutput">${Number(
-      ( 1 / (value(shredder) * 2)).toPrecision(3),
+      ( 1 / (value(shredder) * 1.5)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Legacy Fabricator: <span id="numberOutput">${Number(
-      ( 1 / (value(legacy) * 5)).toPrecision(3),
+      ( 1 / (value(legacy) * 3)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Ice: <span id="numberOutput">${Number(
       ( 1 / ((avg2(glass2) / avg(glass)) * 2.5 * value1(glass1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> RCD: <span id="numberOutput">${Number(
       ( 1 / ((avg2(rcd2) / avg(rcd)) * 0.15 * value1(rcd1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Backpack: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(backpack2) / avg(backpack)) * 0.3 * value1(backpack1))).toPrecision(3),
+      ( 1 / ((avg2(backpack2) / avg(backpack)) * 0.1 * value1(backpack1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Blueprint Scanner: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(bp2) / avg(bp)) * 0.6 * value1(bp1))).toPrecision(3),
+      ( 1 / ((avg2(bp2) / avg(bp)) * 0.5 * value1(bp1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Manifest Scanner: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(manifest2) / avg(manifest)) * 0.15 * value1(manifest1))).toPrecision(3),
+      ( 1 / ((avg2(manifest2) / avg(manifest))) * 0.15 * value1(manifest1)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> BOM Scanner: <span id="numberOutput">${Number(
       ( 1 / ((avg2(bom2) / avg(bom)) * 0.15 * value1(bom1))).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Volleyball: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(volleyball2) / avg(volleyball)) * 0.2 * value1(volleyball1))).toPrecision(3),
+      ( 1 / ((avg2(volleyball2) / avg(volleyball))) * 0.4 * value1(volleyball1)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Basketball: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(basketball2) / avg(basketball)) * 0.2 * value1(basketball1))).toPrecision(3),
+      ( 1 / ((avg2(basketball2) / avg(basketball))) * 0.4 * value1(basketball1)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Football: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(football2) / avg(football)) * 0.2 * value1(football1))).toPrecision(3),
+      ( 1 / ((avg2(football2) / avg(football))) * 0.4 * value1(football1)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Beach Ball: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(beachball2) / avg(beachball)) * 0.2 * value1(beachball1))).toPrecision(3),
+      ( 1 / ((avg2(beachball2) / avg(beachball))) * 0.4 * value1(beachball1)).toPrecision(3),
     )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
-    `<br><h3> Rapid-Fire: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rapid2) / avg(rapid)) * 0.03 * value1(rapid1))).toPrecision(3),
-    )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
-    `<br><h3> Preservation: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(pres2) / avg(pres)) * 0.03 * value1(pres1))).toPrecision(3),
-    )}</span></h3>`;
-  document.getElementById("output2").innerHTML +=
+  document.getElementById("output").innerHTML +=
     `<br><h3> Advanced Turret Controllers: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(control2) / avg(control)) * 0.03 * value1(control1))).toPrecision(3),
+      ( 1 / ((avg2(control2) / avg(control))) * 0.03 * value1(control1)).toPrecision(3),
+    )}</span></h3>`;
+    document.getElementById("output").innerHTML +=
+    `<br><h3> Munition Supply Units: <span id="numberOutput">${Number(
+      ( 1 / ((avg2(msu2) / avg(msu)) * 1 * value1(msu1))).toPrecision(3),
+    )}</span></h3>`;
+    document.getElementById("output").innerHTML +=
+    `<br><h3> Acute Cannons: <span id="numberOutput">${Number(
+      ( 1 / ((avg2(acute2) / avg(acute)) * 1 * value1(acute1))).toPrecision(3),
+    )}</span></h3>`;
+    document.getElementById("output").innerHTML +=
+    `<br><h3> Obtuse Cannons: <span id="numberOutput">${Number(
+      ( 1 / ((avg2(obtuse2) / avg(obtuse)) * 1 * value1(obtuse1))).toPrecision(3),
     )}</span></h3>`;
 }
 
