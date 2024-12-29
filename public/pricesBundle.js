@@ -528,15 +528,15 @@ function combined() {
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Cannons: <span id="numberOutput">${Number(
-      ((avg2(rcs2) / avg(rcs)) * 2 * value1(rcs1)).toPrecision(3),
+      ((avg2(rcs2) / avg(rcs)) * 1.3 * value1(rcs1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Machine Cannons: <span id="numberOutput">${Number(
-      ((avg2(auto2) / avg(auto)) * 1 * value1(auto1)).toPrecision(3),
+      ((avg2(auto2) / avg(auto)) * 0.6 * value1(auto1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Burst Cannons: <span id="numberOutput">${Number(
-      ((avg2(burst2) / avg(burst)) * 1 * value1(burst1)).toPrecision(3),
+      ((avg2(burst2) / avg(burst)) * 0.8 * value1(burst1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
@@ -644,15 +644,15 @@ function combined2() {
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Cannons: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(rcs2) / avg(rcs)) * 2 * value1(rcs1))).toPrecision(3),
+      ( 1 / ((avg2(rcs2) / avg(rcs)) * 1.3 * value1(rcs1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Machine Cannons: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(auto2) / avg(auto)) * 1 * value1(auto1))).toPrecision(3),
+      ( 1 / ((avg2(auto2) / avg(auto)) * 0.6 * value1(auto1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Burst Cannons: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(burst2) / avg(burst)) * 1 * value1(burst1))).toPrecision(3),
+      ( 1 / ((avg2(burst2) / avg(burst)) * 0.8 * value1(burst1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Gold Null Trophy: <span id="numberOutput">${Number(
