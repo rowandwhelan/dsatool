@@ -447,10 +447,6 @@ function output(econ, items, date) {
           beachball2.push(itemNum);
         } else if (items[i].name == "Football") {
           football2.push(itemNum);
-        } else if (items[i].name == "Turret Booster - Rapid Fire") {
-          rapid2.push(itemNum);
-        } else if (items[i].name == "Turret Booster - Preservation") {
-          pres2.push(itemNum);
         } else if (items[i].name == "Enhanced Turret Controller") {
           control2.push(itemNum);
         } else if (items[i].name == "Munitions Supply Unit (Packaged)") {
