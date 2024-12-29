@@ -453,13 +453,13 @@ function output(econ, items, date) {
           pres2.push(itemNum);
         } else if (items[i].name == "Enhanced Turret Controller") {
           control2.push(itemNum);
-        } else if (itemName == "Munitions Supply Unit (Packaged)") {
+        } else if (items[i].name == "Munitions Supply Unit (Packaged)") {
           msu2.push(itemNum);
-        } else if (itemName == "Acute Cannon (Packaged)") {
+        } else if (items[i].name == "Acute Cannon (Packaged)") {
           acute2.push(itemNum);
-        } else if (itemName == "Obtuse Cannon (Packaged)") {
+        } else if (items[i].name == "Obtuse Cannon (Packaged)") {
           obtuse2.push(itemNum);
-        } else if (itemName == "Elimination Loot Box") {
+        } else if (items[i].name == "Elimination Loot Box") {
           elim2.push(itemNum);
         } 
         break;
