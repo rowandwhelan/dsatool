@@ -80,9 +80,9 @@ async function econGetDate() {
   beachball1 = 0;
   football1 = 0;
   control1 = 0;
-  msu = 0;
-  acute = 0;
-  obtuse = 0;
+  msu1 = 0;
+  acute1 = 0;
+  obtuse1 = 0;
 
   days2 = [];
   iron2 = [];
