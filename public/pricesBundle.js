@@ -504,11 +504,11 @@ function value2(item) {
 function combined() {
   document.getElementById("output").innerHTML +=
     `<br><h3> Iron: <span id="numberOutput">${Number(
-      ((avg2(iron2) / avg(iron)) * 8.8 * value1(iron1)).toPrecision(3),
+      ((avg2(iron2) / avg(iron)) * 8.5 * value1(iron1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Explosives: <span id="numberOutput">${Number(
-      ((avg2(exp2) / avg(exp)) * 8.8 * value1(exp1)).toPrecision(3),
+      ((avg2(exp2) / avg(exp)) * 8.5 * value1(exp1)).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output").innerHTML +=
     `<br><h3> Hyper Rubber: <span id="numberOutput">${Number(
@@ -620,11 +620,11 @@ function combined() {
 function combined2() {
   document.getElementById("output2").innerHTML +=
     `<br><h3> Iron: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(iron2) / avg(iron)) * 8.8 * value1(iron1))).toPrecision(3),
+      ( 1 / ((avg2(iron2) / avg(iron)) * 8.5 * value1(iron1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Explosives: <span id="numberOutput">${Number(
-      ( 1 / ((avg2(exp2) / avg(exp)) * 8.8 * value1(exp1))).toPrecision(3),
+      ( 1 / ((avg2(exp2) / avg(exp)) * 8.5 * value1(exp1))).toPrecision(3),
     )}</span></h3>`;
   document.getElementById("output2").innerHTML +=
     `<br><h3> Hyper Rubber: <span id="numberOutput">${Number(
