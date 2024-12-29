@@ -52,6 +52,7 @@ async function econGetDate() {
   msu = [];
   acute = [];
   obtuse = [];
+  elim = [];
 
   days1 = [];
   iron1 = 0;
@@ -83,6 +84,7 @@ async function econGetDate() {
   msu1 = 0;
   acute1 = 0;
   obtuse1 = 0;
+  elim1 = 0;
 
   days2 = [];
   iron2 = [];
@@ -114,6 +116,7 @@ async function econGetDate() {
   msu2 = [];
   acute2 = [];
   obtuse2 = [];
+  elim2 = [];
 
   let endDate = dayjs(`${endYear}-${endMonth}-${endDay}`);
   let currentDate = dayjs(`${startYear}-${startMonth}-${startDay}`);
